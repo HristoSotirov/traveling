@@ -1,0 +1,16 @@
+[
+ {
+  "id": "prague",
+  "name": "Prague",
+  "country": "Czechia",
+  "blurb": "3 days in December",
+  "ready": true
+ },
+ {
+  "id": "budapest",
+  "name": "Budapest",
+  "country": "Hungary",
+  "blurb": "Coming soon",
+  "ready": false
+ }
+]

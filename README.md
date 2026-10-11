@@ -1,0 +1,93 @@
+# Traveling
+
+A small static website with day-by-day city itineraries. Each city has a three-day plan with a numbered route map, an "Open route" walking link, and three food options at every meal stop. The site is plain HTML, CSS and JavaScript: no framework, no build step, no backend.
+
+Live site (after you enable Pages): `https://<your-github-username>.github.io/traveling/`
+
+## What it does
+
+- **Home page** lists every city. It loads only one small file, `data/cities.json`.
+- **City page** loads only that city's file, `data/<city>.json`, when you open it.
+- **Remembers your city.** The last city you opened is stored in the browser. Opening the site again goes straight to it, so you never download or render the other cities.
+- **Back to all cities.** The "← Cities" button always shows the full list.
+- **Cache cleared?** If browser data is cleared, the home page is shown again.
+- **Fast on repeat visits.** A city renders instantly from the stored copy, then refreshes in the background. A service worker also keeps the app available offline once it has been opened.
+- **Empty cities are fine.** A city with no days (Budapest for now) shows "Coming soon" instead of an error.
+
+## How loading works
+
+1. `index.html` loads `assets/style.css` and `assets/app.js`.
+2. `app.js` reads the URL hash:
+   - empty hash: open the remembered city if there is one, otherwise show the home page
+   - `#/cities`: show the home page (used by the back button)
+   - `#/<id>`: show that city (for example `#/prague`)
+3. For a city, the app first shows the copy stored in `localStorage` (key `city:<id>`), then fetches `data/<id>.json` with `no-cache`. If the file changed, the stored copy and the page are updated.
+4. The remembered city is stored under the key `lastCity`. It is saved only after a city has loaded successfully, and removed if that city fails to load.
+5. `sw.js` caches the shell and data files for offline use (stale-while-revalidate).
+
+## Project layout
+
+```
+index.html              app shell
+assets/style.css        styles (light and dark mode)
+assets/app.js           routing, rendering, map drawing
+sw.js                   offline cache
+data/cities.json        list shown on the home page
+data/prague.json        full itinerary for Prague
+data/budapest.json      empty placeholder for Budapest
+.github/workflows/      GitHub Pages deployment
+CLAUDE.md               guide for Claude Code sessions in this repo
+```
+
+## City data format
+
+`data/<id>.json` has these fields:
+
+| Field | Meaning |
+|---|---|
+| `id`, `name`, `title`, `lead` | identity and page heading text |
+| `en`, `local` | English and local name, used to build photo-search links |
+| `lat` | city latitude, used to draw the map without distortion |
+| `hours` | `[start, end]` hours shown on the daylight bar |
+| `sun` | `[sunrise, sunset]` as decimal hours, for the daylight bar |
+| `facts` | list of `[label, text]` shown in the facts box |
+| `river` | optional `[lon, lat]` points drawn as a river on the map |
+| `note` | footnote shown at the bottom |
+| `days` | list of days (below) |
+
+Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` (time, `HH:MM`), `k` (`walk`, `eat`, `view` or `market`), `name`, `d` (description), and either:
+
+- `ll: [lat, lon]` plus `q` (search text) and optionally `id` (Google place id), or
+- `opts`: three options, each with `n` (name), `s` (short description), `ll`, `q`, `id`.
+
+## Adding a city
+
+1. Add an entry to `data/cities.json` (`id`, `name`, `country`, `blurb`, `ready`).
+2. Copy `data/budapest.json` to `data/<id>.json` and fill in the fields above.
+3. Commit and push to `main`. The site deploys automatically.
+
+No other file needs to change.
+
+## Run locally
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+The service worker only registers on HTTPS, so it stays off locally.
+
+## Deploy to GitHub Pages
+
+1. Create a public repository named `traveling` and push this code to `main`.
+2. In the repository open **Settings → Pages** and set **Source** to **GitHub Actions**.
+3. The workflow in `.github/workflows/pages.yml` publishes the site on every push to `main`.
+
+GitHub Pages is free for public repositories. Public repositories also get free GitHub Actions minutes on standard runners.
+
+## Limits to know about
+
+- **Maps are schematic.** They are drawn from coordinates, not from a map service, and the river is an approximation. For real street routes use the "Open route" button, which opens Google Maps with walking directions.
+- **Photos.** The "Photos →" links open an image search. Photos are not embedded.
+- **Opening hours, prices and dates** come from public sources and can change. Check before you go.
+- **Data comes from Google Places** for names, addresses, coordinates and place ids only.

@@ -1,0 +1,73 @@
+
+/* Layout: one phone-first column — short facts, sticky day links, per day: schematic map, route link, numbered timeline with three food options per meal */
+:root{
+  --bg:#edf1f4; --card:#ffffff; --ink:#15212c; --muted:#586876; --line:#d6dee5;
+  --river:#1d6c88; --river-bg:#dcecf2; --lantern:#a8620f; --lantern-bg:#fbebd2;
+  --roof:#b0392b; --roof-bg:#f9e3df; --stone:#44586a; --stone-bg:#e3e9ee; --sun:#f1c24f; --water:#bcd9e5;
+  --display:"Unbounded","Onest",system-ui,sans-serif; --body:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1620; --card:#16222e; --ink:#e6edf3; --muted:#93a4b3; --line:#25354a;
+  --river:#6cc0dc; --river-bg:#13303c; --lantern:#eab05a; --lantern-bg:#3a2a12;
+  --roof:#f08a7a; --roof-bg:#3b1e1a; --stone:#a8bccd; --stone-bg:#1f2f3f; --sun:#c99a2c; --water:#1c4455; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1620; --card:#16222e; --ink:#e6edf3; --muted:#93a4b3; --line:#25354a;
+  --river:#6cc0dc; --river-bg:#13303c; --lantern:#eab05a; --lantern-bg:#3a2a12;
+  --roof:#f08a7a; --roof-bg:#3b1e1a; --stone:#a8bccd; --stone-bg:#1f2f3f; --sun:#c99a2c; --water:#1c4455; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;padding:0 16px}
+.wrap{max-width:600px;margin:0 auto;padding-block:20px 48px;display:flex;flex-direction:column;gap:20px}
+h1{font-family:var(--display);font-weight:600;font-size:27px;line-height:1.2;margin:0;text-wrap:balance}
+.lead{margin:6px 0 0;color:var(--muted);max-width:52ch}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.facts div{display:flex;gap:12px}
+.facts b{flex:none;width:84px;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+.facts span{min-width:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding-block:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+nav a{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:8px 10px;text-align:center;color:var(--ink);text-decoration:none;font-weight:500;font-size:14px}
+nav a:focus-visible,.map:focus-visible,.dir:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+section.day{display:flex;flex-direction:column;gap:12px;scroll-margin-top:64px}
+h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;margin:0;text-wrap:balance}
+.eyebrow{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.theme{margin:0;color:var(--muted);max-width:52ch}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:8px}
+.mapbox svg{display:block;width:100%;height:auto;border-radius:8px}
+.mapfoot{display:flex;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;align-items:center;padding:0 4px 2px}
+.mapfoot small{color:var(--muted);font-size:12px}
+.dir{font-size:13px;font-weight:500;color:var(--river);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:6px 10px;white-space:nowrap}
+.track{position:relative;height:26px;background:var(--stone-bg);border-radius:6px}
+.track .sunbar{position:absolute;top:0;bottom:0;background:var(--sun);opacity:.35;border-radius:6px}
+.track .tick{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--card)}
+.tracklabel{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+.stops{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stop{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;padding:14px;border-top:1px solid var(--line)}
+.stop:first-child{border-top:0}
+.lt{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--card)}
+.time{font-family:var(--mono);font-size:13px;font-weight:500}
+.chip{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:5px;margin-bottom:6px}
+.k-walk{background:var(--stone-bg);color:var(--stone)}
+.k-eat{background:var(--lantern-bg);color:var(--lantern)}
+.k-view{background:var(--river-bg);color:var(--river)}
+.k-market{background:var(--roof-bg);color:var(--roof)}
+.stop h3{margin:0;font-size:16px;font-weight:500;line-height:1.35}
+.stop p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:52ch}
+.opts{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.opts li{font-size:14px;display:flex;flex-direction:column;gap:2px}
+.opts li span{color:var(--muted)}
+.links{display:flex;gap:14px;flex-wrap:wrap}
+.map{color:var(--river);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap}
+.map:hover{text-decoration:underline}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.back{font-size:14px;font-weight:500;color:var(--river);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 10px}
+.back:focus-visible,.city:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+.cities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.city{display:flex;flex-direction:column;gap:4px;min-height:96px;justify-content:flex-end;padding:14px;border:1px solid var(--line);background:var(--card);border-radius:12px;color:var(--ink);text-decoration:none}
+.city strong{font-family:var(--display);font-weight:500;font-size:18px}
+.city span{font-size:13px;color:var(--muted)}
+.city.soon{opacity:.7}
+.empty{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:24px 16px;color:var(--muted);text-align:center}
+nav.days{grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}

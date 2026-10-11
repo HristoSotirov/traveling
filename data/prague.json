@@ -1,0 +1,660 @@
+{
+ "id": "prague",
+ "name": "Prague",
+ "en": "Prague",
+ "local": "Praha",
+ "title": "Prague in December",
+ "lead": "Three days on foot around the centre. Markets are in the evening, the castle and viewpoints are by day, because the sun sets early.",
+ "lat": 50.08,
+ "hours": [
+  7,
+  21
+ ],
+ "sun": [
+  7.8333,
+  15.8333
+ ],
+ "facts": [
+  [
+   "Light",
+   "Sunrise around 7:50, sunset around 15:50. The best light is around 15:00. All times are Prague time, one hour behind Bulgarian time."
+  ],
+  [
+   "Weather",
+   "Usually between −2 and 3 °C. Bring warm shoes with a non-slip sole; the cobblestones are slippery."
+  ],
+  [
+   "Markets",
+   "Last season ran from 25 November to 6 January, with stalls open 10:00–22:00 and food until midnight. Check prague.eu for this year's dates."
+  ],
+  [
+   "Holidays",
+   "On 24, 25 and 26 December many restaurants and sights have shorter hours. Check ahead."
+  ],
+  [
+   "Money",
+   "Czech koruna (CZK). Some small places accept cash only."
+  ]
+ ],
+ "river": [
+  [
+   14.418,
+   50.099
+  ],
+  [
+   14.4175,
+   50.0922
+  ],
+  [
+   14.413,
+   50.09
+  ],
+  [
+   14.4105,
+   50.088
+  ],
+  [
+   14.4105,
+   50.083
+  ],
+  [
+   14.409,
+   50.0805
+  ],
+  [
+   14.411,
+   50.077
+  ],
+  [
+   14.4118,
+   50.0745
+  ],
+  [
+   14.4125,
+   50.0705
+  ],
+  [
+   14.4135,
+   50.066
+  ],
+  [
+   14.415,
+   50.061
+  ]
+ ],
+ "days": [
+  {
+   "id": "d1",
+   "n": "Day 1",
+   "title": "Old Town and Josefov",
+   "theme": "Start early from the square, have a Czech lunch and spend the evening at the market.",
+   "stops": [
+    {
+     "t": "09:00",
+     "k": "walk",
+     "name": "Old Town Square",
+     "d": "Arrive before the crowds. The Orloj astronomical clock performs every hour. Walk around the square and see the Týn Church towers from outside.",
+     "ll": [
+      50.0876,
+      14.4212
+     ],
+     "q": "Old Town Square Prague",
+     "id": "ChIJIfpRNOmUC0cRxHIewgck75c"
+    },
+    {
+     "t": "09:45",
+     "k": "eat",
+     "name": "Coffee or breakfast on Valentinská",
+     "d": "Three places on one street, 3 minutes from the square.",
+     "opts": [
+      {
+       "n": "Liberica Cafe, Valentinská 10",
+       "s": "coffee",
+       "ll": [
+        50.0886,
+        14.4169
+       ],
+       "q": "Liberica Cafe Prague Valentinská",
+       "id": "ChIJ2YdNm-iUC0cRtBa1xNiWLhk"
+      },
+      {
+       "n": "Mistral Cafe, Valentinská 11",
+       "s": "coffee and brunch",
+       "ll": [
+        50.0883,
+        14.4163
+       ],
+       "q": "Mistral Cafe Prague",
+       "id": "ChIJ9XdFnuiUC0cR78EyLOsi128"
+      },
+      {
+       "n": "Coffee & Waffles, Valentinská 6",
+       "s": "breakfast all day",
+       "ll": [
+        50.088,
+        14.4168
+       ],
+       "q": "Coffee & Waffles Prague Valentinská",
+       "id": "ChIJRwWjouiUC0cRUzz0-DOQkQE"
+      }
+     ]
+    },
+    {
+     "t": "10:30",
+     "k": "walk",
+     "name": "Josefov, the Jewish Quarter",
+     "d": "Pařížská street and the old synagogues from outside. The museums are paid and closed on Saturday.",
+     "ll": [
+      50.09,
+      14.4186
+     ],
+     "q": "Josefov Prague Pařížská"
+    },
+    {
+     "t": "12:00",
+     "k": "eat",
+     "name": "Lunch with Czech food",
+     "d": "Come before 12:00 or book; there is often a queue.",
+     "opts": [
+      {
+       "n": "Lokál Dlouhááá, Dlouhá 33",
+       "s": "Czech food and draught beer",
+       "ll": [
+        50.0907,
+        14.4258
+       ],
+       "q": "Lokál Dlouhááá Prague",
+       "id": "ChIJGWh--8GUC0cR4myQM-Wv3QI"
+      },
+      {
+       "n": "Mama Lucy, Dlouhá 2",
+       "s": "Czech food, goulash in bread",
+       "ll": [
+        50.0885,
+        14.4218
+       ],
+       "q": "Mama Lucy Prague Dlouhá",
+       "id": "ChIJqa3RdOmUC0cRVQKCjeim8Rc"
+      },
+      {
+       "n": "Starmáček, Karlova 46",
+       "s": "Czech food on the way to the bridge",
+       "ll": [
+        50.0861,
+        14.419
+       ],
+       "q": "Starmáček Prague Karlova",
+       "id": "ChIJD9f-0-6UC0cRD_XSdCDsaJk"
+      }
+     ]
+    },
+    {
+     "t": "14:00",
+     "k": "walk",
+     "name": "Karlova street to Charles Bridge",
+     "d": "Take narrow Karlova around 14:00 and be on the bridge by 15:00, when the light is softest. Along the way there are stalls with trdelník, roasted chestnuts and hot drinks.",
+     "ll": [
+      50.0865,
+      14.4114
+     ],
+     "q": "Charles Bridge Prague"
+    },
+    {
+     "t": "15:45",
+     "k": "view",
+     "name": "Sunset from the bridge or the riverbank",
+     "d": "Stop on the Vltava bank with a view of the castle while the sky turns red.",
+     "ll": [
+      50.0868,
+      14.41
+     ],
+     "q": "Charles Bridge Prague"
+    },
+    {
+     "t": "17:00",
+     "k": "market",
+     "name": "Christmas market on Old Town Square",
+     "d": "Mulled wine (svařák), sausage, potato pancakes, baked bread and trdelník. Keep a spot near the tree.",
+     "ll": [
+      50.0873,
+      14.4219
+     ],
+     "q": "Old Town Square Christmas market Prague"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner",
+     "d": "The first two are on or next to the square, the third is across the bridge in Malá Strana.",
+     "opts": [
+      {
+       "n": "Restaurace Mincovna, Staroměstské nám. 7",
+       "s": "right on the square, Czech food",
+       "ll": [
+        50.0883,
+        14.4213
+       ],
+       "q": "Restaurace Mincovna Prague",
+       "id": "ChIJm2N1DumUC0cR_7qczhYWur4"
+      },
+      {
+       "n": "Restaurace Mlejnice, Kožná 14",
+       "s": "traditional setting",
+       "ll": [
+        50.0864,
+        14.4215
+       ],
+       "q": "Restaurace Mlejnice Prague",
+       "id": "ChIJMx8BTumUC0cRfkD4d0TNqhQ"
+      },
+      {
+       "n": "Restaurace Pod Věží, Mostecká 2",
+       "s": "by the Malá Strana bridge tower",
+       "ll": [
+        50.0874,
+        14.4067
+       ],
+       "q": "Restaurant Pod Věží Prague Mostecká",
+       "id": "ChIJCxgz5uOUC0cRpu3mVNT7Zws"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "n": "Day 2",
+   "title": "Prague Castle and Malá Strana",
+   "theme": "Early climb to the castle, lunch below it, coffee by the river and a view from Petřín before sunset.",
+   "stops": [
+    {
+     "t": "08:45",
+     "k": "walk",
+     "name": "Prague Castle",
+     "d": "Be at the second courtyard before 9:00. The grounds are free from 6 to 22, paid buildings are open from 9 to 16. A Circuit B ticket is from 250 CZK, Circuit A from 350 CZK, valid for two days. Tuesday and Wednesday are quietest.",
+     "ll": [
+      50.0909,
+      14.4005
+     ],
+     "q": "Prague Castle"
+    },
+    {
+     "t": "11:30",
+     "k": "walk",
+     "name": "Walk down Nerudova street",
+     "d": "Steep and beautiful street with baroque houses. It leads straight to Malá Strana.",
+     "ll": [
+      50.0894,
+      14.4036
+     ],
+     "q": "Nerudova Prague"
+    },
+    {
+     "t": "12:30",
+     "k": "eat",
+     "name": "Lunch on Nerudova and Malostranské náměstí",
+     "d": "Three places within 2 minutes of each other.",
+     "opts": [
+      {
+       "n": "Dvorek pod Hradem, Nerudova 10",
+       "s": "restaurant under the castle",
+       "ll": [
+        50.0888,
+        14.4013
+       ],
+       "q": "Dvorek pod Hradem Prague",
+       "id": "ChIJoU5czcSVC0cRqwpKV1r6YfM"
+      },
+      {
+       "n": "Restaurace U Mecenáše, Malostranské nám. 10",
+       "s": "restaurant on the square",
+       "ll": [
+        50.0877,
+        14.4027
+       ],
+       "q": "Restaurace U Mecenáše Prague",
+       "id": "ChIJ49vPFeKUC0cRrzAz5P5ZyiA"
+      },
+      {
+       "n": "Restaurace U Mlynáře, Nerudova 18",
+       "s": "restaurant on Nerudova",
+       "ll": [
+        50.0887,
+        14.4008
+       ],
+       "q": "Restaurace U Mlynáře Prague",
+       "id": "ChIJww5D_R2VC0cRZMtzusmL1S0"
+      }
+     ]
+    },
+    {
+     "t": "14:00",
+     "k": "walk",
+     "name": "Kampa and the John Lennon Wall",
+     "d": "A small island with a path by the water and the wall on Velkopřevorské square.",
+     "ll": [
+      50.0841,
+      14.4089
+     ],
+     "q": "Kampa Island Prague"
+    },
+    {
+     "t": "14:30",
+     "k": "eat",
+     "name": "Coffee by the river",
+     "d": "Three cafés in Malá Strana, all by the water or near Charles Bridge.",
+     "opts": [
+      {
+       "n": "Bella Vida café, Malostranské nábřeží 3",
+       "s": "breakfast and brunch by the river",
+       "ll": [
+        50.082,
+        14.4078
+       ],
+       "q": "Bella Vida café Prague",
+       "id": "ChIJBaBIOvuUC0cRPMEwPyhHBtk"
+      },
+      {
+       "n": "The Miners Coffee, Lázeňská 19",
+       "s": "coffee by Charles Bridge",
+       "ll": [
+        50.0872,
+        14.406
+       ],
+       "q": "The Miners Coffee Charles Bridge Prague",
+       "id": "ChIJdzzVsleVC0cRzXoZNhto7h4"
+      },
+      {
+       "n": "Café Club Míšeňská, Míšeňská 3",
+       "s": "courtyard, open until midnight",
+       "ll": [
+        50.0877,
+        14.408
+       ],
+       "q": "Café Club Míšeňská Prague",
+       "id": "ChIJF5uR_uOUC0cRUtzknVj7Xqw"
+      }
+     ]
+    },
+    {
+     "t": "15:15",
+     "k": "view",
+     "name": "Petřín hill and tower",
+     "d": "The tower is open until 18:00 according to Google. The climb is steep and the funicular is sometimes closed, so check ahead. Arrive before sunset.",
+     "ll": [
+      50.0835,
+      14.3951
+     ],
+     "q": "Petrin Tower Prague",
+     "id": "ChIJd71LDf2UC0cRkcGvwf8x33E"
+    },
+    {
+     "t": "18:30",
+     "k": "eat",
+     "name": "Dinner in Malá Strana",
+     "d": "After coming down from Petřín, around Újezd and Malostranské náměstí.",
+     "opts": [
+      {
+       "n": "Tlustá myš, Všehrdova 19",
+       "s": "Czech food, near Újezd",
+       "ll": [
+        50.083,
+        14.4056
+       ],
+       "q": "Tlustá myš Prague Všehrdova",
+       "id": "ChIJg3iEVOOUC0cRGqR-ikc7Trw"
+      },
+      {
+       "n": "Czech Slovak Restaurant, Újezd 20",
+       "s": "Czech and Slovak food",
+       "ll": [
+        50.0818,
+        14.4046
+       ],
+       "q": "Czech Slovak Restaurant Prague Újezd",
+       "id": "ChIJCWZ8ovyUC0cRUDz-RPxkU50"
+      },
+      {
+       "n": "U Glaubiců, Malostranské nám. 5",
+       "s": "Czech food on the square",
+       "ll": [
+        50.0877,
+        14.4035
+       ],
+       "q": "U Glaubiců Prague",
+       "id": "ChIJXXFEO-KUC0cRXxm7CSQYrzM"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "n": "Day 3",
+   "title": "New Town, Vyšehrad and the last market",
+   "theme": "A calmer day. Wenceslas Square, the river, Vyšehrad fortress and the market again in the evening.",
+   "stops": [
+    {
+     "t": "09:30",
+     "k": "market",
+     "name": "Wenceslas Square",
+     "d": "The long boulevard with a market in season. Last season the stalls opened at 10:00, so come a bit later.",
+     "ll": [
+      50.0815,
+      14.4285
+     ],
+     "q": "Wenceslas Square Prague"
+    },
+    {
+     "t": "10:15",
+     "k": "eat",
+     "name": "Coffee or breakfast around Wenceslas Square",
+     "d": "Three places around the square.",
+     "opts": [
+      {
+       "n": "Café Svatého Václava, Václavské nám. 39",
+       "s": "restaurant and café on the square",
+       "ll": [
+        50.0815,
+        14.4279
+       ],
+       "q": "Restaurant Café Svatého Václava Prague",
+       "id": "ChIJ09ATz5KUC0cRh5tbmUzfy3o"
+      },
+      {
+       "n": "Husinec, Mezibranská 13",
+       "s": "restaurant behind the National Museum",
+       "ll": [
+        50.0785,
+        14.4294
+       ],
+       "q": "Husinec restaurace Prague",
+       "id": "ChIJQT9xoI2UC0cR80X1LJBQJWc"
+      },
+      {
+       "n": "Bredovský Dvůr, Politických vězňů 13",
+       "s": "Czech food",
+       "ll": [
+        50.0826,
+        14.4299
+       ],
+       "q": "Bredovský Dvůr Prague",
+       "id": "ChIJbS8YHpOUC0cRDe_7384FeZo"
+      }
+     ]
+    },
+    {
+     "t": "11:15",
+     "k": "walk",
+     "name": "Národní třída (National Avenue)",
+     "d": "Walk down Národní toward the Vltava. The street is full of theatres, bookshops and eateries.",
+     "ll": [
+      50.0822,
+      14.419
+     ],
+     "q": "Národní třída Prague"
+    },
+    {
+     "t": "12:15",
+     "k": "eat",
+     "name": "Lunch on Národní",
+     "d": "Three places on the same street.",
+     "opts": [
+      {
+       "n": "Pilsnerka Narodni, Národní 22",
+       "s": "Czech food and beer",
+       "ll": [
+        50.0821,
+        14.4189
+       ],
+       "q": "Pilsnerka Narodni Prague",
+       "id": "ChIJjRUaHR6VC0cRJzvAs6stKl0"
+      },
+      {
+       "n": "Kozlovna U Paukerta, Národní 17",
+       "s": "Czech food and beer",
+       "ll": [
+        50.082,
+        14.417
+       ],
+       "q": "Kozlovna U Paukerta Prague",
+       "id": "ChIJmVcKLu6UC0cRzOzVqTCchpY"
+      },
+      {
+       "n": "Restaurace Tiskárna Národní, Národní 39",
+       "s": "restaurant",
+       "ll": [
+        50.0829,
+        14.4211
+       ],
+       "q": "Restaurace Tiskárna Národní Prague",
+       "id": "ChIJ4UTi2e2UC0cRAYBdr-IIadg"
+      }
+     ]
+    },
+    {
+     "t": "13:30",
+     "k": "walk",
+     "name": "Dancing House and along the river to Vyšehrad",
+     "d": "From the Dancing House go up the right bank of the Vltava, about 25 minutes on foot to Vyšehrad.",
+     "ll": [
+      50.0755,
+      14.4141
+     ],
+     "q": "Dancing House Prague"
+    },
+    {
+     "t": "14:15",
+     "k": "walk",
+     "name": "Vyšehrad",
+     "d": "The old fortress with ramparts, a park and the Vyšehrad cemetery. A quiet place after the centre.",
+     "ll": [
+      50.064,
+      14.4189
+     ],
+     "q": "Vyšehrad Prague"
+    },
+    {
+     "t": "14:50",
+     "k": "eat",
+     "name": "A warm drink at Vyšehrad",
+     "d": "Three places 3–10 minutes from the fortress.",
+     "opts": [
+      {
+       "n": "Bystro Cafe, K Rotundě 3",
+       "s": "coffee and wine at Vyšehrad",
+       "ll": [
+        50.0641,
+        14.4211
+       ],
+       "q": "Bystro Cafe Prague Vyšehrad",
+       "id": "ChIJ1b4ALUuVC0cRDDKOrsLs_cE"
+      },
+      {
+       "n": "Plzeňská restaurace u Vyšehradu, Ostrčilovo nám. 4",
+       "s": "Czech food",
+       "ll": [
+        50.0652,
+        14.4248
+       ],
+       "q": "Plzeňská restaurace u Vyšehradu Prague",
+       "id": "ChIJWYFkEwCVC0cRN8F2IX7omcI"
+      },
+      {
+       "n": "Pod Vyšehradem, Vratislavova 32",
+       "s": "restaurant under the fortress",
+       "ll": [
+        50.067,
+        14.4168
+       ],
+       "q": "Pod Vyšehradem Prague",
+       "id": "ChIJQdfDZ16UC0cRLDLNBMvV76U"
+      }
+     ]
+    },
+    {
+     "t": "15:20",
+     "k": "view",
+     "name": "Sunset from the Vyšehrad walls",
+     "d": "A view down the Vltava toward the castle. An alternative sunset spot is Vyhlídka na Letné on the other bank, if you prefer a park.",
+     "ll": [
+      50.0647,
+      14.417
+     ],
+     "q": "Vyhlídka na Letné Prague",
+     "id": "ChIJyYz0l2eVC0cR90ABalZpp4o"
+    },
+    {
+     "t": "17:30",
+     "k": "market",
+     "name": "Last market",
+     "d": "Back to Old Town Square for mulled wine and last photos with the lit-up towers.",
+     "ll": [
+      50.0873,
+      14.4219
+     ],
+     "q": "Old Town Square Christmas market Prague"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Farewell dinner",
+     "d": "Three places 5–10 minutes' walk from Old Town Square.",
+     "opts": [
+      {
+       "n": "Pivovar Národní, Národní 8",
+       "s": "brewery with Czech food",
+       "ll": [
+        50.0813,
+        14.4152
+       ],
+       "q": "Pivovar Národní Prague",
+       "id": "ChIJbVNRKfCUC0cRSRm72wi4ooM"
+      },
+      {
+       "n": "Restaurace U Pinkasů, Jungmannovo nám. 15",
+       "s": "Czech food and Pilsner Urquell",
+       "ll": [
+        50.0832,
+        14.4233
+       ],
+       "q": "Restaurace U Pinkasů Prague",
+       "id": "ChIJd0KKsu2UC0cRHfSkd7GyWUs"
+      },
+      {
+       "n": "Restaurace „Otevřeno“, Jungmannovo nám. 3",
+       "s": "Czech food",
+       "ll": [
+        50.0832,
+        14.4226
+       ],
+       "q": "Restaurace Otevřeno Prague Jungmannovo",
+       "id": "ChIJhfV9yu2UC0cRYSAtZ76Eccg"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "The maps are approximate, not to scale, and routes are straight lines between stops. For the real street route use the “Open route” button. Opening hours, prices and dates come from public sources and may change. The “Photos” links open an image search."
+}

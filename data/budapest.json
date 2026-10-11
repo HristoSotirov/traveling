@@ -1,0 +1,20 @@
+{
+ "id": "budapest",
+ "name": "Budapest",
+ "en": "Budapest",
+ "local": "Budapest",
+ "title": "Budapest",
+ "lead": "",
+ "lat": 47.5,
+ "hours": [
+  7,
+  21
+ ],
+ "sun": [
+  7,
+  16
+ ],
+ "facts": [],
+ "river": [],
+ "days": []
+}
