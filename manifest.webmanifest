@@ -7,8 +7,15 @@
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
+ "display_override": [
+  "standalone",
+  "minimal-ui"
+ ],
  "background_color": "#0e1620",
  "theme_color": "#0e1620",
+ "categories": [
+  "travel"
+ ],
  "icons": [
   {
    "src": "assets/icons/icon-192.png",
@@ -27,6 +34,12 @@
    "sizes": "512x512",
    "type": "image/png",
    "purpose": "maskable"
+  },
+  {
+   "src": "assets/icons/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
   }
  ]
 }
