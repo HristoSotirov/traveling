@@ -27,6 +27,38 @@
     var path = sv("path", { d: d }); svg.appendChild(path); return svg;
   }
 
+  // ---------- install as an app ----------
+  // The install button shows only where it can install in one tap:
+  // - Chrome, Edge, Samsung Internet, Opera (Android, Windows, macOS, Linux, ChromeOS) fire beforeinstallprompt,
+  //   and the button opens the browser's own install dialog;
+  // - on iPhone and iPad it opens the share sheet, which has "Add to Home Screen".
+  // Elsewhere (Firefox, Safari on Mac) there is no way to install from the page, so the button stays hidden.
+  var installEvt = null;
+  function isApp() { return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true; }
+  function isIOS() { var ua = navigator.userAgent; return /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1); }
+  function canInstall() { return !isApp() && (installEvt || (isIOS() && navigator.share)); }
+  function refreshInstall() {
+    var box = document.querySelector(".hbtns"); if (!box) return;
+    var b = box.querySelector(".install");
+    if (canInstall() && !b) box.insertBefore(installButton(), box.firstChild);
+    if (!canInstall() && b) b.remove();
+  }
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); installEvt = e; refreshInstall(); });
+  window.addEventListener("appinstalled", function () { installEvt = null; refreshInstall(); });
+  function installButton() {
+    var b = el("button", "icon-btn install"); b.type = "button"; b.title = "Install the app"; b.setAttribute("aria-label", "Install the app");
+    b.appendChild(iconSvg("M12 4v11M7 10l5 5 5-5M5 20h14"));
+    b.addEventListener("click", function () {
+      if (installEvt) {
+        var e = installEvt; installEvt = null;
+        e.prompt(); e.userChoice.then(refreshInstall, refreshInstall);
+      } else if (isIOS() && navigator.share) {
+        navigator.share({ title: "Traveling", url: location.origin + location.pathname }).catch(function () {});
+      }
+    });
+    return b;
+  }
+
   // Icon button (top right of the home page) that copies the site link, without a city, ready to send.
   var ICON_LINK = "M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7";
   var ICON_OK = "M5 12.5l4.5 4.5L19 7.5";
@@ -63,7 +95,7 @@
   function home(note) {
     app.replaceChildren();
     var h = el("header"), row = el("div", "hrow");
-    var btns = el("div", "hbtns"); btns.appendChild(copyButton());
+    var btns = el("div", "hbtns"); if (canInstall()) btns.appendChild(installButton()); btns.appendChild(copyButton());
     row.appendChild(el("h1", null, "Where to next")); row.appendChild(btns); h.appendChild(row);
     h.appendChild(el("p", "lead", note || "Pick a city. Next time the app opens straight into it."));
     app.appendChild(h);
