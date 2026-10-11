@@ -91,12 +91,3 @@ nav.days{grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}
 .icon-btn.ok{color:var(--park)}
 .icon-btn:focus-visible{outline:2px solid var(--river);outline-offset:2px}
 .hbtns{display:flex;gap:8px;flex:none}
-.sheet{width:min(560px,calc(100% - 32px));max-height:calc(100% - 32px);overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);padding:20px}
-.sheet::backdrop{background:rgb(0 0 0 / .6)}
-.sheet h2{font-family:var(--display);font-weight:500;font-size:20px;margin:0 0 8px}
-.sheet h3{font-size:15px;font-weight:500;margin:14px 0 4px;color:var(--river)}
-.sheet ol{margin:0;padding-left:20px;color:var(--ink)}
-.sheet li{margin:2px 0}
-.sheet details{margin:16px 0;border-top:1px solid var(--line);padding-top:10px}
-.sheet summary{cursor:pointer;color:var(--muted)}
-.sheet .back{cursor:pointer;font-family:inherit}

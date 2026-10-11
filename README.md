@@ -86,7 +86,7 @@ New kinds can be added whenever a stop fits none of these. Add the kind to `KIND
 
 The site can be installed as an app ("Add to Home Screen" on iPhone, "Install app" in Chrome and on Android). `manifest.webmanifest` describes it. The icons are in `assets/icons/`: `icon.svg` is the source, `icon-maskable.svg` keeps the drawing inside the safe zone for round Android icons, and `favicon.svg` is a simpler pin for browser tabs. The PNG files are rendered from those SVGs; re-render them if you change the drawing. The site has one theme: dark, in the browser and in the installed app.
 
-The home page has an install button (arrow icon, top right). In Chrome, Edge, Samsung Internet and Opera it opens the browser's own install dialog. Safari and Firefox have no such dialog, so the button shows the steps for the visitor's device instead (iPhone and iPad, Android, Xiaomi, Mac, Windows/Linux/ChromeOS). On Xiaomi, Redmi and POCO phones Chrome needs the "Home screen shortcuts" permission, otherwise the installed icon fails with "app cannot be opened". Firefox on a computer cannot install sites as apps.
+The home page has an install button (arrow icon, top right) that installs in one tap. In Chrome, Edge, Samsung Internet and Opera it opens the browser's own install dialog; on iPhone and iPad it opens the share sheet with "Add to Home Screen". Where a page cannot start an install (Firefox, Safari on Mac) the button is hidden and the browser menu is the way to install.
 
 ## Adding a city
 

@@ -28,49 +28,33 @@
   }
 
   // ---------- install as an app ----------
-  // Chrome, Edge, Samsung Internet and Opera (Android, Windows, macOS, Linux, ChromeOS) fire
-  // beforeinstallprompt, so the button installs directly. Safari (iPhone, iPad, Mac) and Firefox
-  // have no such event, so the button shows the steps for that browser instead.
+  // The install button shows only where it can install in one tap:
+  // - Chrome, Edge, Samsung Internet, Opera (Android, Windows, macOS, Linux, ChromeOS) fire beforeinstallprompt,
+  //   and the button opens the browser's own install dialog;
+  // - on iPhone and iPad it opens the share sheet, which has "Add to Home Screen".
+  // Elsewhere (Firefox, Safari on Mac) there is no way to install from the page, so the button stays hidden.
   var installEvt = null;
-  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); installEvt = e; });
-  window.addEventListener("appinstalled", function () { installEvt = null; var b = document.querySelector(".icon-btn.install"); if (b) b.remove(); });
   function isApp() { return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true; }
-  var STEPS = [
-    ["ios", "iPhone and iPad", ["Open this page in Safari (Chrome and Edge on iOS 16.4 or later work too).", "Tap the Share button (the square with an arrow).", "Scroll down and tap “Add to Home Screen”, then “Add”."]],
-    ["android", "Android", ["Open this page in Chrome.", "Tap the ⋮ menu, then “Add to home screen” and “Install”.", "Samsung Internet: menu → “Add page to” → “Home screen”. Firefox: menu → “Install”."]],
-    ["xiaomi", "Xiaomi, Redmi and POCO", ["If the icon does not appear, or it says the app cannot be opened, Chrome is missing a permission.", "Open Settings → Apps → Chrome → Other permissions and allow “Home screen shortcuts” (and “Display pop-up windows while running in the background”).", "Remove the old icon, then install again from Chrome."]],
-    ["mac", "Mac", ["Safari: menu File → “Add to Dock”.", "Chrome or Edge: the install icon at the right of the address bar."]],
-    ["desktop", "Windows, Linux and ChromeOS", ["Open this page in Chrome or Edge.", "Click the install icon at the right of the address bar, or menu → “Cast, save and share” → “Install page as app” (Edge: menu → Apps → “Install this site as an app”).", "Firefox on a computer cannot install sites as apps; use Chrome or Edge."]]
-  ];
-  function platform() {
-    var ua = navigator.userAgent;
-    if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "ios";
-    if (/Android/.test(ua)) return "android";
-    if (/Macintosh/.test(ua)) return "mac";
-    return "desktop";
+  function isIOS() { var ua = navigator.userAgent; return /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1); }
+  function canInstall() { return !isApp() && (installEvt || (isIOS() && navigator.share)); }
+  function refreshInstall() {
+    var box = document.querySelector(".hbtns"); if (!box) return;
+    var b = box.querySelector(".install");
+    if (canInstall() && !b) box.insertBefore(installButton(), box.firstChild);
+    if (!canInstall() && b) b.remove();
   }
-  function showSteps() {
-    var me = platform(), d = el("dialog", "sheet");
-    d.appendChild(el("h2", null, "Install the app"));
-    function block(x, parent) { parent.appendChild(el("h3", null, x[1])); var ol = el("ol"); x[2].forEach(function (t) { ol.appendChild(el("li", null, t)); }); parent.appendChild(ol); }
-    var mine = STEPS.filter(function (x) { return x[0] === me || (me === "android" && x[0] === "xiaomi"); });
-    mine.forEach(function (x) { block(x, d); });
-    var more = el("details"); more.appendChild(el("summary", null, "Other devices"));
-    STEPS.forEach(function (x) { if (mine.indexOf(x) < 0) block(x, more); }); d.appendChild(more);
-    var close = el("button", "back", "Close"); close.type = "button"; close.addEventListener("click", function () { d.close(); }); d.appendChild(close);
-    d.addEventListener("close", function () { d.remove(); });
-    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });   // tap outside closes
-    document.body.appendChild(d);
-    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
-  }
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); installEvt = e; refreshInstall(); });
+  window.addEventListener("appinstalled", function () { installEvt = null; refreshInstall(); });
   function installButton() {
-    if (isApp()) return null;                       // already running as the installed app
     var b = el("button", "icon-btn install"); b.type = "button"; b.title = "Install the app"; b.setAttribute("aria-label", "Install the app");
     b.appendChild(iconSvg("M12 4v11M7 10l5 5 5-5M5 20h14"));
     b.addEventListener("click", function () {
-      if (!installEvt) { showSteps(); return; }
-      var e = installEvt; installEvt = null;
-      e.prompt(); e.userChoice.then(function (c) { if (c.outcome === "accepted") b.remove(); }, function () {});
+      if (installEvt) {
+        var e = installEvt; installEvt = null;
+        e.prompt(); e.userChoice.then(refreshInstall, refreshInstall);
+      } else if (isIOS() && navigator.share) {
+        navigator.share({ title: "Traveling", url: location.origin + location.pathname }).catch(function () {});
+      }
     });
     return b;
   }
@@ -111,7 +95,7 @@
   function home(note) {
     app.replaceChildren();
     var h = el("header"), row = el("div", "hrow");
-    var btns = el("div", "hbtns"), ib = installButton(); if (ib) btns.appendChild(ib); btns.appendChild(copyButton());
+    var btns = el("div", "hbtns"); if (canInstall()) btns.appendChild(installButton()); btns.appendChild(copyButton());
     row.appendChild(el("h1", null, "Where to next")); row.appendChild(btns); h.appendChild(row);
     h.appendChild(el("p", "lead", note || "Pick a city. Next time the app opens straight into it."));
     app.appendChild(h);
@@ -233,7 +217,7 @@
   function route() {
     var h = location.hash;
     var id = h.replace(/^#\/?/, "");
-    document.title = "Travel";
+    document.title = "Traveling";
     if (id === "") {                       // opened without a choice: last city, otherwise home
       var last = store("lastCity");
       if (last) { location.replace("#/" + last); return; }
