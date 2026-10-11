@@ -21,10 +21,24 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font
 .wrap{max-width:600px;margin:0 auto;padding-block:20px 48px;display:flex;flex-direction:column;gap:20px}
 h1{font-family:var(--display);font-weight:600;font-size:27px;line-height:1.2;margin:0;text-wrap:balance}
 .lead{margin:6px 0 0;color:var(--muted);max-width:52ch}
-.facts{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 16px;font-size:14px}
+.facts summary{display:flex;justify-content:space-between;align-items:center;min-height:42px;cursor:pointer;list-style:none;font-weight:500}
+.facts summary::-webkit-details-marker{display:none}
+.facts summary::after{content:"";width:8px;height:8px;border:solid var(--muted);border-width:0 2px 2px 0;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.facts[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.facts summary:focus-visible{outline:2px solid var(--river);outline-offset:2px;border-radius:8px}
+.facts .rows{display:flex;flex-direction:column;gap:8px;padding:0 0 14px}
 .facts div{display:flex;gap:12px}
 .facts b{flex:none;width:84px;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
 .facts span{min-width:0}
+.fx{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-top:-12px;font-size:13px;color:var(--ink)}
+.fx input{width:84px;height:30px;padding:0 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;font-family:var(--mono)}
+.fx input:focus-visible{outline:2px solid var(--river);outline-offset:1px}
+.fx .unit{color:var(--muted)}
+.fx .icon-btn{width:30px;height:30px;border-radius:8px}
+.fx .icon-btn svg{width:15px;height:15px}
+.fx output{font-family:var(--mono);font-weight:500}
+.fx small{margin-left:auto;color:var(--muted);font-size:12px}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding-block:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 nav a{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:8px 10px;text-align:center;color:var(--ink);text-decoration:none;font-weight:500;font-size:14px}
 nav a:focus-visible,.map:focus-visible,.dir:focus-visible{outline:2px solid var(--river);outline-offset:2px}

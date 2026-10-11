@@ -4,11 +4,11 @@
  "en": "Budapest",
  "local": "Budapest",
  "title": "Budapest in December",
- "lead": "Three days on foot on both sides of the Danube. Viewpoints by day, markets and thermal baths after dark, because the sun sets before 16:00.",
+ "lead": "Three days on foot on both sides of the Danube. Viewpoints by day, markets and thermal baths after dark, then a bar, because the sun sets before 16:00.",
  "lat": 47.5,
  "hours": [
   7,
-  21
+  24
  ],
  "sun": [
   7.4,
@@ -25,7 +25,7 @@
   ],
   [
    "Markets",
-   "Vörösmarty Square and the Basilica markets usually run from mid or late November until 31 December or 1 January, roughly 11:00 or 12:00 until 21:00–22:00. Exact dates for this year were not confirmed when this was written; check before you go."
+   "Vörösmarty Square: most guides say 13 November–31 December 2026, 11:00–21:00 (22:00 on Friday and Saturday). The Basilica Advent market is expected from mid-November to about 1 January, and the City Park ice rink and fair run from late November to mid-February. Dates for Városháza Park (Deák tér) and Fisherman's Bastion are not announced yet. Check the organisers' sites a few weeks before you go."
   ],
   [
    "Holidays",
@@ -36,10 +36,19 @@
    "Hungarian forint (HUF). Cards are accepted almost everywhere; some market stalls prefer cash."
   ],
   [
+   "Bars",
+   "Most ruin bars and cocktail bars are in the 7th district, within 15 minutes of each other. Book a table for Friday and Saturday; some bars stop taking walk-ins late on weekends."
+  ],
+  [
    "Baths",
    "Bring your own swimsuit, flip-flops and towel to save on rentals. Tickets are cheaper online."
   ]
  ],
+ "currency": {
+  "code": "HUF",
+  "rate": 390,
+  "sample": 1000
+ },
  "river": [
   [
    19.0465,
@@ -89,24 +98,13 @@
     {
      "t": "09:00",
      "k": "landmark",
-     "name": "Parliament and Kossuth Square",
-     "d": "Walk around the building from outside before the tour groups arrive. Guided tours inside are paid and sell out; book online if you want one.",
+     "name": "Parliament and the Shoes on the Danube Bank",
+     "d": "Walk around the building from outside before the tour groups arrive. Guided tours inside are paid and sell out; book online if you want one. Then walk 5 minutes south along the embankment to the Shoes on the Danube Bank, a memorial to the Jews shot into the river in 1944–45.",
      "ll": [
       47.5071,
       19.0457
      ],
      "q": "Hungarian Parliament Building Budapest"
-    },
-    {
-     "t": "09:30",
-     "k": "landmark",
-     "name": "Shoes on the Danube Bank",
-     "d": "A memorial to the Jews shot into the river in 1944–45, on the embankment south of the Parliament.",
-     "ll": [
-      47.5046,
-      19.0448
-     ],
-     "q": "Shoes on the Danube Bank Budapest"
     },
     {
      "t": "10:00",
@@ -267,6 +265,41 @@
        "q": "Pesti Disznó Budapest"
       }
      ]
+    },
+    {
+     "t": "21:30",
+     "k": "bar",
+     "name": "A drink after dinner",
+     "d": "Three bars in the 7th district, within 15 minutes' walk of each other. Hotsy Totsy recommends booking online for Friday and Saturday.",
+     "opts": [
+      {
+       "n": "Hotsy Totsy, Síp utca",
+       "s": "1920s-style speakeasy down a staircase; open until midnight, until 02:00 Thursday to Saturday",
+       "ll": [
+        47.4985,
+        19.0612
+       ],
+       "q": "Hotsy Totsy Budapest Síp utca"
+      },
+      {
+       "n": "Black Swan, Klauzál utca",
+       "s": "speakeasy behind an unmarked door, marked only by three small swans (check the exact address)",
+       "ll": [
+        47.4966,
+        19.0628
+       ],
+       "q": "Black Swan speakeasy Budapest Klauzál utca"
+      },
+      {
+       "n": "Blue Fox The Bar, Kempinski Hotel Corvinus, Erzsébet tér 7–8",
+       "s": "hotel cocktail bar near the Basilica",
+       "ll": [
+        47.4985,
+        19.051
+       ],
+       "q": "Blue Fox The Bar Kempinski Corvinus Budapest"
+      }
+     ]
     }
    ]
   },
@@ -381,20 +414,9 @@
     },
     {
      "t": "14:15",
-     "k": "walk",
-     "name": "Down through the Tabán",
-     "d": "Leave the hill by the southern paths and cross the Tabán park towards the Elisabeth Bridge and the foot of Gellért Hill.",
-     "ll": [
-      47.4935,
-      19.042
-     ],
-     "q": "Tabán Budapest"
-    },
-    {
-     "t": "15:15",
      "k": "view",
-     "name": "Sunset from Gellért Hill and the Citadella",
-     "d": "The climb takes about 30 minutes. The terraces and the Liberty Statue are free; the exhibition in the Citadella, which reopened in 2026, is paid. Sunset is around 15:55.",
+     "name": "Down through the Tabán and sunset from Gellért Hill",
+     "d": "Leave Castle Hill by the southern paths and cross the Tabán park to the foot of Gellért Hill. The climb takes about 30 minutes. The terraces and the Liberty Statue are free; the exhibition in the Citadella, which reopened in 2026, is paid. Sunset is around 15:55.",
      "ll": [
       47.4867,
       19.0471
@@ -402,15 +424,26 @@
      "q": "Citadella Gellért Hill Budapest"
     },
     {
-     "t": "16:45",
+     "t": "16:30",
      "k": "spa",
      "name": "Rudas Baths",
-     "d": "A 16th-century Turkish bath at the foot of the hill, with a rooftop pool looking over the Danube. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December.",
+     "d": "A 16th-century Turkish bath at the foot of the hill, with a rooftop pool looking over the Danube. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December. Plan on about an hour and a half.",
      "ll": [
       47.4888,
       19.0475
      ],
      "q": "Rudas Baths Budapest"
+    },
+    {
+     "t": "18:30",
+     "k": "market",
+     "name": "Christmas market and ice rink at Városháza Park (Deák Ferenc tér)",
+     "d": "About 25 minutes' walk from Rudas over the Elisabeth Bridge. Last season this park had a Christmas market and an ice rink next to the Deák Ferenc tér metro; the 2026 dates are not announced, so check. If it is not open, the Vörösmarty Square market is five minutes away.",
+     "ll": [
+      47.4968,
+      19.0565
+     ],
+     "q": "Városháza Park Christmas market Budapest"
     },
     {
      "t": "19:30",
@@ -444,6 +477,41 @@
         19.0619
        ],
        "q": "Pata Negra Kálvin tér Budapest"
+      }
+     ]
+    },
+    {
+     "t": "21:30",
+     "k": "bar",
+     "name": "A drink after dinner",
+     "d": "Two cocktail bars and a jazz club in Pest. Opus Jazz Club usually starts its shows at 21:00 and advises booking; check the programme.",
+     "opts": [
+      {
+       "n": "Boutiq' Bar, Akácfa utca 38",
+       "s": "one of the city's top cocktail bars",
+       "ll": [
+        47.499,
+        19.0668
+       ],
+       "q": "Boutiq' Bar Budapest Akácfa utca"
+      },
+      {
+       "n": "Opus Jazz Club, Mátyás utca 8",
+       "s": "jazz club in the Budapest Music Center, Tuesday to Saturday",
+       "ll": [
+        47.4808,
+        19.0702
+       ],
+       "q": "Opus Jazz Club Budapest Mátyás utca"
+      },
+      {
+       "n": "Cotton Club, Budapest",
+       "s": "1920s-style speakeasy with live music every night except Sunday (check the address)",
+       "ll": [
+        47.5047,
+        19.0625
+       ],
+       "q": "Cotton Club Budapest jazz"
       }
      ]
     }
@@ -504,24 +572,13 @@
     {
      "t": "10:45",
      "k": "landmark",
-     "name": "Dohány Street Synagogue",
-     "d": "The largest synagogue in Europe. Paid entry; closed on Saturdays and Jewish holidays.",
+     "name": "Dohány Street Synagogue and the Jewish Quarter",
+     "d": "The largest synagogue in Europe. Paid entry; closed on Saturdays and Jewish holidays. Then walk Kazinczy utca and Gozsdu udvar: ruin bars, street art and the Kazinczy Street Synagogue. Szimpla Kert, the first ruin bar, is open by day.",
      "ll": [
       47.4958,
       19.0605
      ],
      "q": "Dohány Street Synagogue Budapest"
-    },
-    {
-     "t": "11:45",
-     "k": "walk",
-     "name": "Jewish Quarter: Kazinczy utca and Gozsdu udvar",
-     "d": "Ruin bars, street art and the Kazinczy Street Synagogue. Szimpla Kert, the first ruin bar, is open by day.",
-     "ll": [
-      47.497,
-      19.0632
-     ],
-     "q": "Szimpla Kert Budapest"
     },
     {
      "t": "12:30",
@@ -582,17 +639,6 @@
     },
     {
      "t": "15:45",
-     "k": "park",
-     "name": "Vajdahunyad Castle and the City Park ice rink",
-     "d": "The lake becomes one of Europe's largest open-air ice rinks in winter (paid, skates for hire).",
-     "ll": [
-      47.5147,
-      19.0815
-     ],
-     "q": "Városligeti Műjégpálya Budapest"
-    },
-    {
-     "t": "16:45",
      "k": "spa",
      "name": "Széchenyi Baths",
      "d": "The big yellow bath with outdoor pools that steam in the cold. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December.",
@@ -601,6 +647,17 @@
       19.0817
      ],
      "q": "Széchenyi Thermal Bath Budapest"
+    },
+    {
+     "t": "18:00",
+     "k": "market",
+     "name": "Ice rink and winter fair at Vajdahunyad Castle",
+     "d": "In front of Vajdahunyad Castle the lake becomes an ice rink from late November to mid-February, with a small Christmas market selling hot drinks and chimney cake. A 2024 guide gives evening hours of 17:00–20:00 on weekdays and 16:00–21:00 on Saturdays, and about 3,000 HUF for entry plus 3,000 HUF for skates; the 2026 dates and prices are not published, so check.",
+     "ll": [
+      47.5147,
+      19.0815
+     ],
+     "q": "Városligeti Műjégpálya Budapest"
     },
     {
      "t": "19:30",
@@ -634,6 +691,41 @@
         19.063
        ],
        "q": "Menza Budapest"
+      }
+     ]
+    },
+    {
+     "t": "21:30",
+     "k": "bar",
+     "name": "A drink after dinner",
+     "d": "Three bars in the Jewish Quarter, within ten minutes' walk of each other. From City Park take the M1 metro to the centre (about 10 minutes).",
+     "opts": [
+      {
+       "n": "Szimpla Kert, Kazinczy utca 14",
+       "s": "the first and most famous ruin bar; open until 04:00",
+       "ll": [
+        47.4968,
+        19.0642
+       ],
+       "q": "Szimpla Kert Budapest Kazinczy"
+      },
+      {
+       "n": "Instant-Fogas, Akácfa utca 51",
+       "s": "ruin-bar complex with seven dance floors and 18 bars, open from 18:00",
+       "ll": [
+        47.4985,
+        19.0657
+       ],
+       "q": "Instant-Fogas Budapest Akácfa"
+      },
+      {
+       "n": "Doblo Wine Bar, Dob utca",
+       "s": "Hungarian wines, with local jazz bands several evenings a week",
+       "ll": [
+        47.4984,
+        19.0622
+       ],
+       "q": "Doblo Wine Bar Budapest Dob utca"
       }
      ]
     }

@@ -160,6 +160,47 @@
     return u;
   }
 
+  // ---------- currency converter ----------
+  // One thin row under the facts when the city's currency is not the euro. It converts to euro by default; the swap
+  // button flips it. The rate is the ECB reference rate from api.frankfurter.dev, kept in localStorage for 6 hours.
+  // `currency.rate` in the city file (local units per 1 euro) is only the fallback when no rate has loaded yet.
+  var SWAP = "M7 7h13M16 3l4 4-4 4M17 17H4M8 13l-4 4 4 4";
+  function fmt(n, dec) { return new Intl.NumberFormat("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }).format(n); }
+  function fxRow(C) {
+    var cur = C.currency; if (!cur || !cur.code || cur.code === "EUR" || !(cur.rate > 0)) return null;
+    var key = "fx:" + cur.code, rate = cur.rate, live = false, toEur = true, amt = cur.sample || 100, EURO_AMT = 10;
+    try { var c = JSON.parse(store(key)); if (c && c.r > 0) { rate = c.r; live = true; } } catch (e) {}
+    var row = el("div", "fx");
+    var inp = el("input"); inp.type = "text"; inp.inputMode = "decimal"; inp.value = String(amt);
+    var unit = el("span", "unit"), sw = el("button", "icon-btn"), out = el("output"), note = el("small");
+    sw.type = "button"; sw.title = "Swap direction"; sw.setAttribute("aria-label", "Swap direction"); sw.appendChild(iconSvg(SWAP));
+    out.setAttribute("aria-live", "polite");
+    [inp, unit, sw, out, note].forEach(function (n) { row.appendChild(n); });
+    function draw() {
+      var v = parseFloat(String(inp.value).replace(",", ".")), ok = isFinite(v);
+      inp.setAttribute("aria-label", "Amount in " + (toEur ? cur.code : "euro"));
+      unit.textContent = toEur ? cur.code : "€";
+      if (!ok) out.textContent = "–";
+      else if (toEur) { var e = v / rate; out.textContent = "€ " + fmt(e, e < 100 ? 2 : 0); }
+      else out.textContent = fmt(v * rate, rate < 10 ? 2 : 0) + " " + cur.code;
+      note.textContent = "1 € = " + fmt(rate, rate < 10 ? 2 : rate < 100 ? 1 : 0) + " " + cur.code;
+      note.title = live ? "ECB reference rate" : "Approximate rate; the live rate could not be loaded";
+      if (!live) note.textContent = "≈ " + note.textContent;
+    }
+    inp.addEventListener("input", draw);
+    inp.addEventListener("focus", function () { inp.select(); });
+    sw.addEventListener("click", function () { toEur = !toEur; inp.value = String(toEur ? (cur.sample || 100) : EURO_AMT); draw(); });
+    draw();
+    var stale = true; try { var c2 = JSON.parse(store(key)); stale = !(c2 && Date.now() - c2.t < 6 * 3600 * 1000); } catch (e) {}
+    if (stale && window.fetch) {
+      fetch("https://api.frankfurter.dev/v1/latest?base=EUR&symbols=" + encodeURIComponent(cur.code))
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (j) { var r = j && j.rates && j.rates[cur.code]; if (r > 0) { rate = r; live = true; store(key, JSON.stringify({ r: r, t: Date.now() })); draw(); } })
+        .catch(function () {});
+    }
+    return row;
+  }
+
   // ---------- city page ----------
   function city(C) {
     var y = window.scrollY;
@@ -171,10 +212,13 @@
     app.appendChild(h);
     if (!C.days || !C.days.length) { app.appendChild(el("p", "empty", "There is no itinerary here yet. Coming soon.")); return; }
     if (C.facts && C.facts.length) {
-      var f = el("div", "facts");
-      C.facts.forEach(function (x) { var r = el("div"); r.appendChild(el("b", null, x[0])); r.appendChild(el("span", null, x[1])); f.appendChild(r); });
-      app.appendChild(f);
+      // Collapsed by default, so the page opens straight on the days.
+      var f = el("details", "facts"); f.appendChild(el("summary", null, "Good to know"));
+      var rows = el("div", "rows");
+      C.facts.forEach(function (x) { var r = el("div"); r.appendChild(el("b", null, x[0])); r.appendChild(el("span", null, x[1])); rows.appendChild(r); });
+      f.appendChild(rows); app.appendChild(f);
     }
+    var fx = fxRow(C); if (fx) app.appendChild(fx);
     var nav = el("nav", "days"); nav.style.setProperty("--n", C.days.length); nav.setAttribute("aria-label", "Days");
     C.days.forEach(function (D) { var a = el("a", null, D.n); a.href = "#" + D.id; a.addEventListener("click", function (e) { e.preventDefault(); document.getElementById(D.id).scrollIntoView(); }); nav.appendChild(a); });
     app.appendChild(nav);

@@ -53,7 +53,8 @@ CLAUDE.md               guide for Claude Code sessions in this repo
 | `lat` | city latitude, used to draw the map without distortion |
 | `hours` | `[start, end]` hours shown on the daylight bar |
 | `sun` | `[sunrise, sunset]` as decimal hours, for the daylight bar |
-| `facts` | list of `[label, text]` shown in the facts box |
+| `facts` | list of `[label, text]` shown in the "Good to know" box, which is collapsed by default |
+| `currency` | `{code, rate, sample}`: ISO code, fallback rate in local units per 1 euro, and the sample amount the converter starts with. Leave it out for euro countries. The live rate comes from api.frankfurter.dev (ECB) |
 | `river` | optional `[lon, lat]` points drawn as a river on the map |
 | `note` | footnote shown at the bottom |
 | `days` | list of days (below) |

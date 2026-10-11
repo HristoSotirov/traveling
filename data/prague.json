@@ -44,6 +44,11 @@
    "Czech koruna (CZK). Some small places accept cash only."
   ]
  ],
+ "currency": {
+  "code": "CZK",
+  "rate": 24.3,
+  "sample": 100
+ },
  "river": [
   [
    14.418,
