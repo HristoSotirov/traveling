@@ -23,7 +23,7 @@ Read `README.md` first. It explains the loading behaviour, the file layout and t
 
 ## Adding a city
 
-Follow "Adding a city" in `README.md`. Facts to research per city: sunrise and sunset for the travel month, typical weather, local holidays, currency, market or event dates. Each meal stop needs three nearby options. Use real places and give coordinates (`ll`). Never invent places, addresses or opening hours; if something cannot be verified, say so in the stop description or leave it out.
+Follow "Adding a city" in `README.md`. Facts to research per city: sunrise and sunset for the travel month, typical weather, local holidays, currency, market or event dates. Each meal stop and each after-dinner `bar` stop needs three nearby options. Use real places and give coordinates (`ll`). Never invent places, addresses or opening hours; if something cannot be verified, say so in the stop description or leave it out.
 
 Each day should have 7 to 10 stops with times that fit the daylight, a mix of activity kinds (`walk`, `eat`, `view`, `market`, `landmark`, `museum`, `palace`, `church`, `park`, `spa`, `bar`, `zoo`; see "Activity kinds" in `README.md`), and `ll` coordinates close enough that the day is walkable.
 

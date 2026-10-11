@@ -77,7 +77,7 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 | `church` | Church | a church, cathedral or basilica |
 | `park` | Park | a park, garden or ice rink |
 | `spa` | Spa | a thermal bath or spa |
-| `bar` | Bar | a bar, pub or ruin bar |
+| `bar` | Bar | a bar, pub, jazz club or ruin bar; an after-dinner stop has three `opts` like a meal |
 | `zoo` | Zoo | a zoo or aquarium |
 
 New kinds can be added whenever a stop fits none of these. Add the kind to `KIND` in `assets/app.js`, add `--<kind>` and `--<kind>-bg` colours to the `:root` block in `assets/style.css` plus a `.k-<kind>` rule, add a row to this table, and bump the `?v=` and `CACHE` versions.

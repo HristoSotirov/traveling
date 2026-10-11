@@ -180,7 +180,7 @@
       var s = el("section", "day"); s.id = D.id;
       s.appendChild(el("div", "eyebrow", D.n)); s.appendChild(el("h2", null, D.title)); s.appendChild(el("p", "theme", D.theme));
       var mb = el("div", "mapbox"); mb.appendChild(drawMap(C, D));
-      var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat."));
+      var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink."));
       mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
       var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
       var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);

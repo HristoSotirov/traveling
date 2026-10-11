@@ -1,6 +1,6 @@
 // Offline cache: the app shell and city data are kept and refreshed in the background.
-const CACHE = "traveling-v12";
-const SHELL = ["./", "index.html", "assets/style.css?v=12", "assets/app.js?v=12", "data/cities.json", "manifest.webmanifest", "assets/icons/icon-192.png", "assets/icons/favicon.svg"];
+const CACHE = "traveling-v13";
+const SHELL = ["./", "index.html", "assets/style.css?v=13", "assets/app.js?v=13", "data/cities.json", "manifest.webmanifest", "assets/icons/icon-192.png", "assets/icons/favicon.svg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
