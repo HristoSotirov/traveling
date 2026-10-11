@@ -23,6 +23,10 @@
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function sv(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
   function link(href, label, cls) { var a = el("a", cls || "map", label); a.href = href; a.target = "_blank"; a.rel = "noopener"; return a; }
+  function fallback(text) {   // copy without the Clipboard API (older browsers, plain http)
+    var t = el("textarea"); t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand("copy"); } catch (e) {} t.remove(); return ok;
+  }
   function hh(t) { var p = t.split(":"); return +p[0] + (+p[1]) / 60; }
   function mapUrl(q, id) { var u = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); if (id) u += "&query_place_id=" + id; return u; }
   function center(p) { if (p.opts) { var la = 0, lo = 0; p.opts.forEach(function (o) { la += o.ll[0]; lo += o.ll[1]; }); return [la / p.opts.length, lo / p.opts.length]; } return p.ll; }
@@ -40,6 +44,15 @@
   // ---------- home page ----------
   function home(note) {
     app.replaceChildren();
+    // Top-left button that copies the site link (without a city), ready to send to someone.
+    var top = el("div", "top"), sh = el("button", "back", "Copy link"); sh.type = "button";
+    sh.addEventListener("click", function () {
+      var url = location.origin + location.pathname;
+      function done(ok) { sh.textContent = ok ? "Link copied ✓" : url; setTimeout(function () { sh.textContent = "Copy link"; }, ok ? 2000 : 6000); }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(fallback(url)); });
+      else done(fallback(url));
+    });
+    top.appendChild(sh); app.appendChild(top);
     var h = el("header"); h.appendChild(el("h1", null, "Where to next"));
     h.appendChild(el("p", "lead", note || "Pick a city. Next time the app opens straight into it."));
     app.appendChild(h);
