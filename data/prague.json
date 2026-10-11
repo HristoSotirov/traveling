@@ -25,7 +25,7 @@
   ],
   [
    "Markets",
-   "The main markets (Old Town Square and Wenceslas Square) usually run from 28 November to 6 January, 10:00–22:00; one guide says 20 November, so check prague.eu. The smaller ones close on 24 December: Náměstí Míru from 20 November, Náměstí Republiky from 25 November, Tylovo náměstí from 26 November."
+   "The main markets (Old Town Square and Wenceslas Square) usually run from 28 November to 6 January, 10:00–22:00; one guide says 20 November, so check prague.eu. The smaller ones close on 24 December: Náměstí Míru from 20 November, Náměstí Republiky from 25 November, Tylovo náměstí from 26 November. Each evening in this plan is a different market, and dinner and the bar come after it."
   ],
   [
    "Closed in winter",
@@ -33,7 +33,7 @@
   ],
   [
    "Bars",
-   "Cocktail bars fill up after 21:00, and some stop taking reservations around then. Book a table, or go at 20:00. Most are open until 01:00–03:00."
+   "Cocktail bars fill up after 21:00, and some stop taking reservations around then. Book a table in advance. Most are open until 01:00–03:00."
   ],
   [
    "Holidays",
@@ -229,16 +229,16 @@
     {
      "t": "16:45",
      "k": "market",
-     "name": "Christmas market on Old Town Square",
-     "d": "Mulled wine (svařák), sausage, potato pancakes, baked bread and trdelník. Keep a spot near the tree. The main market usually runs from 28 November to 6 January, 10:00–22:00 (one guide says it opens on 20 November; check prague.eu).",
+     "name": "Christmas market on Wenceslas Square",
+     "d": "The other big market of the city, on the boulevard below the National Museum: mulled wine, sausages and chimney cakes, lit up after dark. It usually runs from 28 November to 6 January, 10:00–22:00. In the 2025/26 season only the lower part of the square hosted it because of renovation, so check. About 15 minutes' walk from the Old Town.",
      "ll": [
-      50.0873,
-      14.4219
+      50.0815,
+      14.4285
      ],
-     "q": "Old Town Square Christmas market Prague"
+     "q": "Wenceslas Square Christmas market Prague"
     },
     {
-     "t": "18:30",
+     "t": "19:30",
      "k": "eat",
      "name": "Dinner",
      "d": "Two are in the Old Town, one is a famous literary pub. Book ahead, or come early for the pub.",
@@ -275,10 +275,10 @@
      ]
     },
     {
-     "t": "20:30",
+     "t": "21:30",
      "k": "bar",
      "name": "A drink after dinner",
-     "d": "Three cocktail bars within ten minutes of each other. Hemingway Bar is the benchmark; one guide says it stops taking reservations at 21:00 and has a queue by 22:00 at weekends. AnonymouS Bar also has a line most Saturdays.",
+     "d": "Three cocktail bars within ten minutes of each other. Book a table in advance: one guide says Hemingway Bar stops taking reservations at 21:00 and has a queue by 22:00 at weekends. AnonymouS Bar also has a line most Saturdays.",
      "opts": [
       {
        "n": "Hemingway Bar, Karolíny Světlé 26",
@@ -399,21 +399,10 @@
      "id": "ChIJd71LDf2UC0cRkcGvwf8x33E"
     },
     {
-     "t": "14:45",
-     "k": "walk",
-     "name": "Kampa and the John Lennon Wall",
-     "d": "Walk down to the river. A small island with a path by the water and the John Lennon Wall on Velkopřevorské square. The Čertovka mill stream is on the north side.",
-     "ll": [
-      50.0841,
-      14.4089
-     ],
-     "q": "Kampa Island Prague"
-    },
-    {
-     "t": "15:15",
+     "t": "15:00",
      "k": "park",
-     "name": "Vojan Gardens and Prague's narrowest street",
-     "d": "The oldest partly preserved garden in Prague, free, with peacocks and a chapel built like a stalactite cave. Enter from U Lužického semináře. In December it is open only from 8:00 to 16:00, so go in by 15:30. The gap in the wall nearby is Prague's narrowest street, which went viral on TikTok; it has a traffic light because only one person fits at a time.",
+     "name": "Kampa, Vojan Gardens and Prague's narrowest street",
+     "d": "On the way down from Petřín, cross Kampa island and the John Lennon Wall. Then Vojan Gardens: the oldest partly preserved garden in Prague, free, with peacocks and a chapel built like a stalactite cave. Enter from U Lužického semináře. In December it is open only from 8:00 to 16:00, so go in by 15:30. The gap in the wall nearby is Prague's narrowest street, which went viral on TikTok; it has a traffic light because only one person fits at a time.",
      "ll": [
       50.0878,
       14.4087
@@ -432,10 +421,21 @@
      "q": "Čertovka Prague Malá Strana"
     },
     {
-     "t": "18:00",
+     "t": "16:45",
+     "k": "market",
+     "name": "Christmas market on Old Town Square",
+     "d": "Walk back over the lit Charles Bridge (about 20 minutes) to the biggest market of the city: mulled wine (svařák), sausage, potato pancakes, baked bread and trdelník, with the tree and the lit towers. It usually runs from 28 November to 6 January, 10:00–22:00 (one guide says it opens on 20 November; check prague.eu).",
+     "ll": [
+      50.0873,
+      14.4219
+     ],
+     "q": "Old Town Square Christmas market Prague"
+    },
+    {
+     "t": "19:30",
      "k": "eat",
      "name": "Dinner in Malá Strana",
-     "d": "Three places in Malá Strana: a grand café-restaurant at the foot of Petřín and two Czech restaurants.",
+     "d": "Walk back over the bridge. Three places in Malá Strana: a grand café-restaurant at the foot of Petřín and two Czech restaurants.",
      "opts": [
       {
        "n": "Café Savoy, Vítězná 5",
@@ -469,7 +469,7 @@
      ]
     },
     {
-     "t": "20:30",
+     "t": "21:30",
      "k": "bar",
      "name": "Jazz or a late drink",
      "d": "Three bars within ten minutes of each other. U Malého Glena is a small blues and jazz cellar; check the programme and start time.",
@@ -514,17 +514,6 @@
    "stops": [
     {
      "t": "10:00",
-     "k": "market",
-     "name": "Náměstí Míru and the Church of St Ludmila",
-     "d": "The local Christmas market on Vinohrady's main square, usually from 20 November to 24 December, about 10:00–20:00. It is smaller and more local than the Old Town market. The Neo-Gothic church of St Ludmila is on the square.",
-     "ll": [
-      50.0752,
-      14.4377
-     ],
-     "q": "Náměstí Míru Christmas market Prague"
-    },
-    {
-     "t": "10:45",
      "k": "eat",
      "name": "Breakfast or coffee in Vinohrady",
      "d": "A sourdough bakery, a classic breakfast café and a brunch spot, all in Vinohrady. Pekárna Praktika has no sign outside, mills its own flour and sells out early, so go first.",
@@ -559,7 +548,18 @@
      ]
     },
     {
-     "t": "11:45",
+     "t": "10:45",
+     "k": "church",
+     "name": "Church of St Ludmila at náměstí Míru",
+     "d": "The Neo-Gothic church on Vinohrady's main square, with two tall spires. The square is the centre of the district; the market here is in the evening.",
+     "ll": [
+      50.0752,
+      14.4377
+     ],
+     "q": "Church of St Ludmila Náměstí Míru Prague"
+    },
+    {
+     "t": "11:30",
      "k": "park",
      "name": "Havlíčkovy sady (Grébovka) and its vineyard",
      "d": "A landscaped hill park with a vineyard, a wooden gazebo and a wine cellar. In winter the vines are bare and the park is quiet. Opening times of the cellar and the grotto in winter are not confirmed.",
@@ -570,7 +570,7 @@
      "q": "Havlíčkovy sady Grébovka Prague"
     },
     {
-     "t": "13:00",
+     "t": "12:45",
      "k": "eat",
      "name": "Lunch in Vinohrady",
      "d": "Three Czech places in Vinohrady. They are mostly listed in local guides, so check that they are open.",
@@ -605,7 +605,7 @@
      ]
     },
     {
-     "t": "14:30",
+     "t": "14:15",
      "k": "park",
      "name": "Riegrovy sady",
      "d": "A hill park above the city with views of the castle. It is a favourite spot for sunset among locals and is busy on warm evenings; in December it is much quieter. Walk through on your way to Žižkov.",
@@ -627,7 +627,7 @@
      "q": "Vítkov National Monument Prague"
     },
     {
-     "t": "16:30",
+     "t": "16:15",
      "k": "landmark",
      "name": "Žižkov TV Tower",
      "d": "The 1980s tower with giant crawling babies on its legs. The observation deck costs about 350 CZK; guides give opening times from 9:00 to 23:30 or midnight, so check before you go. The view at dusk is good.",
@@ -638,10 +638,21 @@
      "q": "Žižkov Television Tower Prague"
     },
     {
-     "t": "18:00",
+     "t": "17:45",
+     "k": "market",
+     "name": "Christmas market on náměstí Míru",
+     "d": "The local Christmas market on Vinohrady's main square, usually from 20 November to 24 December, about 10:00–20:00, so it closes after Christmas Eve. It is smaller and more local than the Old Town market. About 20 minutes' walk from the TV Tower.",
+     "ll": [
+      50.0752,
+      14.4377
+     ],
+     "q": "Náměstí Míru Christmas market Prague"
+    },
+    {
+     "t": "19:30",
      "k": "eat",
      "name": "Dinner in Žižkov",
-     "d": "Three Czech pubs and halls in Žižkov, the district with the most pubs per head in Prague (a claim locals make). Czech beer is cheap here.",
+     "d": "A 20-minute walk from the market. Three Czech pubs and halls in Žižkov, the district with the most pubs per head in Prague (a claim locals make). Czech beer is cheap here.",
      "opts": [
       {
        "n": "U Sadu, Škroupovo nám.",
@@ -673,7 +684,7 @@
      ]
     },
     {
-     "t": "20:00",
+     "t": "21:30",
      "k": "bar",
      "name": "Žižkov bars",
      "d": "Three very different bars within ten minutes of each other. U Vystřelenýho Oka opens at 16:30 and the beer costs about 45 CZK; Bukowski's is a cocktail bar open from 19:00; Tiki Taky is a tiki bar that stays open late.",

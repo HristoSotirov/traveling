@@ -141,9 +141,15 @@
       var t = sv("text", { x: X(p[1]).toFixed(1), y: (Y(p[0]) + 4).toFixed(1), "text-anchor": "middle", "font-size": 12, "font-weight": 500, "font-family": "JetBrains Mono, monospace", fill: "var(--card)" });
       t.textContent = String(i + 1); g.appendChild(t); svg.appendChild(g);
     });
-    var bar = 200; if (bar * sc > 120) bar = 100; if (bar * sc < 30) bar = 500; var bw = bar * sc;
-    svg.appendChild(sv("line", { x1: 12, y1: H - 14, x2: 12 + bw, y2: H - 14, stroke: "var(--ink)", "stroke-width": 2 }));
-    var bt = sv("text", { x: 12, y: H - 20, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--muted)" }); bt.textContent = bar + " m"; svg.appendChild(bt);
+    // Length of the whole day on foot, shown bottom left instead of a scale bar. The straight lines between stops
+    // are shorter than real streets, so the distance is multiplied by 1.3 (a typical street factor); a step is 0.75 m.
+    var meters = 0;
+    for (var k = 1; k < pts.length; k++) { var ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my; meters += Math.sqrt(ddx * ddx + ddy * ddy); }
+    meters *= 1.3;
+    var steps = String(Math.round(meters / 0.75 / 100) * 100).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    var label = "≈ " + (meters / 1000).toFixed(1) + " km · ≈ " + steps + " steps";
+    svg.appendChild(sv("rect", { x: 6, y: H - 31, width: Math.round(label.length * 6.9 + 12), height: 22, rx: 6, fill: "var(--card)", "fill-opacity": ".85" }));
+    var bt = sv("text", { x: 12, y: H - 16, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--ink)" }); bt.textContent = label; svg.appendChild(bt);
     var nt = sv("text", { x: W - 14, y: 20, "text-anchor": "end", "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--muted)" }); nt.textContent = "N ↑"; svg.appendChild(nt);
     return svg;
   }
@@ -180,7 +186,7 @@
       var s = el("section", "day"); s.id = D.id;
       s.appendChild(el("div", "eyebrow", D.n)); s.appendChild(el("h2", null, D.title)); s.appendChild(el("p", "theme", D.theme));
       var mb = el("div", "mapbox"); mb.appendChild(drawMap(C, D));
-      var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink."));
+      var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink. The distance is an estimate for the whole walk."));
       mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
       var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
       var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);
