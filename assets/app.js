@@ -27,6 +27,25 @@
     var t = el("textarea"); t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
     document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand("copy"); } catch (e) {} t.remove(); return ok;
   }
+  // Icon button (top right of the home page) that copies the site link, without a city, ready to send.
+  var ICON_LINK = "M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7";
+  var ICON_OK = "M5 12.5l4.5 4.5L19 7.5";
+  function copyButton() {
+    var b = el("button", "icon-btn"); b.type = "button"; b.title = "Copy link"; b.setAttribute("aria-label", "Copy link");
+    var svg = sv("svg", { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true" });
+    var path = sv("path", { d: ICON_LINK }); svg.appendChild(path); b.appendChild(svg);
+    b.addEventListener("click", function () {
+      var url = location.origin + location.pathname;
+      function done(ok) {
+        if (!ok) { window.prompt("Copy this link:", url); return; }
+        path.setAttribute("d", ICON_OK); b.setAttribute("aria-label", "Link copied"); b.classList.add("ok");
+        setTimeout(function () { path.setAttribute("d", ICON_LINK); b.setAttribute("aria-label", "Copy link"); b.classList.remove("ok"); }, 2000);
+      }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(fallback(url)); });
+      else done(fallback(url));
+    });
+    return b;
+  }
   function hh(t) { var p = t.split(":"); return +p[0] + (+p[1]) / 60; }
   function mapUrl(q, id) { var u = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); if (id) u += "&query_place_id=" + id; return u; }
   function center(p) { if (p.opts) { var la = 0, lo = 0; p.opts.forEach(function (o) { la += o.ll[0]; lo += o.ll[1]; }); return [la / p.opts.length, lo / p.opts.length]; } return p.ll; }
@@ -44,16 +63,8 @@
   // ---------- home page ----------
   function home(note) {
     app.replaceChildren();
-    // Top-left button that copies the site link (without a city), ready to send to someone.
-    var top = el("div", "top"), sh = el("button", "back", "Copy link"); sh.type = "button";
-    sh.addEventListener("click", function () {
-      var url = location.origin + location.pathname;
-      function done(ok) { sh.textContent = ok ? "Link copied ✓" : url; setTimeout(function () { sh.textContent = "Copy link"; }, ok ? 2000 : 6000); }
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(fallback(url)); });
-      else done(fallback(url));
-    });
-    top.appendChild(sh); app.appendChild(top);
-    var h = el("header"); h.appendChild(el("h1", null, "Where to next"));
+    var h = el("header"), row = el("div", "hrow");
+    row.appendChild(el("h1", null, "Where to next")); row.appendChild(copyButton()); h.appendChild(row);
     h.appendChild(el("p", "lead", note || "Pick a city. Next time the app opens straight into it."));
     app.appendChild(h);
     var box = el("div"); box.appendChild(el("p", "note", "Loading…")); app.appendChild(box);

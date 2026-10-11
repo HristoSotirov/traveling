@@ -85,7 +85,7 @@ h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;ma
 .note{font-size:13px;color:var(--muted);margin:0}
 
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.back{font:inherit;font-size:14px;cursor:pointer;font-weight:500;color:var(--river);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 10px}
+.back{font-size:14px;font-weight:500;color:var(--river);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 10px}
 .back:focus-visible,.city:focus-visible{outline:2px solid var(--river);outline-offset:2px}
 .cities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
 .city{display:flex;flex-direction:column;gap:10px;min-height:96px;justify-content:space-between;padding:14px;border:1px solid var(--line);background:var(--card);border-radius:12px;color:var(--ink);text-decoration:none}
@@ -99,3 +99,7 @@ h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;ma
 .city.soon{opacity:.7}
 .empty{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:24px 16px;color:var(--muted);text-align:center}
 nav.days{grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.icon-btn{flex:none;display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid var(--line);background:var(--card);color:var(--river);border-radius:10px;cursor:pointer}
+.icon-btn.ok{color:var(--park)}
+.icon-btn:focus-visible{outline:2px solid var(--river);outline-offset:2px}
