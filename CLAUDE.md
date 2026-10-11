@@ -15,7 +15,8 @@ Read `README.md` first. It explains the loading behaviour, the file layout and t
 - **One city per file.** The home page may load only `data/cities.json`. A city file is fetched only when that city is opened. Do not merge cities into one file.
 - **Keep the remember-last-city behaviour.** Opening the site with no hash goes to the last opened city (`localStorage` key `lastCity`). `#/cities` always shows all cities. If storage is empty, show the home page.
 - **Build DOM with `textContent`**, not `innerHTML`, for anything that comes from data files.
-- **Light and dark mode** must both work in the browser. The installed app (standalone) is always dark. Colours are CSS variables in `assets/style.css`.
+- **Dark theme only.** There is no light mode, in the browser or in the installed app. All colours are CSS variables in the `:root` block of `assets/style.css`.
+- **Keep the site installable** on every system: `manifest.webmanifest`, the icons in `assets/icons/`, the service worker, and the install button with per-device steps on the home page.
 - **Activity kinds can grow.** If a stop fits none of the existing kinds, add a new one rather than forcing it into a wrong kind. Follow the steps under "Activity kinds" in `README.md` (there is the same note above `KIND` in `assets/app.js`).
 - **Mobile first.** The layout is a single column, max 600px, with a 16px side gutter.
 - When you change `assets/app.js` or `assets/style.css`, bump the `?v=` number in `index.html` and in the `SHELL` list in `sw.js`, and bump `CACHE` in `sw.js`, so returning visitors get the new files.

@@ -3,7 +3,7 @@
   var NS = "http://www.w3.org/2000/svg";
   // Activity kinds: the `k` value of a stop -> chip label. Each kind has its own colour.
   // New kinds can be added whenever a stop fits none of these (for example a theatre, a beach, a stadium).
-  // To add one: add it here, add `--<kind>` and `--<kind>-bg` colours to all three theme blocks in
+  // To add one: add it here, add `--<kind>` and `--<kind>-bg` colours to the :root block in
   // assets/style.css plus a `.k-<kind>` rule, list it in README.md, and bump the ?v= / CACHE versions.
   var KIND = {
     walk: "Walk", eat: "Eat", view: "View", market: "Market",
@@ -12,11 +12,6 @@
   };
   function kcol(k) { return KIND[k] ? "var(--" + k + ")" : "var(--stone)"; }   // unknown kinds fall back to grey
   var app = document.getElementById("app");
-  // The installed app (home-screen / standalone) is always dark; in a browser tab the site follows the system theme.
-  if ((window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute("content", "#0e1620");
-  }
 
   // ---------- helpers ----------
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
@@ -27,13 +22,65 @@
     var t = el("textarea"); t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
     document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand("copy"); } catch (e) {} t.remove(); return ok;
   }
+  function iconSvg(d) {
+    var svg = sv("svg", { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true" });
+    var path = sv("path", { d: d }); svg.appendChild(path); return svg;
+  }
+
+  // ---------- install as an app ----------
+  // Chrome, Edge, Samsung Internet and Opera (Android, Windows, macOS, Linux, ChromeOS) fire
+  // beforeinstallprompt, so the button installs directly. Safari (iPhone, iPad, Mac) and Firefox
+  // have no such event, so the button shows the steps for that browser instead.
+  var installEvt = null;
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); installEvt = e; });
+  window.addEventListener("appinstalled", function () { installEvt = null; var b = document.querySelector(".icon-btn.install"); if (b) b.remove(); });
+  function isApp() { return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true; }
+  var STEPS = [
+    ["ios", "iPhone and iPad", ["Open this page in Safari (Chrome and Edge on iOS 16.4 or later work too).", "Tap the Share button (the square with an arrow).", "Scroll down and tap “Add to Home Screen”, then “Add”."]],
+    ["android", "Android", ["Open this page in Chrome.", "Tap the ⋮ menu, then “Add to home screen” and “Install”.", "Samsung Internet: menu → “Add page to” → “Home screen”. Firefox: menu → “Install”."]],
+    ["xiaomi", "Xiaomi, Redmi and POCO", ["If the icon does not appear, or it says the app cannot be opened, Chrome is missing a permission.", "Open Settings → Apps → Chrome → Other permissions and allow “Home screen shortcuts” (and “Display pop-up windows while running in the background”).", "Remove the old icon, then install again from Chrome."]],
+    ["mac", "Mac", ["Safari: menu File → “Add to Dock”.", "Chrome or Edge: the install icon at the right of the address bar."]],
+    ["desktop", "Windows, Linux and ChromeOS", ["Open this page in Chrome or Edge.", "Click the install icon at the right of the address bar, or menu → “Cast, save and share” → “Install page as app” (Edge: menu → Apps → “Install this site as an app”).", "Firefox on a computer cannot install sites as apps; use Chrome or Edge."]]
+  ];
+  function platform() {
+    var ua = navigator.userAgent;
+    if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "ios";
+    if (/Android/.test(ua)) return "android";
+    if (/Macintosh/.test(ua)) return "mac";
+    return "desktop";
+  }
+  function showSteps() {
+    var me = platform(), d = el("dialog", "sheet");
+    d.appendChild(el("h2", null, "Install the app"));
+    function block(x, parent) { parent.appendChild(el("h3", null, x[1])); var ol = el("ol"); x[2].forEach(function (t) { ol.appendChild(el("li", null, t)); }); parent.appendChild(ol); }
+    var mine = STEPS.filter(function (x) { return x[0] === me || (me === "android" && x[0] === "xiaomi"); });
+    mine.forEach(function (x) { block(x, d); });
+    var more = el("details"); more.appendChild(el("summary", null, "Other devices"));
+    STEPS.forEach(function (x) { if (mine.indexOf(x) < 0) block(x, more); }); d.appendChild(more);
+    var close = el("button", "back", "Close"); close.type = "button"; close.addEventListener("click", function () { d.close(); }); d.appendChild(close);
+    d.addEventListener("close", function () { d.remove(); });
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });   // tap outside closes
+    document.body.appendChild(d);
+    if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+  }
+  function installButton() {
+    if (isApp()) return null;                       // already running as the installed app
+    var b = el("button", "icon-btn install"); b.type = "button"; b.title = "Install the app"; b.setAttribute("aria-label", "Install the app");
+    b.appendChild(iconSvg("M12 4v11M7 10l5 5 5-5M5 20h14"));
+    b.addEventListener("click", function () {
+      if (!installEvt) { showSteps(); return; }
+      var e = installEvt; installEvt = null;
+      e.prompt(); e.userChoice.then(function (c) { if (c.outcome === "accepted") b.remove(); }, function () {});
+    });
+    return b;
+  }
+
   // Icon button (top right of the home page) that copies the site link, without a city, ready to send.
   var ICON_LINK = "M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7";
   var ICON_OK = "M5 12.5l4.5 4.5L19 7.5";
   function copyButton() {
     var b = el("button", "icon-btn"); b.type = "button"; b.title = "Copy link"; b.setAttribute("aria-label", "Copy link");
-    var svg = sv("svg", { viewBox: "0 0 24 24", width: 20, height: 20, fill: "none", stroke: "currentColor", "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true" });
-    var path = sv("path", { d: ICON_LINK }); svg.appendChild(path); b.appendChild(svg);
+    var svg = iconSvg(ICON_LINK), path = svg.firstChild; b.appendChild(svg);
     b.addEventListener("click", function () {
       var url = location.origin + location.pathname;
       function done(ok) {
@@ -64,7 +111,8 @@
   function home(note) {
     app.replaceChildren();
     var h = el("header"), row = el("div", "hrow");
-    row.appendChild(el("h1", null, "Where to next")); row.appendChild(copyButton()); h.appendChild(row);
+    var btns = el("div", "hbtns"), ib = installButton(); if (ib) btns.appendChild(ib); btns.appendChild(copyButton());
+    row.appendChild(el("h1", null, "Where to next")); row.appendChild(btns); h.appendChild(row);
     h.appendChild(el("p", "lead", note || "Pick a city. Next time the app opens straight into it."));
     app.appendChild(h);
     var box = el("div"); box.appendChild(el("p", "note", "Loading…")); app.appendChild(box);

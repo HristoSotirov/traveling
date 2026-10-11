@@ -29,7 +29,7 @@ Live site (after you enable Pages): `https://<your-github-username>.github.io/tr
 
 ```
 index.html              app shell
-assets/style.css        styles (light and dark mode)
+assets/style.css        styles (dark theme only)
 assets/app.js           routing, rendering, map drawing
 assets/flags/           country flags for the home page
 assets/icons/           app icon and favicon (SVG sources and PNGs)
@@ -80,11 +80,13 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 | `bar` | Bar | a bar, pub or ruin bar |
 | `zoo` | Zoo | a zoo or aquarium |
 
-New kinds can be added whenever a stop fits none of these. Add the kind to `KIND` in `assets/app.js`, add `--<kind>` and `--<kind>-bg` colours to all three theme blocks in `assets/style.css` plus a `.k-<kind>` rule, add a row to this table, and bump the `?v=` and `CACHE` versions.
+New kinds can be added whenever a stop fits none of these. Add the kind to `KIND` in `assets/app.js`, add `--<kind>` and `--<kind>-bg` colours to the `:root` block in `assets/style.css` plus a `.k-<kind>` rule, add a row to this table, and bump the `?v=` and `CACHE` versions.
 
 ## App icon and install
 
-The site can be installed as an app ("Add to Home Screen" on iPhone, "Install app" in Chrome and on Android). `manifest.webmanifest` describes it. The icons are in `assets/icons/`: `icon.svg` is the source, `icon-maskable.svg` keeps the drawing inside the safe zone for round Android icons, and `favicon.svg` is a simpler pin for browser tabs. The PNG files are rendered from those SVGs; re-render them if you change the drawing. The installed app is always dark; in a browser tab the site follows the system theme.
+The site can be installed as an app ("Add to Home Screen" on iPhone, "Install app" in Chrome and on Android). `manifest.webmanifest` describes it. The icons are in `assets/icons/`: `icon.svg` is the source, `icon-maskable.svg` keeps the drawing inside the safe zone for round Android icons, and `favicon.svg` is a simpler pin for browser tabs. The PNG files are rendered from those SVGs; re-render them if you change the drawing. The site has one theme: dark, in the browser and in the installed app.
+
+The home page has an install button (arrow icon, top right). In Chrome, Edge, Samsung Internet and Opera it opens the browser's own install dialog. Safari and Firefox have no such dialog, so the button shows the steps for the visitor's device instead (iPhone and iPad, Android, Xiaomi, Mac, Windows/Linux/ChromeOS). On Xiaomi, Redmi and POCO phones Chrome needs the "Home screen shortcuts" permission, otherwise the installed icon fails with "app cannot be opened". Firefox on a computer cannot install sites as apps.
 
 ## Adding a city
 
