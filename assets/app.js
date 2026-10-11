@@ -8,7 +8,7 @@
   var KIND = {
     walk: "Walk", eat: "Eat", view: "View", market: "Market",
     landmark: "Landmark", museum: "Museum", palace: "Palace", church: "Church",
-    park: "Park", bath: "Bath", bar: "Bar", zoo: "Zoo"
+    park: "Park", spa: "Spa", bar: "Bar", zoo: "Zoo"
   };
   function kcol(k) { return KIND[k] ? "var(--" + k + ")" : "var(--stone)"; }   // unknown kinds fall back to grey
   var app = document.getElementById("app");

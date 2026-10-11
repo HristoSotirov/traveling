@@ -8,14 +8,14 @@
   --view:var(--river); --view-bg:var(--river-bg); --market:var(--roof); --market-bg:var(--roof-bg);
   --landmark:#1f7a6d; --landmark-bg:#dcefeb; --museum:#6b4fa0; --museum-bg:#ece6f5;
   --palace:#8a6d00; --palace-bg:#f6eecb; --church:#7a4b2a; --church-bg:#f1e6dd;
-  --park:#2f7d32; --park-bg:#e0f0e0; --bath:#2b6cb0; --bath-bg:#e0ebf7;
+  --park:#2f7d32; --park-bg:#e0f0e0; --spa:#2b6cb0; --spa-bg:#e0ebf7;
   --bar:#a3326f; --bar-bg:#f7e1ec; --zoo:#5a7a1f; --zoo-bg:#e8f0d8;
   --display:"Unbounded","Onest",system-ui,sans-serif; --body:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --landmark:#6fd0bf; --landmark-bg:#12332e; --museum:#b9a3e3; --museum-bg:#2a2140;
   --palace:#e0c35a; --palace-bg:#33290c; --church:#d3a581; --church-bg:#33241a;
-  --park:#8fd493; --park-bg:#183019; --bath:#8cb8ec; --bath-bg:#172a40;
+  --park:#8fd493; --park-bg:#183019; --spa:#8cb8ec; --spa-bg:#172a40;
   --bar:#ec8fbf; --bar-bg:#3a1a2b; --zoo:#b5d66f; --zoo-bg:#26300f;
   --bg:#0e1620; --card:#16222e; --ink:#e6edf3; --muted:#93a4b3; --line:#25354a;
   --river:#6cc0dc; --river-bg:#13303c; --lantern:#eab05a; --lantern-bg:#3a2a12;
@@ -23,7 +23,7 @@
 :root[data-theme="dark"]{
   --landmark:#6fd0bf; --landmark-bg:#12332e; --museum:#b9a3e3; --museum-bg:#2a2140;
   --palace:#e0c35a; --palace-bg:#33290c; --church:#d3a581; --church-bg:#33241a;
-  --park:#8fd493; --park-bg:#183019; --bath:#8cb8ec; --bath-bg:#172a40;
+  --park:#8fd493; --park-bg:#183019; --spa:#8cb8ec; --spa-bg:#172a40;
   --bar:#ec8fbf; --bar-bg:#3a1a2b; --zoo:#b5d66f; --zoo-bg:#26300f;
   --bg:#0e1620; --card:#16222e; --ink:#e6edf3; --muted:#93a4b3; --line:#25354a;
   --river:#6cc0dc; --river-bg:#13303c; --lantern:#eab05a; --lantern-bg:#3a2a12;
@@ -71,7 +71,7 @@ h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;ma
 .k-palace{background:var(--palace-bg);color:var(--palace)}
 .k-church{background:var(--church-bg);color:var(--church)}
 .k-park{background:var(--park-bg);color:var(--park)}
-.k-bath{background:var(--bath-bg);color:var(--bath)}
+.k-spa{background:var(--spa-bg);color:var(--spa)}
 .k-bar{background:var(--bar-bg);color:var(--bar)}
 .k-zoo{background:var(--zoo-bg);color:var(--zoo)}
 .stop h3{margin:0;font-size:16px;font-weight:500;line-height:1.35}

@@ -76,7 +76,7 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 | `palace` | Palace | a castle or palace |
 | `church` | Church | a church, cathedral or basilica |
 | `park` | Park | a park, garden or ice rink |
-| `bath` | Bath | a thermal bath or spa |
+| `spa` | Spa | a thermal bath or spa |
 | `bar` | Bar | a bar, pub or ruin bar |
 | `zoo` | Zoo | a zoo or aquarium |
 
