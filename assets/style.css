@@ -4,13 +4,27 @@
   --bg:#edf1f4; --card:#ffffff; --ink:#15212c; --muted:#586876; --line:#d6dee5;
   --river:#1d6c88; --river-bg:#dcecf2; --lantern:#a8620f; --lantern-bg:#fbebd2;
   --roof:#b0392b; --roof-bg:#f9e3df; --stone:#44586a; --stone-bg:#e3e9ee; --sun:#f1c24f; --water:#bcd9e5;
+  --walk:var(--stone); --walk-bg:var(--stone-bg); --eat:var(--lantern); --eat-bg:var(--lantern-bg);
+  --view:var(--river); --view-bg:var(--river-bg); --market:var(--roof); --market-bg:var(--roof-bg);
+  --landmark:#1f7a6d; --landmark-bg:#dcefeb; --museum:#6b4fa0; --museum-bg:#ece6f5;
+  --palace:#8a6d00; --palace-bg:#f6eecb; --church:#7a4b2a; --church-bg:#f1e6dd;
+  --park:#2f7d32; --park-bg:#e0f0e0; --bath:#2b6cb0; --bath-bg:#e0ebf7;
+  --bar:#a3326f; --bar-bg:#f7e1ec; --zoo:#5a7a1f; --zoo-bg:#e8f0d8;
   --display:"Unbounded","Onest",system-ui,sans-serif; --body:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --landmark:#6fd0bf; --landmark-bg:#12332e; --museum:#b9a3e3; --museum-bg:#2a2140;
+  --palace:#e0c35a; --palace-bg:#33290c; --church:#d3a581; --church-bg:#33241a;
+  --park:#8fd493; --park-bg:#183019; --bath:#8cb8ec; --bath-bg:#172a40;
+  --bar:#ec8fbf; --bar-bg:#3a1a2b; --zoo:#b5d66f; --zoo-bg:#26300f;
   --bg:#0e1620; --card:#16222e; --ink:#e6edf3; --muted:#93a4b3; --line:#25354a;
   --river:#6cc0dc; --river-bg:#13303c; --lantern:#eab05a; --lantern-bg:#3a2a12;
   --roof:#f08a7a; --roof-bg:#3b1e1a; --stone:#a8bccd; --stone-bg:#1f2f3f; --sun:#c99a2c; --water:#1c4455; color-scheme:dark}}
 :root[data-theme="dark"]{
+  --landmark:#6fd0bf; --landmark-bg:#12332e; --museum:#b9a3e3; --museum-bg:#2a2140;
+  --palace:#e0c35a; --palace-bg:#33290c; --church:#d3a581; --church-bg:#33241a;
+  --park:#8fd493; --park-bg:#183019; --bath:#8cb8ec; --bath-bg:#172a40;
+  --bar:#ec8fbf; --bar-bg:#3a1a2b; --zoo:#b5d66f; --zoo-bg:#26300f;
   --bg:#0e1620; --card:#16222e; --ink:#e6edf3; --muted:#93a4b3; --line:#25354a;
   --river:#6cc0dc; --river-bg:#13303c; --lantern:#eab05a; --lantern-bg:#3a2a12;
   --roof:#f08a7a; --roof-bg:#3b1e1a; --stone:#a8bccd; --stone-bg:#1f2f3f; --sun:#c99a2c; --water:#1c4455; color-scheme:dark}
@@ -47,10 +61,19 @@ h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;ma
 .num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--card)}
 .time{font-family:var(--mono);font-size:13px;font-weight:500}
 .chip{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:5px;margin-bottom:6px}
-.k-walk{background:var(--stone-bg);color:var(--stone)}
-.k-eat{background:var(--lantern-bg);color:var(--lantern)}
-.k-view{background:var(--river-bg);color:var(--river)}
-.k-market{background:var(--roof-bg);color:var(--roof)}
+/* Activity kind chips: one rule per kind in KIND (assets/app.js); colours are the --<kind> variables above */
+.k-walk{background:var(--walk-bg);color:var(--walk)}
+.k-eat{background:var(--eat-bg);color:var(--eat)}
+.k-view{background:var(--view-bg);color:var(--view)}
+.k-market{background:var(--market-bg);color:var(--market)}
+.k-landmark{background:var(--landmark-bg);color:var(--landmark)}
+.k-museum{background:var(--museum-bg);color:var(--museum)}
+.k-palace{background:var(--palace-bg);color:var(--palace)}
+.k-church{background:var(--church-bg);color:var(--church)}
+.k-park{background:var(--park-bg);color:var(--park)}
+.k-bath{background:var(--bath-bg);color:var(--bath)}
+.k-bar{background:var(--bar-bg);color:var(--bar)}
+.k-zoo{background:var(--zoo-bg);color:var(--zoo)}
 .stop h3{margin:0;font-size:16px;font-weight:500;line-height:1.35}
 .stop p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:52ch}
 .opts{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}

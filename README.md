@@ -12,7 +12,7 @@ Live site (after you enable Pages): `https://<your-github-username>.github.io/tr
 - **Back to all cities.** The "← Cities" button always shows the full list.
 - **Cache cleared?** If browser data is cleared, the home page is shown again.
 - **Fast on repeat visits.** A city renders instantly from the stored copy, then refreshes in the background. A service worker also keeps the app available offline once it has been opened.
-- **Empty cities are fine.** A city with no days (Budapest for now) shows "Coming soon" instead of an error.
+- **Empty cities are fine.** A city with no days shows "Coming soon" instead of an error.
 
 ## How loading works
 
@@ -31,10 +31,13 @@ Live site (after you enable Pages): `https://<your-github-username>.github.io/tr
 index.html              app shell
 assets/style.css        styles (light and dark mode)
 assets/app.js           routing, rendering, map drawing
+assets/flags/           country flags for the home page
+assets/icons/           app icon and favicon (SVG sources and PNGs)
+manifest.webmanifest    makes the site installable as an app
 sw.js                   offline cache
 data/cities.json        list shown on the home page
 data/prague.json        full itinerary for Prague
-data/budapest.json      empty placeholder for Budapest
+data/budapest.json      full itinerary for Budapest
 .github/workflows/      GitHub Pages deployment
 CLAUDE.md               guide for Claude Code sessions in this repo
 ```
@@ -55,10 +58,33 @@ CLAUDE.md               guide for Claude Code sessions in this repo
 | `note` | footnote shown at the bottom |
 | `days` | list of days (below) |
 
-Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` (time, `HH:MM`), `k` (`walk`, `eat`, `view` or `market`), `name`, `d` (description), and either:
+Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` (time, `HH:MM`), `k` (the activity kind, see below), `name`, `d` (description), and either:
 
 - `ll: [lat, lon]` plus `q` (search text) and optionally `id` (Google place id), or
 - `opts`: three options, each with `n` (name), `s` (short description), `ll`, `q`, `id`.
+
+### Activity kinds
+
+| `k` | Label | Use for |
+|---|---|---|
+| `walk` | Walk | a street, square, bridge or neighbourhood on foot |
+| `eat` | Eat | a meal or coffee stop, always with three `opts` |
+| `view` | View | a viewpoint or sunset spot |
+| `market` | Market | a market hall or Christmas market |
+| `landmark` | Landmark | a famous building, monument or memorial |
+| `museum` | Museum | a museum or gallery |
+| `palace` | Palace | a castle or palace |
+| `church` | Church | a church, cathedral or basilica |
+| `park` | Park | a park, garden or ice rink |
+| `bath` | Bath | a thermal bath or spa |
+| `bar` | Bar | a bar, pub or ruin bar |
+| `zoo` | Zoo | a zoo or aquarium |
+
+New kinds can be added whenever a stop fits none of these. Add the kind to `KIND` in `assets/app.js`, add `--<kind>` and `--<kind>-bg` colours to all three theme blocks in `assets/style.css` plus a `.k-<kind>` rule, add a row to this table, and bump the `?v=` and `CACHE` versions.
+
+## App icon and install
+
+The site can be installed as an app ("Add to Home Screen" on iPhone, "Install app" in Chrome and on Android). `manifest.webmanifest` describes it. The icons are in `assets/icons/`: `icon.svg` is the source, `icon-maskable.svg` keeps the drawing inside the safe zone for round Android icons, and `favicon.svg` is a simpler pin for browser tabs. The PNG files are rendered from those SVGs; re-render them if you change the drawing. The installed app is always dark; in a browser tab the site follows the system theme.
 
 ## Adding a city
 

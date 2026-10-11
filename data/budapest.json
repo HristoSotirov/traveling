@@ -88,7 +88,7 @@
    "stops": [
     {
      "t": "09:00",
-     "k": "walk",
+     "k": "landmark",
      "name": "Parliament and Kossuth Square",
      "d": "Walk around the building from outside before the tour groups arrive. Guided tours inside are paid and sell out; book online if you want one.",
      "ll": [
@@ -99,7 +99,7 @@
     },
     {
      "t": "09:30",
-     "k": "view",
+     "k": "landmark",
      "name": "Shoes on the Danube Bank",
      "d": "A memorial to the Jews shot into the river in 1944–45, on the embankment south of the Parliament.",
      "ll": [
@@ -145,7 +145,7 @@
     },
     {
      "t": "11:00",
-     "k": "view",
+     "k": "church",
      "name": "St Stephen's Basilica and the dome",
      "d": "Climb (or take the lift) to the panorama terrace around the dome for a 360° view over Pest and the castle. Paid entry.",
      "ll": [
@@ -289,7 +289,7 @@
     },
     {
      "t": "09:30",
-     "k": "walk",
+     "k": "palace",
      "name": "Buda Castle courtyards",
      "d": "Walk through the palace courtyards and onto the terrace above the Danube. The National Gallery is inside if you want a museum.",
      "ll": [
@@ -335,7 +335,7 @@
     },
     {
      "t": "11:15",
-     "k": "view",
+     "k": "landmark",
      "name": "Fisherman's Bastion and Matthias Church",
      "d": "The view over the Parliament is free from the lower terraces; the upper towers and the church are paid.",
      "ll": [
@@ -403,7 +403,7 @@
     },
     {
      "t": "16:45",
-     "k": "walk",
+     "k": "bath",
      "name": "Rudas Baths",
      "d": "A 16th-century Turkish bath at the foot of the hill, with a rooftop pool looking over the Danube. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December.",
      "ll": [
@@ -503,7 +503,7 @@
     },
     {
      "t": "10:45",
-     "k": "view",
+     "k": "landmark",
      "name": "Dohány Street Synagogue",
      "d": "The largest synagogue in Europe. Paid entry; closed on Saturdays and Jewish holidays.",
      "ll": [
@@ -582,7 +582,7 @@
     },
     {
      "t": "15:45",
-     "k": "walk",
+     "k": "park",
      "name": "Vajdahunyad Castle and the City Park ice rink",
      "d": "The lake becomes one of Europe's largest open-air ice rinks in winter (paid, skates for hire).",
      "ll": [
@@ -593,7 +593,7 @@
     },
     {
      "t": "16:45",
-     "k": "walk",
+     "k": "bath",
      "name": "Széchenyi Baths",
      "d": "The big yellow bath with outdoor pools that steam in the cold. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December.",
      "ll": [

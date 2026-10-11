@@ -91,7 +91,7 @@
    "stops": [
     {
      "t": "09:00",
-     "k": "walk",
+     "k": "landmark",
      "name": "Old Town Square",
      "d": "Arrive before the crowds. The Orloj astronomical clock performs every hour. Walk around the square and see the Týn Church towers from outside.",
      "ll": [
@@ -269,7 +269,7 @@
    "stops": [
     {
      "t": "08:45",
-     "k": "walk",
+     "k": "palace",
      "name": "Prague Castle",
      "d": "Be at the second courtyard before 9:00. The grounds are free from 6 to 22, paid buildings are open from 9 to 16. A Circuit B ticket is from 250 CZK, Circuit A from 350 CZK, valid for two days. Tuesday and Wednesday are quietest.",
      "ll": [
@@ -545,7 +545,7 @@
     },
     {
      "t": "14:15",
-     "k": "walk",
+     "k": "landmark",
      "name": "Vyšehrad",
      "d": "The old fortress with ramparts, a park and the Vyšehrad cemetery. A quiet place after the centre.",
      "ll": [

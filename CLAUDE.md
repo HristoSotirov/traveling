@@ -15,7 +15,8 @@ Read `README.md` first. It explains the loading behaviour, the file layout and t
 - **One city per file.** The home page may load only `data/cities.json`. A city file is fetched only when that city is opened. Do not merge cities into one file.
 - **Keep the remember-last-city behaviour.** Opening the site with no hash goes to the last opened city (`localStorage` key `lastCity`). `#/cities` always shows all cities. If storage is empty, show the home page.
 - **Build DOM with `textContent`**, not `innerHTML`, for anything that comes from data files.
-- **Light and dark mode** must both work. Colours are CSS variables in `assets/style.css`.
+- **Light and dark mode** must both work in the browser. The installed app (standalone) is always dark. Colours are CSS variables in `assets/style.css`.
+- **Activity kinds can grow.** If a stop fits none of the existing kinds, add a new one rather than forcing it into a wrong kind. Follow the steps under "Activity kinds" in `README.md` (there is the same note above `KIND` in `assets/app.js`).
 - **Mobile first.** The layout is a single column, max 600px, with a 16px side gutter.
 - When you change `assets/app.js` or `assets/style.css`, bump the `?v=` number in `index.html` and in the `SHELL` list in `sw.js`, and bump `CACHE` in `sw.js`, so returning visitors get the new files.
 
@@ -23,7 +24,7 @@ Read `README.md` first. It explains the loading behaviour, the file layout and t
 
 Follow "Adding a city" in `README.md`. Facts to research per city: sunrise and sunset for the travel month, typical weather, local holidays, currency, market or event dates. Each meal stop needs three nearby options. Use real places and give coordinates (`ll`). Never invent places, addresses or opening hours; if something cannot be verified, say so in the stop description or leave it out.
 
-Each day should have 7 to 10 stops with times that fit the daylight, a mix of `walk`, `eat`, `view` and `market` kinds, and `ll` coordinates close enough that the day is walkable.
+Each day should have 7 to 10 stops with times that fit the daylight, a mix of activity kinds (`walk`, `eat`, `view`, `market`, `landmark`, `museum`, `palace`, `church`, `park`, `bath`, `bar`, `zoo`; see "Activity kinds" in `README.md`), and `ll` coordinates close enough that the day is walkable.
 
 ## Check your work
 

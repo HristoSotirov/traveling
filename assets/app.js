@@ -1,9 +1,22 @@
 (function () {
   "use strict";
   var NS = "http://www.w3.org/2000/svg";
-  var KIND = { walk: "Walk", eat: "Eat", view: "View", market: "Market" };
-  var KCOL = { walk: "var(--stone)", eat: "var(--lantern)", view: "var(--river)", market: "var(--roof)" };
+  // Activity kinds: the `k` value of a stop -> chip label. Each kind has its own colour.
+  // New kinds can be added whenever a stop fits none of these (for example a theatre, a beach, a stadium).
+  // To add one: add it here, add `--<kind>` and `--<kind>-bg` colours to all three theme blocks in
+  // assets/style.css plus a `.k-<kind>` rule, list it in README.md, and bump the ?v= / CACHE versions.
+  var KIND = {
+    walk: "Walk", eat: "Eat", view: "View", market: "Market",
+    landmark: "Landmark", museum: "Museum", palace: "Palace", church: "Church",
+    park: "Park", bath: "Bath", bar: "Bar", zoo: "Zoo"
+  };
+  function kcol(k) { return KIND[k] ? "var(--" + k + ")" : "var(--stone)"; }   // unknown kinds fall back to grey
   var app = document.getElementById("app");
+  // The installed app (home-screen / standalone) is always dark; in a browser tab the site follows the system theme.
+  if ((window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute("content", "#0e1620");
+  }
 
   // ---------- helpers ----------
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
@@ -68,7 +81,7 @@
     D.stops.forEach(function (p) { (p.opts || []).forEach(function (o) { svg.appendChild(sv("circle", { cx: X(o.ll[1]).toFixed(1), cy: Y(o.ll[0]).toFixed(1), r: 3.5, fill: "var(--lantern)", stroke: "var(--card)", "stroke-width": 1.5 })); }); });
     pts.forEach(function (p, i) {
       var g = sv("g", {});
-      g.appendChild(sv("circle", { cx: X(p[1]).toFixed(1), cy: Y(p[0]).toFixed(1), r: 11, fill: KCOL[D.stops[i].k], stroke: "var(--card)", "stroke-width": 2 }));
+      g.appendChild(sv("circle", { cx: X(p[1]).toFixed(1), cy: Y(p[0]).toFixed(1), r: 11, fill: kcol(D.stops[i].k), stroke: "var(--card)", "stroke-width": 2 }));
       var t = sv("text", { x: X(p[1]).toFixed(1), y: (Y(p[0]) + 4).toFixed(1), "text-anchor": "middle", "font-size": 12, "font-weight": 500, "font-family": "JetBrains Mono, monospace", fill: "var(--card)" });
       t.textContent = String(i + 1); g.appendChild(t); svg.appendChild(g);
     });
@@ -115,14 +128,14 @@
       mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
       var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
       var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);
-      D.stops.forEach(function (p) { var t = el("div", "tick"); t.style.left = pct(hh(p.t)) + "%"; t.style.background = KCOL[p.k]; tr.appendChild(t); });
+      D.stops.forEach(function (p) { var t = el("div", "tick"); t.style.left = pct(hh(p.t)) + "%"; t.style.background = kcol(p.k); tr.appendChild(t); });
       s.appendChild(tr);
       var lb = el("div", "tracklabel"); for (var t = T0; t <= T1; t += 4) lb.appendChild(el("span", null, (t < 10 ? "0" : "") + t + ":00")); s.appendChild(lb);
       var list = el("div", "stops");
       D.stops.forEach(function (p, i) {
         var r = el("div", "stop"), lt = el("div", "lt"), n = el("div", "num", String(i + 1));
-        n.style.background = KCOL[p.k]; lt.appendChild(n); lt.appendChild(el("div", "time", p.t)); r.appendChild(lt);
-        var b = el("div"); b.appendChild(el("span", "chip k-" + p.k, KIND[p.k])); b.appendChild(el("h3", null, p.name)); b.appendChild(el("p", null, p.d));
+        n.style.background = kcol(p.k); lt.appendChild(n); lt.appendChild(el("div", "time", p.t)); r.appendChild(lt);
+        var b = el("div"); b.appendChild(el("span", "chip k-" + (KIND[p.k] ? p.k : "walk"), KIND[p.k] || p.k)); b.appendChild(el("h3", null, p.name)); b.appendChild(el("p", null, p.d));
         if (p.opts) {
           var u = el("ul", "opts");
           p.opts.forEach(function (o) {
