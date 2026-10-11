@@ -3,18 +3,641 @@
  "name": "Budapest",
  "en": "Budapest",
  "local": "Budapest",
- "title": "Budapest",
- "lead": "",
+ "title": "Budapest in December",
+ "lead": "Three days on foot on both sides of the Danube. Viewpoints by day, markets and thermal baths after dark, because the sun sets before 16:00.",
  "lat": 47.5,
  "hours": [
   7,
   21
  ],
  "sun": [
-  7,
-  16
+  7.4,
+  15.9
  ],
- "facts": [],
- "river": [],
- "days": []
+ "facts": [
+  [
+   "Light",
+   "Sunrise around 7:20, sunset around 15:55. The best light is around 15:00. All times are Budapest time, one hour behind Bulgarian time."
+  ],
+  [
+   "Weather",
+   "Usually between −2 and 4 °C, often grey and windy by the river. Bring warm shoes with a non-slip sole."
+  ],
+  [
+   "Markets",
+   "Vörösmarty Square and the Basilica markets usually run from mid or late November until 31 December or 1 January, roughly 11:00 or 12:00 until 21:00–22:00. Exact dates for this year were not confirmed when this was written; check before you go."
+  ],
+  [
+   "Holidays",
+   "On 24, 25 and 26 December many restaurants, the markets and the baths have shorter hours or close. The Central Market Hall is closed on Sundays and on 25–26 December."
+  ],
+  [
+   "Money",
+   "Hungarian forint (HUF). Cards are accepted almost everywhere; some market stalls prefer cash."
+  ],
+  [
+   "Baths",
+   "Bring your own swimsuit, flip-flops and towel to save on rentals. Tickets are cheaper online."
+  ]
+ ],
+ "river": [
+  [
+   19.0465,
+   47.525
+  ],
+  [
+   19.0475,
+   47.5135
+  ],
+  [
+   19.0445,
+   47.506
+  ],
+  [
+   19.0435,
+   47.499
+  ],
+  [
+   19.0465,
+   47.494
+  ],
+  [
+   19.0505,
+   47.4905
+  ],
+  [
+   19.0555,
+   47.486
+  ],
+  [
+   19.0615,
+   47.481
+  ],
+  [
+   19.0665,
+   47.4765
+  ]
+ ],
+ "note": "The maps are approximate, not to scale, and routes are straight lines between stops. For the real street route use the “Open route” button. Opening hours, prices and dates come from public sources and may change. The “Photos” links open an image search.",
+ "days": [
+  {
+   "id": "d1",
+   "n": "Day 1",
+   "title": "Parliament, Basilica and the Pest markets",
+   "theme": "Start at the Parliament, see the city from the Basilica dome, watch the sunset by the Danube and spend the evening at the two big Christmas markets.",
+   "stops": [
+    {
+     "t": "09:00",
+     "k": "walk",
+     "name": "Parliament and Kossuth Square",
+     "d": "Walk around the building from outside before the tour groups arrive. Guided tours inside are paid and sell out; book online if you want one.",
+     "ll": [
+      47.5071,
+      19.0457
+     ],
+     "q": "Hungarian Parliament Building Budapest"
+    },
+    {
+     "t": "09:30",
+     "k": "view",
+     "name": "Shoes on the Danube Bank",
+     "d": "A memorial to the Jews shot into the river in 1944–45, on the embankment south of the Parliament.",
+     "ll": [
+      47.5046,
+      19.0448
+     ],
+     "q": "Shoes on the Danube Bank Budapest"
+    },
+    {
+     "t": "10:00",
+     "k": "eat",
+     "name": "Coffee or breakfast near the Parliament",
+     "d": "Three places within a few minutes' walk.",
+     "opts": [
+      {
+       "n": "Szamos Café, Kossuth Lajos tér 10",
+       "s": "cakes and breakfast, chocolate museum upstairs",
+       "ll": [
+        47.5066,
+        19.0486
+       ],
+       "q": "Szamos Kossuth Lajos tér Budapest"
+      },
+      {
+       "n": "Szalai Cukrászda, Balassi Bálint u. 7",
+       "s": "family pastry shop, almost 100 years old",
+       "ll": [
+        47.5085,
+        19.0463
+       ],
+       "q": "Szalai Cukrászda Budapest Balassi Bálint"
+      },
+      {
+       "n": "Espresso Embassy, Arany János u. 15",
+       "s": "specialty coffee",
+       "ll": [
+        47.5022,
+        19.0503
+       ],
+       "q": "Espresso Embassy Budapest"
+      }
+     ]
+    },
+    {
+     "t": "11:00",
+     "k": "view",
+     "name": "St Stephen's Basilica and the dome",
+     "d": "Climb (or take the lift) to the panorama terrace around the dome for a 360° view over Pest and the castle. Paid entry.",
+     "ll": [
+      47.5009,
+      19.0539
+     ],
+     "q": "St. Stephen's Basilica Budapest"
+    },
+    {
+     "t": "12:30",
+     "k": "eat",
+     "name": "Lunch with Hungarian food",
+     "d": "Goulash, paprikás and lángos. Book ahead in December or come before 12:30.",
+     "opts": [
+      {
+       "n": "Kispiac Bisztró, Hold u. 13",
+       "s": "Hungarian bistro next to the Hold Street market hall",
+       "ll": [
+        47.5039,
+        19.051
+       ],
+       "q": "Kispiac Bisztró Budapest"
+      },
+      {
+       "n": "Hungarikum Bisztró, Steindl Imre u. 13",
+       "s": "home-style Hungarian cooking near the Parliament",
+       "ll": [
+        47.5055,
+        19.0478
+       ],
+       "q": "Hungarikum Bisztró Budapest"
+      },
+      {
+       "n": "Café Kör, Sas u. 17",
+       "s": "classic bistro, two minutes from the Basilica",
+       "ll": [
+        47.4997,
+        19.0527
+       ],
+       "q": "Café Kör Budapest"
+      }
+     ]
+    },
+    {
+     "t": "14:15",
+     "k": "walk",
+     "name": "Danube Promenade",
+     "d": "Walk south along the Pest bank from the Chain Bridge to the Vigadó, with the Castle and Gellért Hill across the river.",
+     "ll": [
+      47.4972,
+      19.0474
+     ],
+     "q": "Danube Promenade Budapest Vigadó"
+    },
+    {
+     "t": "15:30",
+     "k": "view",
+     "name": "Sunset over Buda",
+     "d": "The sun sets around 15:55. Watch the Castle and the Chain Bridge light up from the Pest end of the bridge.",
+     "ll": [
+      47.4989,
+      19.0446
+     ],
+     "q": "Széchenyi Chain Bridge Budapest"
+    },
+    {
+     "t": "16:30",
+     "k": "market",
+     "name": "Christmas market on Vörösmarty Square",
+     "d": "The oldest Christmas market in the city: crafts, chimney cake (kürtőskalács), sausages, stuffed cabbage and mulled wine (forralt bor).",
+     "ll": [
+      47.4966,
+      19.051
+     ],
+     "q": "Vörösmarty tér Christmas market Budapest"
+    },
+    {
+     "t": "18:00",
+     "k": "market",
+     "name": "Advent market at the Basilica",
+     "d": "Light show projected on the Basilica façade in the evening, an ice rink around the tree, and food stalls.",
+     "ll": [
+      47.5007,
+      19.0536
+     ],
+     "q": "Advent Bazilika Budapest"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner",
+     "d": "All three are within ten minutes of the Basilica. Book ahead.",
+     "opts": [
+      {
+       "n": "Borkonyha Winekitchen, Sas u. 3",
+       "s": "modern Hungarian food and a long Hungarian wine list",
+       "ll": [
+        47.4983,
+        19.052
+       ],
+       "q": "Borkonyha Winekitchen Budapest"
+      },
+      {
+       "n": "Zeller Bistro, Hercegprímás u. 18",
+       "s": "Hungarian dishes from family recipes",
+       "ll": [
+        47.5022,
+        19.0529
+       ],
+       "q": "Zeller Bistro Budapest"
+      },
+      {
+       "n": "Pesti Disznó, Nagymező u. 19",
+       "s": "pork and Hungarian classics near the Opera",
+       "ll": [
+        47.504,
+        19.0601
+       ],
+       "q": "Pesti Disznó Budapest"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "n": "Day 2",
+   "title": "Castle Hill, Gellért Hill and a thermal bath",
+   "theme": "Cross the Chain Bridge, spend the morning on Castle Hill, catch the sunset from Gellért Hill and warm up in a Turkish bath.",
+   "stops": [
+    {
+     "t": "09:00",
+     "k": "walk",
+     "name": "Across the Chain Bridge",
+     "d": "Walk over the bridge to Clark Ádám Square. Take the funicular (paid) or the free steps and paths up to the palace.",
+     "ll": [
+      47.4986,
+      19.0399
+     ],
+     "q": "Clark Ádám tér Budapest"
+    },
+    {
+     "t": "09:30",
+     "k": "walk",
+     "name": "Buda Castle courtyards",
+     "d": "Walk through the palace courtyards and onto the terrace above the Danube. The National Gallery is inside if you want a museum.",
+     "ll": [
+      47.4962,
+      19.0396
+     ],
+     "q": "Buda Castle Budapest"
+    },
+    {
+     "t": "10:30",
+     "k": "eat",
+     "name": "Coffee and pastry on Castle Hill",
+     "d": "Two classic pastry shops and a hotel café, all in the old town on the hill.",
+     "opts": [
+      {
+       "n": "Ruszwurm Cukrászda, Szentháromság u. 7",
+       "s": "pastry shop open since the 1820s; very small, expect a queue",
+       "ll": [
+        47.502,
+        19.0331
+       ],
+       "q": "Ruszwurm Cukrászda Budapest"
+      },
+      {
+       "n": "Buda Rétesvár, Balta köz 4",
+       "s": "strudel (rétes) with cherry, poppy seed or cottage cheese",
+       "ll": [
+        47.5013,
+        19.0337
+       ],
+       "q": "Buda Rétesvár Budapest"
+      },
+      {
+       "n": "Baltazár, Országház u. 31",
+       "s": "café and bar in a boutique hotel at the north end of the hill",
+       "ll": [
+        47.5049,
+        19.0316
+       ],
+       "q": "Baltazár Budapest Országház utca"
+      }
+     ]
+    },
+    {
+     "t": "11:15",
+     "k": "view",
+     "name": "Fisherman's Bastion and Matthias Church",
+     "d": "The view over the Parliament is free from the lower terraces; the upper towers and the church are paid.",
+     "ll": [
+      47.5022,
+      19.0347
+     ],
+     "q": "Fisherman's Bastion Budapest"
+    },
+    {
+     "t": "12:30",
+     "k": "eat",
+     "name": "Lunch on Castle Hill",
+     "d": "All three are within a few minutes of Matthias Church.",
+     "opts": [
+      {
+       "n": "21 Magyar Vendéglő, Fortuna u. 21",
+       "s": "modern takes on Hungarian classics",
+       "ll": [
+        47.5035,
+        19.0334
+       ],
+       "q": "21 Magyar Vendéglő Budapest"
+      },
+      {
+       "n": "Pierrot, Fortuna u. 14",
+       "s": "café-restaurant in an old bakery; check days, it has not always opened every day",
+       "ll": [
+        47.503,
+        19.0338
+       ],
+       "q": "Pierrot Restaurant Budapest"
+      },
+      {
+       "n": "Fortuna Restaurant, Hess András tér 4",
+       "s": "Hungarian food in a medieval building",
+       "ll": [
+        47.5028,
+        19.0343
+       ],
+       "q": "Fortuna Restaurant Budapest Hess András tér"
+      }
+     ]
+    },
+    {
+     "t": "14:15",
+     "k": "walk",
+     "name": "Down through the Tabán",
+     "d": "Leave the hill by the southern paths and cross the Tabán park towards the Elisabeth Bridge and the foot of Gellért Hill.",
+     "ll": [
+      47.4935,
+      19.042
+     ],
+     "q": "Tabán Budapest"
+    },
+    {
+     "t": "15:15",
+     "k": "view",
+     "name": "Sunset from Gellért Hill and the Citadella",
+     "d": "The climb takes about 30 minutes. The terraces and the Liberty Statue are free; the exhibition in the Citadella, which reopened in 2026, is paid. Sunset is around 15:55.",
+     "ll": [
+      47.4867,
+      19.0471
+     ],
+     "q": "Citadella Gellért Hill Budapest"
+    },
+    {
+     "t": "16:45",
+     "k": "walk",
+     "name": "Rudas Baths",
+     "d": "A 16th-century Turkish bath at the foot of the hill, with a rooftop pool looking over the Danube. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December.",
+     "ll": [
+      47.4888,
+      19.0475
+     ],
+     "q": "Rudas Baths Budapest"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner",
+     "d": "One on the Buda side, two across the Liberty Bridge in Pest.",
+     "opts": [
+      {
+       "n": "Aranyszarvas, Szarvas tér 1",
+       "s": "game and Hungarian dishes in the Tabán, 10 minutes from Rudas",
+       "ll": [
+        47.4945,
+        19.041
+       ],
+       "q": "Aranyszarvas Budapest"
+      },
+      {
+       "n": "Építész Pince, Ötpacsirta u. 2",
+       "s": "cellar restaurant behind the National Museum",
+       "ll": [
+        47.4902,
+        19.0638
+       ],
+       "q": "Építész Pince Budapest"
+      },
+      {
+       "n": "Pata Negra, Kálvin tér 8",
+       "s": "Spanish tapas and wine",
+       "ll": [
+        47.4895,
+        19.0619
+       ],
+       "q": "Pata Negra Kálvin tér Budapest"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "n": "Day 3",
+   "title": "Market Hall, Jewish Quarter and City Park",
+   "theme": "Shop for paprika at the Central Market Hall, walk the Jewish Quarter and Andrássy Avenue, and end the day in the Széchenyi Baths.",
+   "stops": [
+    {
+     "t": "09:00",
+     "k": "market",
+     "name": "Central Market Hall",
+     "d": "Paprika, salami, Tokaji wine and lángos upstairs. Closed on Sundays and on 25–26 December; open until 15:00 on Saturdays.",
+     "ll": [
+      47.487,
+      19.0585
+     ],
+     "q": "Central Market Hall Budapest"
+    },
+    {
+     "t": "09:45",
+     "k": "eat",
+     "name": "Breakfast or coffee",
+     "d": "One in the hall and two on the way north.",
+     "opts": [
+      {
+       "n": "Lángos stalls, upper floor of the Central Market Hall",
+       "s": "fried dough with sour cream and cheese",
+       "ll": [
+        47.487,
+        19.0585
+       ],
+       "q": "Central Market Hall lángos Budapest"
+      },
+      {
+       "n": "Fekete, Múzeum krt. 5",
+       "s": "specialty coffee in a courtyard",
+       "ll": [
+        47.492,
+        19.0598
+       ],
+       "q": "Fekete Budapest Múzeum körút"
+      },
+      {
+       "n": "My Little Melbourne, Madách Imre út 3",
+       "s": "coffee and breakfast near Deák Square",
+       "ll": [
+        47.4975,
+        19.0565
+       ],
+       "q": "My Little Melbourne Budapest"
+      }
+     ]
+    },
+    {
+     "t": "10:45",
+     "k": "view",
+     "name": "Dohány Street Synagogue",
+     "d": "The largest synagogue in Europe. Paid entry; closed on Saturdays and Jewish holidays.",
+     "ll": [
+      47.4958,
+      19.0605
+     ],
+     "q": "Dohány Street Synagogue Budapest"
+    },
+    {
+     "t": "11:45",
+     "k": "walk",
+     "name": "Jewish Quarter: Kazinczy utca and Gozsdu udvar",
+     "d": "Ruin bars, street art and the Kazinczy Street Synagogue. Szimpla Kert, the first ruin bar, is open by day.",
+     "ll": [
+      47.497,
+      19.0632
+     ],
+     "q": "Szimpla Kert Budapest"
+    },
+    {
+     "t": "12:30",
+     "k": "eat",
+     "name": "Lunch in the Jewish Quarter",
+     "d": "Three different styles in the same few streets.",
+     "opts": [
+      {
+       "n": "Gettó Gulyás, Wesselényi u. 18",
+       "s": "goulash and paprikás in a small dining room",
+       "ll": [
+        47.4985,
+        19.0617
+       ],
+       "q": "Gettó Gulyás Budapest"
+      },
+      {
+       "n": "Mazel Tov, Akácfa u. 47",
+       "s": "Israeli and Middle Eastern food under a glass roof",
+       "ll": [
+        47.4993,
+        19.065
+       ],
+       "q": "Mazel Tov Budapest"
+      },
+      {
+       "n": "Karaván, Kazinczy u. 18",
+       "s": "street-food court next to Szimpla Kert",
+       "ll": [
+        47.4974,
+        19.0627
+       ],
+       "q": "Karaván Street Food Budapest"
+      }
+     ]
+    },
+    {
+     "t": "14:00",
+     "k": "walk",
+     "name": "Andrássy Avenue and the Opera",
+     "d": "Walk up the avenue past the Opera House. If your legs are tired, take the yellow M1 metro under it to Hősök tere.",
+     "ll": [
+      47.5027,
+      19.0583
+     ],
+     "q": "Hungarian State Opera House Budapest"
+    },
+    {
+     "t": "15:15",
+     "k": "view",
+     "name": "Heroes' Square at sunset",
+     "d": "The Millennium Monument and the two museums in the last light.",
+     "ll": [
+      47.5149,
+      19.0778
+     ],
+     "q": "Heroes' Square Budapest"
+    },
+    {
+     "t": "15:45",
+     "k": "walk",
+     "name": "Vajdahunyad Castle and the City Park ice rink",
+     "d": "The lake becomes one of Europe's largest open-air ice rinks in winter (paid, skates for hire).",
+     "ll": [
+      47.5147,
+      19.0815
+     ],
+     "q": "Városligeti Műjégpálya Budapest"
+    },
+    {
+     "t": "16:45",
+     "k": "walk",
+     "name": "Széchenyi Baths",
+     "d": "The big yellow bath with outdoor pools that steam in the cold. Bring a swimsuit and flip-flops. Check holiday hours around 24–26 December.",
+     "ll": [
+      47.5187,
+      19.0817
+     ],
+     "q": "Széchenyi Thermal Bath Budapest"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner",
+     "d": "Two in City Park, one back near the Opera.",
+     "opts": [
+      {
+       "n": "Gundel, Gundel Károly út 4",
+       "s": "the city's most famous classic restaurant; formal and pricey",
+       "ll": [
+        47.5177,
+        19.0785
+       ],
+       "q": "Gundel Restaurant Budapest"
+      },
+      {
+       "n": "Robinson, Városligeti tó",
+       "s": "on a small island in the City Park lake",
+       "ll": [
+        47.5153,
+        19.0823
+       ],
+       "q": "Robinson Restaurant Budapest Városliget"
+      },
+      {
+       "n": "Menza, Liszt Ferenc tér 2",
+       "s": "retro-styled Hungarian food on a lively square",
+       "ll": [
+        47.5047,
+        19.063
+       ],
+       "q": "Menza Budapest"
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }
