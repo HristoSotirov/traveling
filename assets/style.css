@@ -65,9 +65,14 @@ h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;ma
 .back{font-size:14px;font-weight:500;color:var(--river);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 10px}
 .back:focus-visible,.city:focus-visible{outline:2px solid var(--river);outline-offset:2px}
 .cities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
-.city{display:flex;flex-direction:column;gap:4px;min-height:96px;justify-content:flex-end;padding:14px;border:1px solid var(--line);background:var(--card);border-radius:12px;color:var(--ink);text-decoration:none}
-.city strong{font-family:var(--display);font-weight:500;font-size:18px}
-.city span{font-size:13px;color:var(--muted)}
+.city{display:flex;flex-direction:column;gap:10px;min-height:96px;justify-content:space-between;padding:14px;border:1px solid var(--line);background:var(--card);border-radius:12px;color:var(--ink);text-decoration:none}
+.city .head{display:flex;align-items:center;gap:10px;min-width:0}
+.city .head div{display:flex;flex-direction:column;min-width:0}
+.city .flag{width:30px;height:20px;flex:none;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px var(--line)}
+.city strong{font-family:var(--display);font-weight:500;font-size:17px;line-height:1.2;overflow-wrap:anywhere}
+.city .head span{font-size:13px;color:var(--muted)}
+.city .tags{display:flex;flex-wrap:wrap;gap:4px}
+.city .tag{font-size:11px;line-height:1;padding:4px 7px;border-radius:999px;background:var(--river-bg);color:var(--river)}
 .city.soon{opacity:.7}
 .empty{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:24px 16px;color:var(--muted);text-align:center}
 nav.days{grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}

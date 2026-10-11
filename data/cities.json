@@ -3,14 +3,26 @@
   "id": "prague",
   "name": "Prague",
   "country": "Czechia",
-  "blurb": "3 days in December",
+  "flag": "cz",
+  "tags": [
+   "Winter",
+   "3 days",
+   "Christmas markets",
+   "Old town"
+  ],
   "ready": true
  },
  {
   "id": "budapest",
   "name": "Budapest",
   "country": "Hungary",
-  "blurb": "3 days in December",
+  "flag": "hu",
+  "tags": [
+   "Winter",
+   "3 days",
+   "Christmas markets",
+   "Thermal baths"
+  ],
   "ready": true
  }
 ]

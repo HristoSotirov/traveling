@@ -36,7 +36,13 @@
       list.forEach(function (c) {
         var li = el("li"), a = el("a", "city" + (c.ready ? "" : " soon"));
         a.href = "#/" + c.id;
-        a.appendChild(el("strong", null, c.name)); a.appendChild(el("span", null, c.country + " · " + c.blurb));
+        var hd = el("div", "head");
+        if (c.flag && /^[a-z]{2}$/.test(c.flag)) { var f = el("img", "flag"); f.src = "assets/flags/" + c.flag + ".svg"; f.alt = ""; hd.appendChild(f); }
+        var nm = el("div"); nm.appendChild(el("strong", null, c.name)); nm.appendChild(el("span", null, c.country)); hd.appendChild(nm);
+        a.appendChild(hd);
+        var tg = el("div", "tags");
+        (c.ready ? c.tags || [] : ["Coming soon"]).forEach(function (t) { tg.appendChild(el("span", "tag", t)); });
+        a.appendChild(tg);
         li.appendChild(a); ul.appendChild(li);
       });
       box.replaceChildren(ul);

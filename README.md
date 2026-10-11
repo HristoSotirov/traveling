@@ -62,7 +62,7 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 
 ## Adding a city
 
-1. Add an entry to `data/cities.json` (`id`, `name`, `country`, `blurb`, `ready`).
+1. Add an entry to `data/cities.json`: `id`, `name`, `country`, `flag` (two-letter country code with a matching `assets/flags/<code>.svg`), `tags` (a few short words for the trip, for example `Winter`, `3 days`) and `ready`.
 2. Copy `data/budapest.json` to `data/<id>.json` and fill in the fields above.
 3. Commit and push to `main`. The site deploys automatically.
 
