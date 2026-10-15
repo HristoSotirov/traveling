@@ -4,11 +4,11 @@
  "en": "Krakow",
  "local": "Kraków",
  "title": "Kraków for New Year",
- "lead": "Six days for seven friends, from Monday 28 December to Saturday 2 January. Every day starts at the apartment. Local corners instead of tourist traps, a plan B for every outdoor stop, and New Year's Eve with three free options to choose from.",
+ "lead": "28 December – 2 January, seven friends, New Year in Kraków.",
  "lat": 50.06,
  "hours": [
   4,
-  24
+  26
  ],
  "sun": [
   7.57,
@@ -485,7 +485,7 @@
      "t": "21:30",
      "k": "bar",
      "name": "Kazimierz bars",
-     "d": "Three of the classic Kazimierz bars, two minutes apart. To get home: two Bolt cars take about 10 minutes, or walk 30 minutes.",
+     "d": "Three of the classic Kazimierz bars, two minutes apart.",
      "opts": [
       {
        "n": "Alchemia, Estery 5",
@@ -515,6 +515,17 @@
        "q": "Eszeweria Józefa 9 Kraków"
       }
      ]
+    },
+    {
+     "t": "23:30",
+     "k": "home",
+     "name": "Back to the apartment",
+     "d": "Two Bolt or Uber cars take about 10 minutes; or walk 30 minutes north through the Old Town (Józefa → Stradomska → Grodzka → the Main Square → Karmelicka).",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
     }
    ]
   },
@@ -729,6 +740,17 @@
        "q": "Frantic Club Szewska 5 Kraków"
       }
      ]
+    },
+    {
+     "t": "02:00",
+     "k": "home",
+     "name": "Back to the apartment",
+     "d": "15 minutes on foot from any of the three clubs: Szewska → Karmelicka → Czysta. Walk back together.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
     }
    ]
   },
@@ -950,6 +972,17 @@
        "q": "Kopiec Krakusa Kraków"
       }
      ]
+    },
+    {
+     "t": "01:00",
+     "k": "home",
+     "name": "Back to the apartment",
+     "d": "Walk back together; taxis are scarce and expensive after midnight. From the Main Square 15 minutes, from Plac Nowy 30 minutes, from Krakus Mound about 50 minutes (or a taxi if you can get one).",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
     }
    ]
   },

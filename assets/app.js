@@ -240,6 +240,7 @@
     app.appendChild(nav);
     var T0 = C.hours[0], T1 = C.hours[1];
     function pct(x) { return Math.max(0, Math.min(100, (x - T0) / (T1 - T0) * 100)); }
+    function hx(t) { var x = hh(t); return x < T0 ? x + 24 : x; }   // after midnight (02:00) goes to the end of the bar
     function photoUrl(q) { return "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(q.split(" " + C.en)[0] + " " + C.local); }
     var root = el("div"); root.style.cssText = "display:flex;flex-direction:column;gap:32px";
     C.days.forEach(function (D) {
@@ -250,7 +251,7 @@
       mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
       var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
       var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);
-      D.stops.forEach(function (p) { var t = el("div", "tick"); t.style.left = pct(hh(p.t)) + "%"; t.style.background = kcol(p.k); tr.appendChild(t); });
+      D.stops.forEach(function (p) { var t = el("div", "tick"); t.style.left = pct(hx(p.t)) + "%"; t.style.background = kcol(p.k); tr.appendChild(t); });
       s.appendChild(tr);
       var lb = el("div", "tracklabel"); for (var t = T0; t <= T1; t += 4) lb.appendChild(el("span", null, (t < 10 ? "0" : "") + t + ":00")); s.appendChild(lb);
       var list = el("div", "stops");
