@@ -210,12 +210,13 @@
     var y = window.scrollY;
     app.replaceChildren();
     document.title = C.title || C.name;
+    var stayLabel = (C.stay && C.stay.label) || KIND.home;   // e.g. "Airbnb" instead of "Stay"
     var top = el("div", "top"), bk = el("a", "back", "← Cities"); bk.href = "#/cities"; top.appendChild(bk); app.appendChild(top);
     var h = el("header"); h.appendChild(el("h1", null, C.title || C.name));
     if (C.lead) h.appendChild(el("p", "lead", C.lead));
     if (C.stay) {
       // Where the group sleeps: the listing and walking directions to it. Every day's route starts there.
-      var st = el("p", "stay"); st.appendChild(el("b", null, "Stay"));
+      var st = el("p", "stay"); st.appendChild(el("b", null, stayLabel));
       st.appendChild(el("span", null, C.stay.name));
       var sl = el("span", "links");
       if (C.stay.url) sl.appendChild(link(C.stay.url, "Listing →"));
@@ -235,7 +236,7 @@
     var nav = el("nav", "days"); nav.setAttribute("aria-label", "Days");
     if (C.days.length > 4 || C.stay) nav.classList.add("scroll");   // many days: a sideways slider
     else nav.style.setProperty("--n", C.days.length);
-    if (C.stay) { var hm = link(stayUrl(C.stay), "Stay", "home"); hm.title = "Directions to the apartment"; hm.insertBefore(iconSvg(ICON_HOME), hm.firstChild); nav.appendChild(hm); }
+    if (C.stay) { var hm = link(stayUrl(C.stay), stayLabel, "home"); hm.title = "Directions to the apartment"; hm.insertBefore(iconSvg(ICON_HOME), hm.firstChild); nav.appendChild(hm); }
     C.days.forEach(function (D) { var a = el("a", null, D.n); a.href = "#" + D.id; a.addEventListener("click", function (e) { e.preventDefault(); document.getElementById(D.id).scrollIntoView(); }); nav.appendChild(a); });
     app.appendChild(nav);
     var T0 = C.hours[0], T1 = C.hours[1];
@@ -258,7 +259,7 @@
       D.stops.forEach(function (p, i) {
         var r = el("div", "stop"), lt = el("div", "lt"), n = el("div", "num", String(i + 1));
         n.style.background = kcol(p.k); lt.appendChild(n); lt.appendChild(el("div", "time", p.t)); r.appendChild(lt);
-        var b = el("div"); b.appendChild(el("span", "chip k-" + (KIND[p.k] ? p.k : "walk"), KIND[p.k] || p.k)); b.appendChild(el("h3", null, p.name)); b.appendChild(el("p", null, p.d));
+        var b = el("div"); b.appendChild(el("span", "chip k-" + (KIND[p.k] ? p.k : "walk"), p.k === "home" ? stayLabel : KIND[p.k] || p.k)); b.appendChild(el("h3", null, p.name)); b.appendChild(el("p", null, p.d));
         if (p.opts) {
           var u = el("ul", "opts");
           p.opts.forEach(function (o) {

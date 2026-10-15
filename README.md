@@ -57,7 +57,7 @@ CLAUDE.md               guide for Claude Code sessions in this repo
 | `facts` | list of `[label, text]` shown in the "Good to know" box, which is collapsed by default |
 | `currency` | `{code, rate, sample}`: ISO code, fallback rate in local units per 1 euro, and the sample amount the converter starts with. Leave it out for euro countries. The live rate comes from api.frankfurter.dev (ECB) |
 | `river` | optional `[lon, lat]` points drawn as a river on the map |
-| `stay` | optional `{name, url, ll}`: where the group sleeps. Shown under the lead with the listing link and directions, and as a "Stay" button at the start of the day bar that opens directions to it |
+| `stay` | optional `{label, name, url, ll}`: where the group sleeps. Shown under the lead with the listing link and directions, and as a button at the start of the day bar that opens directions to it. `label` (for example `Airbnb`) replaces the word "Stay" on that button, the heading and the `home` stop chips |
 | `note` | footnote shown at the bottom |
 | `days` | list of days (below) |
 

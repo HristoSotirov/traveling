@@ -15,7 +15,8 @@
   15.72
  ],
  "stay": {
-  "name": "Airbnb apartment near Czysta street, 15 minutes' walk from the Main Square",
+  "label": "Airbnb",
+  "name": "Apartment near Czysta street, 15 minutes' walk from the Main Square",
   "url": "https://www.airbnb.co.uk/rooms/50452678",
   "ll": [
    50.065,
@@ -28,7 +29,7 @@
    "Out: Ryanair FR 8976, Mon 28 Dec, Sofia 11:40 → Kraków 12:20. Back: FR 8975, Sat 2 Jan, Kraków 07:00 → Sofia 09:50. Kraków is one hour behind Bulgaria."
   ],
   [
-   "Stay",
+   "Airbnb",
    "The Airbnb is between Czarnowiejska and Czysta streets, west of the Old Town. The map pin is approximate; use the address from the Airbnb app."
   ],
   [
