@@ -384,17 +384,17 @@
     {
      "t": "12:45",
      "k": "eat",
-     "name": "Lunch in Kazimierz",
-     "d": "Cheap and quick, to leave time for the sunset.",
+     "name": "Lunch in Kazimierz: the zapiekanka from the TikTok",
+     "d": "The zapiekanka from the TikTok food guide is on Plac Nowy, the square with the round market hall in the middle of Kazimierz. The best known window is Endzior. Cash only; there is usually a queue, and it moves fast. The windows stay open late, so it also works after the bars.",
      "opts": [
       {
-       "n": "Zapiekanki at the Okrąglak, Plac Nowy",
-       "s": "the round market hall in the middle of the square: long open baguettes with mushrooms and cheese, the local street food",
+       "n": "Endzior, Okrąglak, Plac Nowy 4",
+       "s": "the famous zapiekanka window in the round hall: a long open baguette with mushrooms, cheese and toppings of your choice; open late, closed on Sundays according to In Your Pocket",
        "ll": [
         50.0517,
         19.9447
        ],
-       "q": "Okrąglak Plac Nowy zapiekanki Kraków"
+       "q": "Endzior zapiekanki Plac Nowy Kraków"
       },
       {
        "n": "Polakowski, Miodowa 39",
@@ -1083,7 +1083,7 @@
      "t": "16:15",
      "k": "transit",
      "name": "Back by tram or taxi",
-     "d": "From Zakrzówek take a tram towards the centre or two Bolt cars, about 15 minutes to the apartment. Rest and pack.",
+     "d": "From Zakrzówek take a tram towards the centre or two Bolt cars, about 15 minutes to the apartment. Rest for an hour; dinner is at 18:00.",
      "ll": [
       50.0405,
       19.9185
@@ -1091,7 +1091,7 @@
      "q": "Zakrzówek Kraków"
     },
     {
-     "t": "19:00",
+     "t": "18:00",
      "k": "eat",
      "name": "Last dinner",
      "d": "In Kazimierz. Book ahead and check that they are open on 1 January.",
@@ -1126,10 +1126,10 @@
      ]
     },
     {
-     "t": "20:45",
+     "t": "20:00",
      "k": "bar",
      "name": "One last quiet drink",
-     "d": "Close to dinner, so you can be home by 22:30.",
+     "d": "Close to dinner, so you can be home by 22:00.",
      "opts": [
       {
        "n": "Singer, Estery 20",
@@ -1161,7 +1161,7 @@
      ]
     },
     {
-     "t": "22:30",
+     "t": "22:00",
      "k": "home",
      "name": "Pack and sleep",
      "d": "Book two taxis for 04:45 tonight (Bolt or Uber can schedule rides) and set alarms for 04:00.",
