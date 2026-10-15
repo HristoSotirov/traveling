@@ -46,7 +46,7 @@
   ],
   [
    "Markets",
-   "The Main Square Christmas market is expected to run until about 1 January 2027; check krakow.pl."
+   "Guides disagree on when the Main Square Christmas market ends: some say about 1 January 2027, others 26 December. Check krakow.pl before the trip."
   ],
   [
    "New Year",
@@ -197,7 +197,7 @@
      "t": "18:30",
      "k": "market",
      "name": "Christmas market on the Main Square",
-     "d": "The market is expected to stay until about 1 January (check krakow.pl). Have a grzaniec (mulled wine) and try oscypek, smoked sheep's cheese with cranberry. Prices on the square are high, so have dinner elsewhere. On the hour, listen for the trumpet call (hejnał) from St Mary's tower.",
+     "d": "Guides disagree on when the market ends: some say about 1 January, others 26 December, so check krakow.pl. Even without the stalls, the lit-up square is the place to start. Have a grzaniec (mulled wine) and try oscypek, smoked sheep's cheese with cranberry. Prices on the square are high, so have dinner elsewhere. On the hour, listen for the trumpet call (hejnał) from St Mary's tower.",
      "ll": [
       50.0617,
       19.9373
@@ -308,7 +308,7 @@
      "t": "09:15",
      "k": "market",
      "name": "Stary Kleparz market",
-     "d": "Locals' food market since the Middle Ages, open Monday to Saturday from early morning: fruit, pickles, cheese, sausage and pączki (Polish doughnuts). Partly covered.",
+     "d": "Locals' food market since the Middle Ages, open Monday to Saturday from early morning: fruit, pickles, cheese, sausage and pączki (Polish doughnuts). Partly covered. Buy an obwarzanek, the braided Kraków bagel, from one of the blue street carts on the way; about 3 zł.",
      "ll": [
       50.0681,
       19.9405
@@ -352,20 +352,9 @@
     },
     {
      "t": "10:45",
-     "k": "church",
-     "name": "St Francis Basilica and Kanonicza Street",
-     "d": "Free. Look up at Stanisław Wyspiański's stained-glass window 'God the Father' over the entrance. Then walk down Kanonicza, the quietest and oldest street in the Old Town, to the foot of Wawel.",
-     "ll": [
-      50.0596,
-      19.9353
-     ],
-     "q": "Bazylika św. Franciszka z Asyżu Kraków"
-    },
-    {
-     "t": "11:30",
      "k": "palace",
      "name": "Wawel Hill, then the river path to Skałka",
-     "d": "Walk up to Wawel from the end of Kanonicza. The castle courtyards and the hill are free; the cathedral, state rooms and Dragon's Den are paid, and on 1 January many of them may be closed, so today is the day. Leave by the path down to the Vistula and walk along the river to Skałka, a Pauline church on a rock with a crypt where Polish poets and painters are buried. Few tourists get this far.",
+     "d": "On the way, step into St Francis Basilica (free) for Stanisław Wyspiański's stained-glass window 'God the Father', then walk down Kanonicza, the quietest and oldest street in the Old Town, up to Wawel. The castle courtyards and the hill are free; the cathedral, state rooms and Dragon's Den are paid, and on 1 January many of them may be closed, so today is the day. Leave by the path down to the Vistula and walk along the river to Skałka, a Pauline church on a rock with a crypt where Polish poets and painters are buried. Few tourists get this far.",
      "ll": [
       50.054,
       19.9354
@@ -384,35 +373,35 @@
     {
      "t": "12:45",
      "k": "eat",
-     "name": "Lunch in Kazimierz",
-     "d": "Cheap and quick, to leave time for the sunset.",
+     "name": "Zapiekanki on Plac Nowy (from the TikTok food guide)",
+     "d": "This is the place from the TikTok: the round market hall (Okrąglak) in the middle of Plac Nowy, ringed with zapiekanki windows. A zapiekanka is a long open baguette with mushrooms, cheese and toppings of your choice; a large one is cheap enough to share. Cash is safest; the queues move fast. The windows stay open late, so they work after the bars too.",
      "opts": [
       {
-       "n": "Zapiekanki at the Okrąglak, Plac Nowy",
-       "s": "the round market hall in the middle of the square: long open baguettes with mushrooms and cheese, the local street food",
+       "n": "Endzior, Okrąglak, Plac Nowy 4",
+       "s": "the best known window; open late, closed on Sundays according to In Your Pocket",
        "ll": [
         50.0517,
         19.9447
        ],
-       "q": "Okrąglak Plac Nowy zapiekanki Kraków"
+       "q": "Endzior zapiekanki Plac Nowy Kraków"
       },
       {
-       "n": "Polakowski, Miodowa 39",
-       "s": "self-service Polish canteen: soups, pierogi, cutlets",
+       "n": "Zapiekanki Królewskie, Okrąglak, Plac Nowy",
+       "s": "another window in the same hall, the one TikTok creators feature most",
        "ll": [
-        50.051,
-        19.9482
+        50.0518,
+        19.9449
        ],
-       "q": "Polakowski Miodowa 39 Kraków"
+       "q": "Zapiekanki Królewskie Plac Nowy Kraków"
       },
       {
-       "n": "Marchewka z Groszkiem, Mostowa 2",
-       "s": "small Polish bistro with home-style dishes",
+       "n": "Cytat Café, Miodowa 23 (from the TikTok food guide)",
+       "s": "book café with quotes on the coffee cups and a wall of board games; for coffee after the zapiekanka",
        "ll": [
-        50.0491,
-        19.9467
+        50.0522,
+        19.9462
        ],
-       "q": "Marchewka z Groszkiem Mostowa 2 Kraków"
+       "q": "Cytat Cafe Miodowa 23 Kraków"
       }
      ]
     },
@@ -518,10 +507,45 @@
      ]
     },
     {
-     "t": "23:30",
+     "t": "23:15",
+     "k": "eat",
+     "name": "Late-night snack: the blue van sausage",
+     "d": "A Kraków ritual after the bars. From Plac Nowy it is 10 minutes' walk north to the market hall on Grzegórzecka; the van is cash only and closed on Sundays.",
+     "opts": [
+      {
+       "n": "Niebieska Nyska, Hala Targowa, Grzegórzecka 5",
+       "s": "grilled kiełbasa with mustard and bread from a blue 1970s van, from about 20:00 until 2–3 at night",
+       "ll": [
+        50.0569,
+        19.9498
+       ],
+       "q": "Kiełbaski z Niebieskiej Nyski Hala Targowa Kraków"
+      },
+      {
+       "n": "Endzior, Plac Nowy 4",
+       "s": "a second zapiekanka if you stayed in Kazimierz",
+       "ll": [
+        50.0517,
+        19.9447
+       ],
+       "q": "Endzior zapiekanki Plac Nowy Kraków"
+      },
+      {
+       "n": "Przypiecek, Sławkowska 32",
+       "s": "pierogi round the clock, on the way home",
+       "ll": [
+        50.0647,
+        19.9395
+       ],
+       "q": "Przypiecek Sławkowska 32 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "23:45",
      "k": "home",
      "name": "Back to the apartment",
-     "d": "Two Bolt or Uber cars take about 10 minutes; or walk 30 minutes north through the Old Town (Józefa → Stradomska → Grodzka → the Main Square → Karmelicka).",
+     "d": "Two Bolt or Uber cars take about 10 minutes; or walk 25–30 minutes through the Old Town to Karmelicka and Czysta.",
      "ll": [
       50.065,
       19.9256
@@ -572,13 +596,13 @@
        "q": "Bunkier Cafe Plac Szczepański Kraków"
       },
       {
-       "n": "Charlotte, Plac Szczepański 2",
-       "s": "French bakery with breakfast all morning",
+       "n": "Cukiernia Michałek, Krupnicza 6",
+       "s": "famous Kraków pastry shop, known for its rose-filled pączki; takeaway, 3 minutes from the apartment",
        "ll": [
-        50.0638,
-        19.9352
+        50.0627,
+        19.9325
        ],
-       "q": "Charlotte Plac Szczepański 2 Kraków"
+       "q": "Cukiernia Michałek Krupnicza 6 Kraków"
       }
      ]
     },
@@ -697,13 +721,13 @@
        "q": "Pod Baranem Świętej Gertrudy 21 Kraków"
       },
       {
-       "n": "Bar Mleczny Pod Temidą, Grodzka 43",
-       "s": "cheap milk bar, closes early in the evening, so go first",
+       "n": "Czarna Kaczka, Poselska 22 (from the TikTok food guide)",
+       "s": "the duck place: roast duck with apples and sides, book for seven",
        "ll": [
-        50.0571,
-        19.9378
+        50.0573,
+        19.9392
        ],
-       "q": "Bar Mleczny Pod Temidą Grodzka 43 Kraków"
+       "q": "Czarna Kaczka Poselska 22 Kraków"
       }
      ]
     },
@@ -862,16 +886,16 @@
      "t": "14:30",
      "k": "eat",
      "name": "Late lunch near the apartment",
-     "d": "Shops close early today; you shopped yesterday.",
+     "d": "Shops close early today; you shopped yesterday. Pod Wawelem is 15 minutes south of the apartment; the other two are closer.",
      "opts": [
       {
-       "n": "Bar Mleczny Miła, Czysta 1",
-       "s": "old-school milk bar right by the apartment: soups, pierogi, cutlets, very cheap; pay at the counter",
+       "n": "Pod Wawelem, Plac na Groblach 9 (from the TikTok food guide)",
+       "s": "huge schnitzels, ribs and beer by the litre in a loud beer hall; 15 minutes from the apartment",
        "ll": [
-        50.0646,
-        19.9268
+        50.0566,
+        19.9339
        ],
-       "q": "Bar Mleczny Miła Czysta 1 Kraków"
+       "q": "Pod Wawelem Kompania Kuflowa Plac na Groblach 9 Kraków"
       },
       {
        "n": "Pod Norenami, Krupnicza 6",
@@ -1083,7 +1107,7 @@
      "t": "16:15",
      "k": "transit",
      "name": "Back by tram or taxi",
-     "d": "From Zakrzówek take a tram towards the centre or two Bolt cars, about 15 minutes to the apartment. Rest and pack.",
+     "d": "From Zakrzówek take a tram towards the centre or two Bolt cars, about 15 minutes to the apartment. Rest for an hour; dinner is at 18:00.",
      "ll": [
       50.0405,
       19.9185
@@ -1091,7 +1115,7 @@
      "q": "Zakrzówek Kraków"
     },
     {
-     "t": "19:00",
+     "t": "18:00",
      "k": "eat",
      "name": "Last dinner",
      "d": "In Kazimierz. Book ahead and check that they are open on 1 January.",
@@ -1126,10 +1150,10 @@
      ]
     },
     {
-     "t": "20:45",
+     "t": "20:00",
      "k": "bar",
      "name": "One last quiet drink",
-     "d": "Close to dinner, so you can be home by 22:30.",
+     "d": "Close to dinner, so you can be home by 22:00.",
      "opts": [
       {
        "n": "Singer, Estery 20",
@@ -1161,7 +1185,7 @@
      ]
     },
     {
-     "t": "22:30",
+     "t": "22:00",
      "k": "home",
      "name": "Pack and sleep",
      "d": "Book two taxis for 04:45 tonight (Bolt or Uber can schedule rides) and set alarms for 04:00.",
