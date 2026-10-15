@@ -38,6 +38,7 @@ sw.js                   offline cache
 data/cities.json        list shown on the home page
 data/prague.json        full itinerary for Prague
 data/budapest.json      full itinerary for Budapest
+data/krakow.json        full itinerary for Kraków (six days, New Year)
 .github/workflows/      GitHub Pages deployment
 CLAUDE.md               guide for Claude Code sessions in this repo
 ```
@@ -56,6 +57,7 @@ CLAUDE.md               guide for Claude Code sessions in this repo
 | `facts` | list of `[label, text]` shown in the "Good to know" box, which is collapsed by default |
 | `currency` | `{code, rate, sample}`: ISO code, fallback rate in local units per 1 euro, and the sample amount the converter starts with. Leave it out for euro countries. The live rate comes from api.frankfurter.dev (ECB) |
 | `river` | optional `[lon, lat]` points drawn as a river on the map |
+| `stay` | optional `{name, url, ll}`: where the group sleeps. Shown under the lead with the listing link and directions, and as a "Stay" button at the start of the day bar that opens directions to it |
 | `note` | footnote shown at the bottom |
 | `days` | list of days (below) |
 
@@ -63,6 +65,10 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 
 - `ll: [lat, lon]` plus `q` (search text) and optionally `id` (Google place id), or
 - `opts`: three options, each with `n` (name), `s` (short description), `ll`, `q`, `id`.
+
+An outdoor stop can have `b`, a plan B if it rains: `{name, d, ll, q}`. It is shown under the stop in a "Plan B if it rains" box.
+
+The day `n` label is shown in the day bar. With more than four days, or with a `stay`, the bar becomes a sideways slider.
 
 ### Activity kinds
 
@@ -80,6 +86,9 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 | `spa` | Spa | a thermal bath or spa |
 | `bar` | Bar | a bar, pub, jazz club or ruin bar; an after-dinner stop has three `opts` like a meal |
 | `zoo` | Zoo | a zoo or aquarium |
+| `home` | Stay | the apartment or hotel: start and end of a day |
+| `transit` | Transit | an airport, tram ride or taxi; the leg after it is ridden and not counted in the walking distance |
+| `party` | Party | a New Year's Eve or other one-night event, with three `opts` to choose from |
 
 New kinds can be added whenever a stop fits none of these. Add the kind to `KIND` in `assets/app.js`, add `--<kind>` and `--<kind>-bg` colours to the `:root` block in `assets/style.css` plus a `.k-<kind>` rule, add a row to this table, and bump the `?v=` and `CACHE` versions.
 

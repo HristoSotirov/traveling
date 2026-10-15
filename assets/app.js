@@ -8,7 +8,8 @@
   var KIND = {
     walk: "Walk", eat: "Eat", view: "View", market: "Market",
     landmark: "Landmark", museum: "Museum", palace: "Palace", church: "Church",
-    park: "Park", spa: "Spa", bar: "Bar", zoo: "Zoo"
+    park: "Park", spa: "Spa", bar: "Bar", zoo: "Zoo",
+    home: "Stay", transit: "Transit", party: "Party"
   };
   function kcol(k) { return KIND[k] ? "var(--" + k + ")" : "var(--stone)"; }   // unknown kinds fall back to grey
   var app = document.getElementById("app");
@@ -143,8 +144,9 @@
     });
     // Length of the whole day on foot, shown bottom left instead of a scale bar. The straight lines between stops
     // are shorter than real streets, so the distance is multiplied by 1.3 (a typical street factor); a step is 0.75 m.
+    // A leg that starts at a `transit` stop is ridden (tram, taxi, plane), so it is not counted.
     var meters = 0;
-    for (var k = 1; k < pts.length; k++) { var ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my; meters += Math.sqrt(ddx * ddx + ddy * ddy); }
+    for (var k = 1; k < pts.length; k++) { if (D.stops[k - 1].k === "transit") continue; var ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my; meters += Math.sqrt(ddx * ddx + ddy * ddy); }
     meters *= 1.3;
     var steps = String(Math.round(meters / 0.75 / 100) * 100).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     var label = "≈ " + (meters / 1000).toFixed(1) + " km · ≈ " + steps + " steps";
@@ -153,6 +155,8 @@
     var nt = sv("text", { x: W - 14, y: 20, "text-anchor": "end", "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--muted)" }); nt.textContent = "N ↑"; svg.appendChild(nt);
     return svg;
   }
+  var ICON_HOME = "M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10";
+  function stayUrl(S) { return "https://www.google.com/maps/dir/?api=1&destination=" + S.ll[0] + "," + S.ll[1]; }
   function dirUrl(D) {
     var c = D.stops.map(function (p) { var x = center(p); return x[0].toFixed(5) + "," + x[1].toFixed(5); });
     var u = "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=" + c[0] + "&destination=" + c[c.length - 1];
@@ -209,6 +213,15 @@
     var top = el("div", "top"), bk = el("a", "back", "← Cities"); bk.href = "#/cities"; top.appendChild(bk); app.appendChild(top);
     var h = el("header"); h.appendChild(el("h1", null, C.title || C.name));
     if (C.lead) h.appendChild(el("p", "lead", C.lead));
+    if (C.stay) {
+      // Where the group sleeps: the listing and walking directions to it. Every day's route starts there.
+      var st = el("p", "stay"); st.appendChild(el("b", null, "Stay"));
+      st.appendChild(el("span", null, C.stay.name));
+      var sl = el("span", "links");
+      if (C.stay.url) sl.appendChild(link(C.stay.url, "Listing →"));
+      sl.appendChild(link(stayUrl(C.stay), "Directions →"));
+      st.appendChild(sl); h.appendChild(st);
+    }
     app.appendChild(h);
     if (!C.days || !C.days.length) { app.appendChild(el("p", "empty", "There is no itinerary here yet. Coming soon.")); return; }
     if (C.facts && C.facts.length) {
@@ -219,7 +232,10 @@
       f.appendChild(rows); app.appendChild(f);
     }
     var fx = fxRow(C); if (fx) app.appendChild(fx);
-    var nav = el("nav", "days"); nav.style.setProperty("--n", C.days.length); nav.setAttribute("aria-label", "Days");
+    var nav = el("nav", "days"); nav.setAttribute("aria-label", "Days");
+    if (C.days.length > 4 || C.stay) nav.classList.add("scroll");   // many days: a sideways slider
+    else nav.style.setProperty("--n", C.days.length);
+    if (C.stay) { var hm = link(stayUrl(C.stay), "Stay", "home"); hm.title = "Directions to the apartment"; hm.insertBefore(iconSvg(ICON_HOME), hm.firstChild); nav.appendChild(hm); }
     C.days.forEach(function (D) { var a = el("a", null, D.n); a.href = "#" + D.id; a.addEventListener("click", function (e) { e.preventDefault(); document.getElementById(D.id).scrollIntoView(); }); nav.appendChild(a); });
     app.appendChild(nav);
     var T0 = C.hours[0], T1 = C.hours[1];
@@ -252,6 +268,12 @@
         } else {
           var ln2 = el("div", "links"); ln2.style.marginTop = "6px";
           ln2.appendChild(link(mapUrl(p.q, p.id), "Map →")); ln2.appendChild(link(photoUrl(p.q), "Photos →")); b.appendChild(ln2);
+        }
+        if (p.b) {   // indoor alternative for an outdoor stop, if it rains
+          var pb = el("div", "planb"); pb.appendChild(el("small", null, "Plan B if it rains"));
+          pb.appendChild(el("b", null, p.b.name)); if (p.b.d) pb.appendChild(el("span", null, p.b.d));
+          if (p.b.q) { var ln3 = el("div", "links"); ln3.appendChild(link(mapUrl(p.b.q, p.b.id), "Map →")); ln3.appendChild(link(photoUrl(p.b.q), "Photos →")); pb.appendChild(ln3); }
+          b.appendChild(pb);
         }
         r.appendChild(b); list.appendChild(r);
       });

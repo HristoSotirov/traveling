@@ -1,0 +1,1186 @@
+{
+ "id": "krakow",
+ "name": "Kraków",
+ "en": "Krakow",
+ "local": "Kraków",
+ "title": "Kraków for New Year",
+ "lead": "Six days for seven friends, from Monday 28 December to Saturday 2 January. Every day starts at the apartment. Local corners instead of tourist traps, a plan B for every outdoor stop, and New Year's Eve with three free options to choose from.",
+ "lat": 50.06,
+ "hours": [
+  4,
+  24
+ ],
+ "sun": [
+  7.57,
+  15.72
+ ],
+ "stay": {
+  "name": "Airbnb apartment near Czysta street, 15 minutes' walk from the Main Square",
+  "url": "https://www.airbnb.co.uk/rooms/50452678",
+  "ll": [
+   50.065,
+   19.9256
+  ]
+ },
+ "facts": [
+  [
+   "Flights",
+   "Out: Ryanair FR 8976, Mon 28 Dec, Sofia 11:40 → Kraków 12:20. Back: FR 8975, Sat 2 Jan, Kraków 07:00 → Sofia 09:50. Kraków is one hour behind Bulgaria."
+  ],
+  [
+   "Stay",
+   "The Airbnb is between Czarnowiejska and Czysta streets, west of the Old Town. The map pin is approximate; use the address from the Airbnb app."
+  ],
+  [
+   "Light",
+   "Sunrise around 7:35, sunset around 15:40. The best light is around 15:00."
+  ],
+  [
+   "Weather",
+   "Usually between −4 and 2 °C, often grey, with snow or sleet some days. Every outdoor stop has a plan B. Bring warm, waterproof shoes."
+  ],
+  [
+   "Getting around",
+   "Most of the plan is on foot. Trams: buy tickets at the machine inside the tram by card; plan with the Jakdojade app. For seven people, use two Bolt or Uber cars."
+  ],
+  [
+   "Markets",
+   "The Main Square Christmas market is expected to run until about 1 January 2027; check krakow.pl."
+  ],
+  [
+   "New Year",
+   "Kraków bans fireworks from 2026, and the city does not run a fireworks show. Drinking alcohol in public is illegal and fined. Shops close early on 31 December and almost everything is closed on 1 January, so do the big shop on 30 December. Small Żabka shops are often open."
+  ],
+  [
+   "Money",
+   "Polish złoty (PLN). Cards work almost everywhere; milk bars and small places can be cash only."
+  ]
+ ],
+ "currency": {
+  "code": "PLN",
+  "rate": 4.25,
+  "sample": 50
+ },
+ "river": [
+  [
+   19.88,
+   50.05
+  ],
+  [
+   19.905,
+   50.051
+  ],
+  [
+   19.918,
+   50.052
+  ],
+  [
+   19.93,
+   50.051
+  ],
+  [
+   19.935,
+   50.0515
+  ],
+  [
+   19.94,
+   50.05
+  ],
+  [
+   19.946,
+   50.0485
+  ],
+  [
+   19.952,
+   50.0475
+  ],
+  [
+   19.96,
+   50.047
+  ],
+  [
+   19.975,
+   50.048
+  ],
+  [
+   20.0,
+   50.048
+  ]
+ ],
+ "note": "The maps are approximate, not to scale, and routes are straight lines between stops. Ridden legs (tram, taxi, plane) are not counted in the distance. For the real street route use the “Open route” button. Opening hours, prices and dates come from public sources and may change; holiday hours around 31 December and 1 January especially. The “Photos” links open an image search.",
+ "days": [
+  {
+   "id": "d1",
+   "n": "Mon 28 Dec",
+   "title": "Land, check in and a first evening",
+   "theme": "The flight lands at 12:20. Get to the apartment, eat next door, check in and rest. In the evening a short walk through the Old Town, dinner and one drink.",
+   "stops": [
+    {
+     "t": "12:20",
+     "k": "transit",
+     "name": "Land at Kraków Airport (KRK)",
+     "d": "Ryanair FR 8976 lands at 12:20, Kraków time (one hour behind Bulgaria). Easiest for seven people with bags: two Bolt or Uber cars straight to the apartment, about 25–35 minutes. Cheaper: the airport train to Kraków Główny (about 20 minutes; buy tickets at the machine on the platform), then a 20-minute walk or a short taxi.",
+     "ll": [
+      50.0777,
+      19.7848
+     ],
+     "q": "Kraków Airport John Paul II Balice"
+    },
+    {
+     "t": "13:30",
+     "k": "eat",
+     "name": "Late lunch next to the apartment",
+     "d": "Eat first if the apartment is not ready yet. Check the check-in time in the Airbnb app and ask the host if you can leave bags earlier.",
+     "opts": [
+      {
+       "n": "Bar Mleczny Miła, Czysta 1",
+       "s": "old-school milk bar right by the apartment: soups, pierogi, cutlets, very cheap; pay at the counter",
+       "ll": [
+        50.0646,
+        19.9268
+       ],
+       "q": "Bar Mleczny Miła Czysta 1 Kraków"
+      },
+      {
+       "n": "Pod Norenami, Krupnicza 6",
+       "s": "vegan Asian bowls and ramen, 5 minutes' walk",
+       "ll": [
+        50.0626,
+        19.9327
+       ],
+       "q": "Pod Norenami Krupnicza 6 Kraków"
+      },
+      {
+       "n": "Przypiecek, Sławkowska 32",
+       "s": "pierogi bar open around the clock, quick and cheap",
+       "ll": [
+        50.0647,
+        19.9395
+       ],
+       "q": "Przypiecek Sławkowska 32 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "14:45",
+     "k": "home",
+     "name": "Check in and put your feet up",
+     "d": "Unpack, rest, sleep after the early start. The sun sets around 15:40 anyway. On the way in, buy water, breakfast things and drinks at a small shop (Żabka) nearby.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "18:00",
+     "k": "walk",
+     "name": "Planty park and the Collegium Maius courtyard",
+     "d": "Ten minutes on foot: through the Planty, the green ring around the Old Town, to the Gothic courtyard of the oldest university building (Jagiellońska 15). The courtyard is free; the gate usually closes in the evening, so if it is shut, look through the gate and carry on.",
+     "ll": [
+      50.0614,
+      19.9333
+     ],
+     "q": "Collegium Maius Jagiellońska 15 Kraków",
+     "b": {
+      "name": "Bunkier Café, Plac Szczepański 3a",
+      "d": "Skip the park and walk straight down Karmelicka to Plac Szczepański; warm up on the covered, heated terrace of Bunkier Café, then go on to the square.",
+      "ll": [
+       50.064,
+       19.9346
+      ],
+      "q": "Bunkier Cafe Plac Szczepański Kraków"
+     }
+    },
+    {
+     "t": "18:30",
+     "k": "market",
+     "name": "Christmas market on the Main Square",
+     "d": "The market is expected to stay until about 1 January (check krakow.pl). Have a grzaniec (mulled wine) and try oscypek, smoked sheep's cheese with cranberry. Prices on the square are high, so have dinner elsewhere. On the hour, listen for the trumpet call (hejnał) from St Mary's tower.",
+     "ll": [
+      50.0617,
+      19.9373
+     ],
+     "q": "Rynek Główny Kraków Christmas market"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner off the square",
+     "d": "Book a table for seven; December evenings fill up.",
+     "opts": [
+      {
+       "n": "Chimera, Św. Anny 3",
+       "s": "Polish dishes in a brick cellar, plus a cheap salad bar upstairs",
+       "ll": [
+        50.0613,
+        19.9345
+       ],
+       "q": "Chimera Restauracja Św. Anny 3 Kraków"
+      },
+      {
+       "n": "Morskie Oko, Plac Szczepański 8",
+       "s": "highlander (góral) food at long wooden tables, good for groups, live folk music some nights",
+       "ll": [
+        50.0646,
+        19.9353
+       ],
+       "q": "Morskie Oko restauracja Plac Szczepański 8 Kraków"
+      },
+      {
+       "n": "Gospoda Koko, Gołębia 8",
+       "s": "cheap Polish home cooking, soup and pierogi, students' favourite",
+       "ll": [
+        50.0607,
+        19.9357
+       ],
+       "q": "Gospoda Koko Gołębia 8 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "21:30",
+     "k": "bar",
+     "name": "One drink on the way home",
+     "d": "All three are between the square and the apartment.",
+     "opts": [
+      {
+       "n": "Pauza In Garden, Rajska 12",
+       "s": "bar and small club with a hidden courtyard, DJs at weekends; 5 minutes from the apartment",
+       "ll": [
+        50.0641,
+        19.9303
+       ],
+       "q": "Pauza In Garden Rajska 12 Kraków"
+      },
+      {
+       "n": "Weźże Krafta, Dolnych Młynów 10",
+       "s": "craft beer bar in the Tytano complex, a former tobacco factory, 3 minutes from the apartment",
+       "ll": [
+        50.0655,
+        19.9282
+       ],
+       "q": "Weźże Krafta Dolnych Młynów 10 Kraków"
+      },
+      {
+       "n": "Piwnica pod Baranami, Rynek Główny 27",
+       "s": "legendary cabaret cellar under a palace on the square; check if there is a show",
+       "ll": [
+        50.0617,
+        19.9357
+       ],
+       "q": "Piwnica pod Baranami Rynek Główny 27 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "23:00",
+     "k": "home",
+     "name": "Back to the apartment",
+     "d": "Five to fifteen minutes on foot from any of the bars.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "n": "Tue 29 Dec",
+   "title": "Backstreets, Kazimierz and a sunset on Krakus Mound",
+   "theme": "A local market, quiet streets below Wawel, lunch in Kazimierz, then over the footbridge to Podgórze for sunset from the oldest mound in the city. Dinner and bars in Kazimierz.",
+   "stops": [
+    {
+     "t": "09:00",
+     "k": "home",
+     "name": "Leave the apartment",
+     "d": "Walk north-east along Czysta and Basztowa to the market, about 12 minutes.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "09:15",
+     "k": "market",
+     "name": "Stary Kleparz market",
+     "d": "Locals' food market since the Middle Ages, open Monday to Saturday from early morning: fruit, pickles, cheese, sausage and pączki (Polish doughnuts). Partly covered.",
+     "ll": [
+      50.0681,
+      19.9405
+     ],
+     "q": "Stary Kleparz Rynek Kleparski Kraków"
+    },
+    {
+     "t": "09:45",
+     "k": "eat",
+     "name": "Breakfast in the Old Town",
+     "d": "Three places on the way south.",
+     "opts": [
+      {
+       "n": "Café Camelot, Św. Tomasza 17",
+       "s": "candle-lit café tucked into a side street, with the Loch Camelot cabaret cellar below",
+       "ll": [
+        50.0627,
+        19.9386
+       ],
+       "q": "Cafe Camelot Świętego Tomasza 17 Kraków"
+      },
+      {
+       "n": "Milkbar Tomasza, Św. Tomasza 24",
+       "s": "all-day breakfasts, a modern take on the milk bar",
+       "ll": [
+        50.0634,
+        19.9408
+       ],
+       "q": "Milkbar Tomasza Kraków"
+      },
+      {
+       "n": "Nowa Prowincja, Bracka 3",
+       "s": "old bohemian café, hot chocolate and cake",
+       "ll": [
+        50.0603,
+        19.9372
+       ],
+       "q": "Nowa Prowincja Bracka 3 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "10:45",
+     "k": "church",
+     "name": "St Francis Basilica and Kanonicza Street",
+     "d": "Free. Look up at Stanisław Wyspiański's stained-glass window 'God the Father' over the entrance. Then walk down Kanonicza, the quietest and oldest street in the Old Town, to the foot of Wawel.",
+     "ll": [
+      50.0596,
+      19.9353
+     ],
+     "q": "Bazylika św. Franciszka z Asyżu Kraków"
+    },
+    {
+     "t": "11:45",
+     "k": "walk",
+     "name": "Vistula boulevard and Skałka",
+     "d": "Walk below Wawel along the river to Skałka, a Pauline church on a rock with a crypt where Polish poets and painters are buried. Few tourists come here.",
+     "ll": [
+      50.049,
+      19.9393
+     ],
+     "q": "Skałka Kościół Paulinów Kraków",
+     "b": {
+      "name": "Archdiocesan Museum, Kanonicza 19–21",
+      "d": "Stay on Kanonicza and go into the Archdiocesan Museum: medieval art in a Gothic house. Check opening hours.",
+      "ll": [
+       50.056,
+       19.937
+      ],
+      "q": "Muzeum Archidiecezjalne Kanonicza 19 Kraków"
+     }
+    },
+    {
+     "t": "12:45",
+     "k": "eat",
+     "name": "Lunch in Kazimierz",
+     "d": "Cheap and quick, to leave time for the sunset.",
+     "opts": [
+      {
+       "n": "Zapiekanki at the Okrąglak, Plac Nowy",
+       "s": "the round market hall in the middle of the square: long open baguettes with mushrooms and cheese, the local street food",
+       "ll": [
+        50.0517,
+        19.9447
+       ],
+       "q": "Okrąglak Plac Nowy zapiekanki Kraków"
+      },
+      {
+       "n": "Polakowski, Miodowa 39",
+       "s": "self-service Polish canteen: soups, pierogi, cutlets",
+       "ll": [
+        50.051,
+        19.9482
+       ],
+       "q": "Polakowski Miodowa 39 Kraków"
+      },
+      {
+       "n": "Marchewka z Groszkiem, Mostowa 2",
+       "s": "small Polish bistro with home-style dishes",
+       "ll": [
+        50.0491,
+        19.9467
+       ],
+       "q": "Marchewka z Groszkiem Mostowa 2 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "13:45",
+     "k": "walk",
+     "name": "Kazimierz courtyards and the Bernatek footbridge",
+     "d": "Walk Józefa and Szeroka streets and look into the courtyards. Then cross the Bernatek footbridge with its hanging acrobat sculptures to Podgórze.",
+     "ll": [
+      50.049,
+      19.9498
+     ],
+     "q": "Kładka Ojca Bernatka Kraków"
+    },
+    {
+     "t": "15:00",
+     "k": "view",
+     "name": "Sunset from Krakus Mound",
+     "d": "About 20 minutes uphill from the bridge. Free, open all the time, with a 360° view over the city; the sun sets around 15:40. Locals come here, tourists rarely do. The path gets muddy, so wear good shoes. On the way down, pass Ghetto Heroes Square with its 70 empty chairs.",
+     "ll": [
+      50.038,
+      19.9585
+     ],
+     "q": "Kopiec Krakusa Kraków",
+     "b": {
+      "name": "MOCAK, Lipowa 4",
+      "d": "Museum of Contemporary Art in the old Schindler factory complex, 15 minutes from the bridge. Check opening hours.",
+      "ll": [
+       50.0475,
+       19.9615
+      ],
+      "q": "MOCAK Lipowa 4 Kraków"
+     }
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner in Kazimierz",
+     "d": "Book for seven. Between sunset and dinner, rest in a café or go back to the apartment by tram.",
+     "opts": [
+      {
+       "n": "Starka, Józefa 14",
+       "s": "Polish food and house-flavoured vodkas",
+       "ll": [
+        50.0507,
+        19.9455
+       ],
+       "q": "Starka Józefa 14 Kraków"
+      },
+      {
+       "n": "Kuchnia u Doroty, Augustiańska 4",
+       "s": "small home-cooking place, big portions",
+       "ll": [
+        50.0497,
+        19.9413
+       ],
+       "q": "Kuchnia u Doroty Augustiańska 4 Kraków"
+      },
+      {
+       "n": "Zakładka Food & Wine, Józefińska 2",
+       "s": "bistro across the footbridge in Podgórze",
+       "ll": [
+        50.0471,
+        19.9478
+       ],
+       "q": "Zakładka Food and Wine Józefińska 2 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "21:30",
+     "k": "bar",
+     "name": "Kazimierz bars",
+     "d": "Three of the classic Kazimierz bars, two minutes apart. To get home: two Bolt cars take about 10 minutes, or walk 30 minutes.",
+     "opts": [
+      {
+       "n": "Alchemia, Estery 5",
+       "s": "candle-lit rooms, mismatched furniture, concerts in the cellar",
+       "ll": [
+        50.0514,
+        19.9451
+       ],
+       "q": "Alchemia Estery 5 Kraków"
+      },
+      {
+       "n": "Hevre, Meiselsa 18",
+       "s": "huge bar in a former prayer house, with old murals on the walls",
+       "ll": [
+        50.0518,
+        19.9425
+       ],
+       "q": "Hevre Meiselsa 18 Kraków"
+      },
+      {
+       "n": "Eszeweria, Józefa 9",
+       "s": "dark, candle-lit rooms and old furniture",
+       "ll": [
+        50.0506,
+        19.9446
+       ],
+       "q": "Eszeweria Józefa 9 Kraków"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "n": "Wed 30 Dec",
+   "title": "Nowa Huta, the communist model town",
+   "theme": "A tram ride east to Nowa Huta, the planned socialist-realist town built in the 1950s: a grand square, a milk bar unchanged since the 1950s and a church shaped like an ark. Back by mid-afternoon for the big shop before the holidays, then a club night.",
+   "stops": [
+    {
+     "t": "09:00",
+     "k": "home",
+     "name": "Leave the apartment",
+     "d": "",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "09:10",
+     "k": "eat",
+     "name": "Breakfast near the apartment",
+     "d": "All within 5 minutes.",
+     "opts": [
+      {
+       "n": "Karma, Krupnicza 12",
+       "s": "roastery café with good breakfasts, 5 minutes from the apartment",
+       "ll": [
+        50.0628,
+        19.9312
+       ],
+       "q": "Karma Coffee Roastery Krupnicza 12 Kraków"
+      },
+      {
+       "n": "Bunkier Café, Plac Szczepański 3a",
+       "s": "café of the Bunkier Sztuki gallery with a covered, heated terrace",
+       "ll": [
+        50.064,
+        19.9346
+       ],
+       "q": "Bunkier Cafe Plac Szczepański Kraków"
+      },
+      {
+       "n": "Charlotte, Plac Szczepański 2",
+       "s": "French bakery with breakfast all morning",
+       "ll": [
+        50.0638,
+        19.9352
+       ],
+       "q": "Charlotte Plac Szczepański 2 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "10:00",
+     "k": "transit",
+     "name": "Tram to Plac Centralny",
+     "d": "From the Teatr Bagatela stop, take a tram east to Plac Centralny im. Ronalda Reagana, about 35–40 minutes. Check the line in the Jakdojade app or Google Maps. Buy tickets at the machine inside the tram by card; a 24-hour ticket each covers the whole day.",
+     "ll": [
+      50.0634,
+      19.9327
+     ],
+     "q": "Teatr Bagatela tram stop Kraków"
+    },
+    {
+     "t": "10:45",
+     "k": "landmark",
+     "name": "Plac Centralny and Aleja Róż",
+     "d": "The central square of the town planned in the 1950s, framed by grand socialist-realist blocks. Walk up Aleja Róż (Avenue of Roses), where a Lenin statue stood until 1989.",
+     "ll": [
+      50.0722,
+      20.0378
+     ],
+     "q": "Plac Centralny Nowa Huta Kraków"
+    },
+    {
+     "t": "11:15",
+     "k": "museum",
+     "name": "Museum of Nowa Huta",
+     "d": "Branch of the Museum of Kraków in the former Światowid cinema (Osiedle Centrum E 1): life in the communist years. Check hours on mhk.pl. Guided tours of the Cold-War shelters under the town are run by private companies; book them a day ahead.",
+     "ll": [
+      50.0723,
+      20.04
+     ],
+     "q": "Muzeum Nowej Huty Światowid Osiedle Centrum E 1 Kraków"
+    },
+    {
+     "t": "12:30",
+     "k": "church",
+     "name": "Arka Pana (Lord's Ark)",
+     "d": "Twenty minutes' walk north through the housing estates. A modernist church shaped like Noah's ark, finished in 1977 after a 20-year fight with the communist authorities. Free; be quiet during mass.",
+     "ll": [
+      50.0838,
+      20.026
+     ],
+     "q": "Arka Pana Obrońców Krzyża 1 Kraków"
+    },
+    {
+     "t": "13:30",
+     "k": "eat",
+     "name": "Lunch on the square",
+     "d": "Back on Plac Centralny. Milk bars are cash only.",
+     "opts": [
+      {
+       "n": "Bar Mleczny Centralny, Osiedle Centrum C 1",
+       "s": "milk bar on the square since the early 1950s, soup and a main for very little",
+       "ll": [
+        50.0728,
+        20.0383
+       ],
+       "q": "Bar Mleczny Centralny Nowa Huta Kraków"
+      },
+      {
+       "n": "Restauracja Stylowa, Osiedle Centrum C 3",
+       "s": "restaurant open since 1956, with the interior to match",
+       "ll": [
+        50.0733,
+        20.037
+       ],
+       "q": "Restauracja Stylowa Nowa Huta Kraków"
+      },
+      {
+       "n": "Good Lood, Aleja Róż",
+       "s": "Kraków's favourite ice cream, for dessert",
+       "ll": [
+        50.0745,
+        20.0375
+       ],
+       "q": "Good Lood Nowa Huta Aleja Róż Kraków"
+      }
+     ]
+    },
+    {
+     "t": "14:45",
+     "k": "transit",
+     "name": "Tram back and the big shop",
+     "d": "Ride back to Teatr Bagatela. Shops close early on 31 December and nearly all are closed on 1 January, so buy food and drinks for New Year's Eve and New Year's Day now at a supermarket near the apartment. Then rest.",
+     "ll": [
+      50.064,
+      19.93
+     ],
+     "q": "supermarket Karmelicka Kraków"
+    },
+    {
+     "t": "19:30",
+     "k": "eat",
+     "name": "Dinner in the Old Town",
+     "d": "Casual and filling before a night out.",
+     "opts": [
+      {
+       "n": "Moaburger, Mikołajska 3",
+       "s": "burgers, good for a group",
+       "ll": [
+        50.0618,
+        19.9408
+       ],
+       "q": "Moaburger Mikołajska 3 Kraków"
+      },
+      {
+       "n": "Pod Baranem, Św. Gertrudy 21",
+       "s": "Polish classics, duck and pierogi",
+       "ll": [
+        50.056,
+        19.9389
+       ],
+       "q": "Pod Baranem Świętej Gertrudy 21 Kraków"
+      },
+      {
+       "n": "Bar Mleczny Pod Temidą, Grodzka 43",
+       "s": "cheap milk bar, closes early in the evening, so go first",
+       "ll": [
+        50.0571,
+        19.9378
+       ],
+       "q": "Bar Mleczny Pod Temidą Grodzka 43 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "22:00",
+     "k": "bar",
+     "name": "Club night",
+     "d": "Three Old Town clubs within 5 minutes of each other and 15 minutes' walk from the apartment. Check the night's programme and entry fee on their pages.",
+     "opts": [
+      {
+       "n": "Prozak 2.0, Plac Dominikański 6",
+       "s": "electronic club in a cellar labyrinth",
+       "ll": [
+        50.0599,
+        19.9389
+       ],
+       "q": "Prozak 2.0 Plac Dominikański 6 Kraków"
+      },
+      {
+       "n": "Szpitalna 1, Szpitalna 1",
+       "s": "bar and club, from indie to dance nights",
+       "ll": [
+        50.0636,
+        19.9418
+       ],
+       "q": "Szpitalna 1 Kraków"
+      },
+      {
+       "n": "Frantic, Szewska 5",
+       "s": "big cellar club with two dance floors",
+       "ll": [
+        50.0618,
+        19.9352
+       ],
+       "q": "Frantic Club Szewska 5 Kraków"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d4",
+   "n": "Thu 31 Dec",
+   "title": "Salwator, Kościuszko Mound and New Year's Eve",
+   "theme": "A late start and a walk west along the river to the mound with the widest view of the city. A nap in the afternoon, dinner, then the evening is blocked for New Year's Eve: pick one of three free options.",
+   "stops": [
+    {
+     "t": "10:00",
+     "k": "home",
+     "name": "Leave the apartment",
+     "d": "Walk south through the Planty to Felicjanek Street, 10 minutes.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "10:15",
+     "k": "eat",
+     "name": "Brunch by the river",
+     "d": "Both Felicjanek cafés are two minutes from the Vistula.",
+     "opts": [
+      {
+       "n": "Massolit Books & Café, Felicjanek 4",
+       "s": "second-hand English bookshop with a café, cakes and quiches",
+       "ll": [
+        50.0553,
+        19.9318
+       ],
+       "q": "Massolit Books & Cafe Felicjanek 4 Kraków"
+      },
+      {
+       "n": "Cafe Szafe, Felicjanek 10",
+       "s": "quirky local café full of wardrobes and old furniture",
+       "ll": [
+        50.0548,
+        19.9313
+       ],
+       "q": "Cafe Szafe Felicjanek 10 Kraków"
+      },
+      {
+       "n": "Karma, Krupnicza 12",
+       "s": "roastery café with good breakfasts, 5 minutes from the apartment",
+       "ll": [
+        50.0628,
+        19.9312
+       ],
+       "q": "Karma Coffee Roastery Krupnicza 12 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "11:30",
+     "k": "walk",
+     "name": "Salwator and the Norbertine convent",
+     "d": "Walk west along the Vistula to Salwator, an old village inside the city: the fortress-like Norbertine convent on the river and the little wooden church of St Margaret on the hill.",
+     "ll": [
+      50.0545,
+      19.9105
+     ],
+     "q": "Klasztor Norbertanek Salwator Kraków"
+    },
+    {
+     "t": "12:15",
+     "k": "view",
+     "name": "Kościuszko Mound",
+     "d": "Uphill for 25 minutes along Aleja Waszyngtona. The mound stands inside a 19th-century fort; paid entry. On a clear day you can see the Tatra mountains.",
+     "ll": [
+      50.0549,
+      19.8935
+     ],
+     "q": "Kopiec Kościuszki Kraków",
+     "b": {
+      "name": "National Museum, Al. 3 Maja 1",
+      "d": "Polish 20th-century art and design, 8 minutes from the apartment. Hours on 31 December may be shorter; check mnk.pl.",
+      "ll": [
+       50.0603,
+       19.9235
+      ],
+      "q": "Muzeum Narodowe Gmach Główny Al. 3 Maja 1 Kraków"
+     }
+    },
+    {
+     "t": "13:45",
+     "k": "park",
+     "name": "Back across Błonia",
+     "d": "The huge meadow where the Pope said mass; walk straight across it and through Jordan Park towards the apartment.",
+     "ll": [
+      50.06,
+      19.912
+     ],
+     "q": "Błonia Kraków",
+     "b": {
+      "name": "Bus or taxi back",
+      "d": "Skip the meadow and take a Bolt back from the mound, about 10 minutes.",
+      "ll": [
+       50.0549,
+       19.8935
+      ],
+      "q": "Kopiec Kościuszki Kraków"
+     }
+    },
+    {
+     "t": "14:30",
+     "k": "eat",
+     "name": "Late lunch near the apartment",
+     "d": "Shops close early today; you shopped yesterday.",
+     "opts": [
+      {
+       "n": "Bar Mleczny Miła, Czysta 1",
+       "s": "old-school milk bar right by the apartment: soups, pierogi, cutlets, very cheap; pay at the counter",
+       "ll": [
+        50.0646,
+        19.9268
+       ],
+       "q": "Bar Mleczny Miła Czysta 1 Kraków"
+      },
+      {
+       "n": "Pod Norenami, Krupnicza 6",
+       "s": "vegan Asian bowls and ramen, 5 minutes' walk",
+       "ll": [
+        50.0626,
+        19.9327
+       ],
+       "q": "Pod Norenami Krupnicza 6 Kraków"
+      },
+      {
+       "n": "Przypiecek, Sławkowska 32",
+       "s": "pierogi bar open around the clock, quick and cheap",
+       "ll": [
+        50.0647,
+        19.9395
+       ],
+       "q": "Przypiecek Sławkowska 32 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "15:30",
+     "k": "home",
+     "name": "Nap and get ready",
+     "d": "Rest before a long night. Charge your phones and agree on a meeting point in case you lose each other at midnight (mobile networks get slow).",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "19:00",
+     "k": "eat",
+     "name": "Dinner before the night",
+     "d": "Most restaurants serve set New Year's Eve menus that must be booked weeks ahead. If you can't book, cook at the apartment with what you bought yesterday.",
+     "opts": [
+      {
+       "n": "Morskie Oko, Plac Szczepański 8",
+       "s": "highlander food, long tables for a group",
+       "ll": [
+        50.0646,
+        19.9353
+       ],
+       "q": "Morskie Oko restauracja Plac Szczepański 8 Kraków"
+      },
+      {
+       "n": "Chimera, Św. Anny 3",
+       "s": "Polish dishes in a brick cellar",
+       "ll": [
+        50.0613,
+        19.9345
+       ],
+       "q": "Chimera Restauracja Św. Anny 3 Kraków"
+      },
+      {
+       "n": "Pod Baranem, Św. Gertrudy 21",
+       "s": "Polish classics",
+       "ll": [
+        50.056,
+        19.9389
+       ],
+       "q": "Pod Baranem Świętej Gertrudy 21 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "21:00",
+     "k": "party",
+     "name": "New Year's Eve: pick one",
+     "d": "This time is blocked for New Year's Eve. All three are free to enter. Kraków bans fireworks from 2026 and the city no longer runs a show; the 2026/27 programme had not been announced in October 2026, so check krakow.pl and pik.krakow.pl in December. Drinking alcohol in public is illegal in Poland, and glass is usually not allowed on the square. Taxis are scarce after midnight; all three are walkable from the apartment.",
+     "opts": [
+      {
+       "n": "Main Square (Rynek Główny)",
+       "s": "the city's big open-air gathering in front of the Cloth Hall, traditionally free; recent years had a stage or light show and a countdown. 15 minutes' walk from the apartment",
+       "ll": [
+        50.0617,
+        19.9373
+       ],
+       "q": "Rynek Główny Kraków"
+      },
+      {
+       "n": "Plac Nowy and the Kazimierz bars",
+       "s": "the square in Kazimierz fills up at midnight; bar-hop between Alchemia, Singer and Eszeweria, which usually have no entry fee, though some may sell New Year tickets, so check. 30 minutes' walk",
+       "ll": [
+        50.0517,
+        19.9447
+       ],
+       "q": "Plac Nowy Kraków"
+      },
+      {
+       "n": "Krakus Mound",
+       "s": "the locals' alternative: watch midnight over the whole city from the top, quiet and free. Bring a torch and warm layers. 40 minutes' walk or 15 by taxi before 23:00",
+       "ll": [
+        50.038,
+        19.9585
+       ],
+       "q": "Kopiec Krakusa Kraków"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "d5",
+   "n": "Fri 1 Jan",
+   "title": "New Year's Day, slow",
+   "theme": "A public holiday: most shops are closed and many cafés open late. A late brunch, Wawel hill and the cliffs of the Zakrzówek quarry lake, an early dinner and an early night, because the alarm rings at 04:00.",
+   "stops": [
+    {
+     "t": "11:30",
+     "k": "home",
+     "name": "Wake up slowly",
+     "d": "Leave around midday.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "12:00",
+     "k": "eat",
+     "name": "Late brunch",
+     "d": "On 1 January opening hours are uncertain; check Google Maps before you go. Przypiecek is open round the clock.",
+     "opts": [
+      {
+       "n": "Przypiecek, Sławkowska 32",
+       "s": "pierogi bar open around the clock, quick and cheap",
+       "ll": [
+        50.0647,
+        19.9395
+       ],
+       "q": "Przypiecek Sławkowska 32 Kraków"
+      },
+      {
+       "n": "Milkbar Tomasza, Św. Tomasza 24",
+       "s": "all-day breakfasts, a modern take on the milk bar",
+       "ll": [
+        50.0634,
+        19.9408
+       ],
+       "q": "Milkbar Tomasza Kraków"
+      },
+      {
+       "n": "Charlotte, Plac Szczepański 2",
+       "s": "French bakery with breakfast all morning",
+       "ll": [
+        50.0638,
+        19.9352
+       ],
+       "q": "Charlotte Plac Szczepański 2 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "13:15",
+     "k": "palace",
+     "name": "Wawel Hill",
+     "d": "Walk up to the castle courtyard; the grounds are free. The cathedral and state rooms may be closed today.",
+     "ll": [
+      50.054,
+      19.9354
+     ],
+     "q": "Wawel Royal Castle Kraków"
+    },
+    {
+     "t": "14:15",
+     "k": "view",
+     "name": "Zakrzówek quarry lake",
+     "d": "Cross the Dębnicki bridge and walk 25 minutes south to the flooded limestone quarry: turquoise water under white cliffs, with paths along the top. The park is open in winter; the swimming pools are summer-only. Watch the sunset here around 15:45.",
+     "ll": [
+      50.0383,
+      19.9135
+     ],
+     "q": "Zakrzówek Kraków",
+     "b": {
+      "name": "Kino Pod Baranami, Rynek Główny 27",
+      "d": "Arthouse cinema in a palace on the square; films are shown in the original language with Polish subtitles. Check the 1 January programme.",
+      "ll": [
+       50.0617,
+       19.9357
+      ],
+      "q": "Kino Pod Baranami Kraków"
+     }
+    },
+    {
+     "t": "16:15",
+     "k": "transit",
+     "name": "Back by tram or taxi",
+     "d": "From Zakrzówek take a tram towards the centre or two Bolt cars, about 15 minutes to the apartment. Rest and pack.",
+     "ll": [
+      50.0405,
+      19.9185
+     ],
+     "q": "Zakrzówek Kraków"
+    },
+    {
+     "t": "19:00",
+     "k": "eat",
+     "name": "Last dinner",
+     "d": "In Kazimierz. Book ahead and check that they are open on 1 January.",
+     "opts": [
+      {
+       "n": "Hamsa, Szeroka 2",
+       "s": "Israeli food, mezze for the table",
+       "ll": [
+        50.0533,
+        19.9478
+       ],
+       "q": "Hamsa Szeroka 2 Kraków"
+      },
+      {
+       "n": "Zazie Bistro, Józefa 34",
+       "s": "French bistro, good value",
+       "ll": [
+        50.0509,
+        19.9474
+       ],
+       "q": "Zazie Bistro Józefa 34 Kraków"
+      },
+      {
+       "n": "Pierogi MR Vincent, Bożego Ciała 12",
+       "s": "tiny pierogi place with unusual fillings",
+       "ll": [
+        50.0505,
+        19.946
+       ],
+       "q": "Pierogi MR Vincent Bożego Ciała 12 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "20:45",
+     "k": "bar",
+     "name": "One last quiet drink",
+     "d": "Close to dinner, so you can be home by 22:30.",
+     "opts": [
+      {
+       "n": "Singer, Estery 20",
+       "s": "bar with old Singer sewing machines as tables",
+       "ll": [
+        50.0513,
+        19.9456
+       ],
+       "q": "Singer Estery 20 Kraków"
+      },
+      {
+       "n": "Cafe Mleczarnia, Meiselsa 20",
+       "s": "cosy café-bar opposite Hevre",
+       "ll": [
+        50.0519,
+        19.9421
+       ],
+       "q": "Cafe Mleczarnia Meiselsa 20 Kraków"
+      },
+      {
+       "n": "Spokój, Bracka 3–5",
+       "s": "calm Old Town bar, on the way home",
+       "ll": [
+        50.0602,
+        19.937
+       ],
+       "q": "Spokój Bracka 3 Kraków"
+      }
+     ]
+    },
+    {
+     "t": "22:30",
+     "k": "home",
+     "name": "Pack and sleep",
+     "d": "Book two taxis for 04:45 tonight (Bolt or Uber can schedule rides) and set alarms for 04:00.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    }
+   ]
+  },
+  {
+   "id": "d6",
+   "n": "Sat 2 Jan",
+   "title": "Departure",
+   "theme": "Flight FR 8975 leaves at 07:00 and lands in Sofia at 09:50 Bulgarian time.",
+   "stops": [
+    {
+     "t": "04:00",
+     "k": "home",
+     "name": "Wake up and check out",
+     "d": "Leave the keys as the host asked and close the windows.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "04:45",
+     "k": "transit",
+     "name": "Two taxis to the airport",
+     "d": "About 20–25 minutes at night. The airport train may start too late at this hour; if you want it, check the first departure on kolejemalopolskie.com.pl.",
+     "ll": [
+      50.065,
+      19.9256
+     ],
+     "q": "50.0650,19.9256"
+    },
+    {
+     "t": "05:15",
+     "k": "transit",
+     "name": "Kraków Airport",
+     "d": "Check in online with Ryanair before you go. Security can be slow in the morning; the gate closes 30 minutes before departure.",
+     "ll": [
+      50.0777,
+      19.7848
+     ],
+     "q": "Kraków Airport John Paul II Balice"
+    },
+    {
+     "t": "07:00",
+     "k": "transit",
+     "name": "Flight to Sofia",
+     "d": "FR 8975, Kraków 07:00 → Sofia 09:50 (Bulgarian time).",
+     "ll": [
+      50.0777,
+      19.7848
+     ],
+     "q": "Kraków Airport John Paul II Balice"
+    }
+   ]
+  }
+ ]
+}
