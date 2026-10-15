@@ -4,7 +4,7 @@
  "en": "Krakow",
  "local": "Kraków",
  "title": "Kraków for New Year",
- "lead": "28 December – 2 January, seven friends, New Year in Kraków.",
+ "lead": "28 December – 2 January, New Year in Kraków.",
  "lat": 50.06,
  "hours": [
   4,
@@ -289,8 +289,8 @@
   {
    "id": "d2",
    "n": "Tue 29 Dec",
-   "title": "Backstreets, Kazimierz and a sunset on Krakus Mound",
-   "theme": "A local market, quiet streets below Wawel, lunch in Kazimierz, then over the footbridge to Podgórze for sunset from the oldest mound in the city. Dinner and bars in Kazimierz.",
+   "title": "Wawel, Kazimierz and a sunset on Krakus Mound",
+   "theme": "A local market, the quiet streets up to Wawel Hill, lunch in Kazimierz, then over the footbridge to Podgórze for sunset from the oldest mound in the city. Dinner and bars in Kazimierz.",
    "stops": [
     {
      "t": "09:00",
@@ -361,23 +361,23 @@
      "q": "Bazylika św. Franciszka z Asyżu Kraków"
     },
     {
-     "t": "11:45",
-     "k": "walk",
-     "name": "Vistula boulevard and Skałka",
-     "d": "Walk below Wawel along the river to Skałka, a Pauline church on a rock with a crypt where Polish poets and painters are buried. Few tourists come here.",
+     "t": "11:30",
+     "k": "palace",
+     "name": "Wawel Hill, then the river path to Skałka",
+     "d": "Walk up to Wawel from the end of Kanonicza. The castle courtyards and the hill are free; the cathedral, state rooms and Dragon's Den are paid, and on 1 January many of them may be closed, so today is the day. Leave by the path down to the Vistula and walk along the river to Skałka, a Pauline church on a rock with a crypt where Polish poets and painters are buried. Few tourists get this far.",
      "ll": [
-      50.049,
-      19.9393
+      50.054,
+      19.9354
      ],
-     "q": "Skałka Kościół Paulinów Kraków",
+     "q": "Wawel Royal Castle Kraków",
      "b": {
-      "name": "Archdiocesan Museum, Kanonicza 19–21",
-      "d": "Stay on Kanonicza and go into the Archdiocesan Museum: medieval art in a Gothic house. Check opening hours.",
+      "name": "Wawel Cathedral",
+      "d": "Spend the time indoors: the coronation cathedral, the royal tombs in the crypt and the climb to the Sigismund Bell. Paid; check hours on katedra-wawelska.pl.",
       "ll": [
-       50.056,
-       19.937
+       50.0545,
+       19.9351
       ],
-      "q": "Muzeum Archidiecezjalne Kanonicza 19 Kraków"
+      "q": "Wawel Cathedral Kraków"
      }
     },
     {
@@ -990,7 +990,7 @@
    "id": "d5",
    "n": "Fri 1 Jan",
    "title": "New Year's Day, slow",
-   "theme": "A public holiday: most shops are closed and many cafés open late. A late brunch, Wawel hill and the cliffs of the Zakrzówek quarry lake, an early dinner and an early night, because the alarm rings at 04:00.",
+   "theme": "A public holiday: most shops are closed and many cafés open late. A late brunch, a walk along the river to the cliffs of the Zakrzówek quarry lake, an early dinner and an early night, because the alarm rings at 04:00.",
    "stops": [
     {
      "t": "11:30",
@@ -1040,14 +1040,23 @@
     },
     {
      "t": "13:15",
-     "k": "palace",
-     "name": "Wawel Hill",
-     "d": "Walk up to the castle courtyard; the grounds are free. The cathedral and state rooms may be closed today.",
+     "k": "walk",
+     "name": "Along the Vistula and over the Dębnicki bridge",
+     "d": "Walk down to the river and cross the Dębnicki bridge for the view back to Wawel from the other bank, then follow the streets of Dębniki south towards Zakrzówek.",
      "ll": [
-      50.054,
-      19.9354
+      50.053,
+      19.9285
      ],
-     "q": "Wawel Royal Castle Kraków"
+     "q": "Most Dębnicki Kraków",
+     "b": {
+      "name": "Massolit Books & Café, Felicjanek 4",
+      "d": "Sit out the rain with coffee and cake among second-hand books, two minutes from the bridge. Check that it is open on 1 January.",
+      "ll": [
+       50.0553,
+       19.9318
+      ],
+      "q": "Massolit Books & Cafe Felicjanek 4 Kraków"
+     }
     },
     {
      "t": "14:15",
