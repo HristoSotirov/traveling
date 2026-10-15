@@ -24,5 +24,18 @@
    "Thermal baths"
   ],
   "ready": true
+ },
+ {
+  "id": "krakow",
+  "name": "Kraków",
+  "country": "Poland",
+  "flag": "pl",
+  "tags": [
+   "Winter",
+   "New Year",
+   "6 days",
+   "Hidden gems"
+  ],
+  "ready": true
  }
 ]
