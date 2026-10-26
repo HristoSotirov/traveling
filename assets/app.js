@@ -18,13 +18,11 @@
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function sv(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
-  // Google links open in one named tab each (one for photos, one for maps), so tapping many of them does not pile up
-  // new tabs (Safari on iPhone opens a new tab for every target="_blank"). A named tab needs window.opener to be
-  // found again, so these links have no rel="noopener"; that is only for Google. Other links open a new tab.
+  // Google links (photos and maps) all open in one named tab, so tapping many of them does not pile up new tabs
+  // (Safari on iPhone opens a new tab for every target="_blank"). A named tab needs window.opener to be found
+  // again, so these links have no rel="noopener"; that is only for Google. Other links open a new tab.
   function tabFor(href) {
-    if (/^https:\/\/www\.google\.com\/search\?/.test(href)) return "photos";
-    if (/^https:\/\/(www\.google\.com\/maps|maps\.google\.com)\//.test(href)) return "maps";
-    return null;
+    return /^https:\/\/(www\.google\.com\/(search\?|maps)|maps\.google\.com\/)/.test(href) ? "google" : null;
   }
   function link(href, label, cls) {
     var a = el("a", cls || "map", label), t = tabFor(href); a.href = href;
