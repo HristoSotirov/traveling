@@ -18,7 +18,19 @@
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function sv(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
-  function link(href, label, cls) { var a = el("a", cls || "map", label); a.href = href; a.target = "_blank"; a.rel = "noopener"; return a; }
+  // Google links open in one named tab each (one for photos, one for maps), so tapping many of them does not pile up
+  // new tabs (Safari on iPhone opens a new tab for every target="_blank"). A named tab needs window.opener to be
+  // found again, so these links have no rel="noopener"; that is only for Google. Other links open a new tab.
+  function tabFor(href) {
+    if (/^https:\/\/www\.google\.com\/search\?/.test(href)) return "photos";
+    if (/^https:\/\/(www\.google\.com\/maps|maps\.google\.com)\//.test(href)) return "maps";
+    return null;
+  }
+  function link(href, label, cls) {
+    var a = el("a", cls || "map", label), t = tabFor(href); a.href = href;
+    if (t) a.target = t; else { a.target = "_blank"; a.rel = "noopener"; }
+    return a;
+  }
   function fallback(text) {   // copy without the Clipboard API (older browsers, plain http)
     var t = el("textarea"); t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
     document.body.appendChild(t); t.select(); var ok = false; try { ok = document.execCommand("copy"); } catch (e) {} t.remove(); return ok;
