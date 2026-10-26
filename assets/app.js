@@ -148,16 +148,23 @@
       var t = sv("text", { x: X(p[1]).toFixed(1), y: (Y(p[0]) + 4).toFixed(1), "text-anchor": "middle", "font-size": 12, "font-weight": 500, "font-family": "JetBrains Mono, monospace", fill: "var(--card)" });
       t.textContent = String(i + 1); g.appendChild(t); svg.appendChild(g);
     });
-    // Length of the whole day on foot, shown bottom left instead of a scale bar. The straight lines between stops
-    // are shorter than real streets, so the distance is multiplied by 1.3 (a typical street factor); a step is 0.75 m.
-    // A ridden leg (see ridden()) is not counted.
-    var meters = 0;
-    for (var k = 1; k < pts.length; k++) { if (ridden(D.stops[k - 1])) continue; var ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my; meters += Math.sqrt(ddx * ddx + ddy * ddy); }
-    meters *= 1.3;
+    // Distances of the day, shown bottom left instead of a scale bar: on foot (with steps) and by tram, bus or taxi.
+    // The straight lines between stops are shorter than real streets, so both are multiplied by 1.3 (a typical
+    // street factor); a step is 0.75 m. A ridden leg (see ridden()) counts as transport; flights are left out.
+    var meters = 0, rode = 0;
+    for (var k = 1; k < pts.length; k++) {
+      var prev = D.stops[k - 1], ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my, m = Math.sqrt(ddx * ddx + ddy * ddy);
+      if (!ridden(prev)) meters += m; else if (!(prev.go && prev.go.m === "plane")) rode += m;
+    }
+    meters *= 1.3; rode *= 1.3;
     var steps = String(Math.round(meters / 0.75 / 100) * 100).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    var label = "≈ " + (meters / 1000).toFixed(1) + " km · ≈ " + steps + " steps";
-    svg.appendChild(sv("rect", { x: 6, y: H - 31, width: Math.round(label.length * 6.9 + 12), height: 22, rx: 6, fill: "var(--card)", "fill-opacity": ".85" }));
-    var bt = sv("text", { x: 12, y: H - 16, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--ink)" }); bt.textContent = label; svg.appendChild(bt);
+    var lines = ["Walk ≈ " + (meters / 1000).toFixed(1) + " km · ≈ " + steps + " steps"];
+    if (rode >= 100) lines.push("Ride ≈ " + (rode / 1000).toFixed(1) + " km by tram or taxi");
+    var lw = Math.max.apply(0, lines.map(function (l) { return l.length; }));
+    svg.appendChild(sv("rect", { x: 6, y: H - 15 - 16 * lines.length, width: Math.round(lw * 6.9 + 12), height: 6 + 16 * lines.length, rx: 6, fill: "var(--card)", "fill-opacity": ".85" }));
+    lines.forEach(function (l, i) {
+      var bt = sv("text", { x: 12, y: H - 16 - 16 * (lines.length - 1 - i), "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: i ? "var(--muted)" : "var(--ink)" }); bt.textContent = l; svg.appendChild(bt);
+    });
     var nt = sv("text", { x: W - 14, y: 20, "text-anchor": "end", "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--muted)" }); nt.textContent = "N ↑"; svg.appendChild(nt);
     return svg;
   }
@@ -282,7 +289,7 @@
     var s = el("section", "day"); s.id = D.id;
     s.appendChild(el("div", "eyebrow", D.n)); s.appendChild(el("h1", null, D.title)); s.appendChild(el("p", "theme", D.theme));
     var mb = el("div", "mapbox"); mb.appendChild(drawMap(C, D));
-    var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink. Dotted lines are rides. The distance is an estimate for the walking only."));
+    var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink. Dotted lines are rides. Walk and ride distances are estimates."));
     mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
     var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
     var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);
