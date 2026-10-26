@@ -15,13 +15,14 @@
   15.72
  ],
  "stay": {
-  "label": "Airbnb",
-  "name": "Apartment near Czysta street, 15 minutes' walk from the Main Square",
-  "url": "https://www.airbnb.co.uk/rooms/50452678",
+  "label": "Hotel",
+  "name": "Hotel Swing, Dobrego Pasterza 124, next to the Park Wodny water park, about 4.5 km north-east of the Main Square",
+  "url": "https://maps.google.com/?q=Hotel+Swing,+Dobrego+Pasterza+124,+31-416+Krak%C3%B3w,+Poland&ftid=0x47165ac095233bc7:0x265fa757046cc4b0",
   "ll": [
-   50.065,
-   19.9256
-  ]
+   50.0891,
+   19.9808
+  ],
+  "q": "Hotel Swing, Dobrego Pasterza 124, 31-416 Kraków"
  },
  "facts": [
   [
@@ -29,8 +30,8 @@
    "Out: Ryanair FR 8976, Mon 28 Dec, Sofia 11:40 → Kraków 12:20. Back: FR 8975, Sat 2 Jan, Kraków 07:00 → Sofia 09:50. Kraków is one hour behind Bulgaria."
   ],
   [
-   "Airbnb",
-   "The Airbnb is between Czarnowiejska and Czysta streets, west of the Old Town. The map pin is approximate; use the address from the Airbnb app."
+   "Hotel",
+   "Hotel Swing, Dobrego Pasterza 124, in Prądnik Czerwony, about 4.5 km north-east of the Main Square, next to the Park Wodny water park and the Krokus and Serenada shopping centres. Reception is open 24 hours. Breakfast is a paid extra; listings say a buffet from 07:00 to 10:00 for about 60 zł, so check when you book."
   ],
   [
    "Light",
@@ -42,7 +43,7 @@
   ],
   [
    "Getting around",
-   "Most of the plan is on foot. Trams: buy tickets at the machine inside the tram by card; plan with the Jakdojade app. For seven people, use two Bolt or Uber cars."
+   "The hotel is out of the centre, so each day starts and ends with a ride. The new tram line to Mistrzejowice (open since 26 September 2026) runs along Dobrego Pasterza; the Park Wodny stop is outside the hotel. Tram 12 goes to Basztowa at the north edge of the Old Town (about 20 minutes) and on along Podwale and Piłsudskiego to Błonia and Salwator; tram 9 goes to Grzegórzki and Zabłocie, near Kazimierz and Podgórze; tram 16 goes to the main station (Dworzec Główny Tunel) and east to Nowa Huta. Buy tickets by card at the machine inside the tram; a 24-hour or 72-hour ticket is easiest. Plan every ride in the Jakdojade app, which also shows holiday timetables. Late at night, or for seven people with bags, use two Bolt or Uber cars: about 15 minutes to the Old Town."
   ],
   [
    "Markets",
@@ -108,19 +109,19 @@
    50.048
   ]
  ],
- "note": "The maps are approximate, not to scale, and routes are straight lines between stops. Ridden legs (tram, taxi, plane) are not counted in the distance. For the real street route use the “Open route” button. Opening hours, prices and dates come from public sources and may change; holiday hours around 31 December and 1 January especially. The “Photos” links open an image search.",
+ "note": "The maps are approximate, not to scale, and routes are straight lines between stops. Ridden legs (tram, taxi, plane) are dotted and not counted in the distance; the rows between stops say which tram to take and how long it takes. For the real street route use the “Open route” button. Opening hours, prices and dates come from public sources and may change; holiday hours around 31 December and 1 January especially. The “Photos” links open an image search.",
  "days": [
   {
    "id": "d1",
    "n": "Mon 28 Dec",
    "title": "Land, check in and a first evening",
-   "theme": "The flight lands at 12:20. Get to the apartment, eat next door, check in and rest. In the evening a short walk through the Old Town, dinner and one drink.",
+   "theme": "The flight lands at 12:20. A ride across the city to the hotel, then straight into the Old Town for a late lunch, the Planty at dusk, the Christmas market, dinner and one drink.",
    "stops": [
     {
      "t": "12:20",
      "k": "transit",
      "name": "Land at Kraków Airport (KRK)",
-     "d": "Ryanair FR 8976 lands at 12:20, Kraków time (one hour behind Bulgaria). Easiest for seven people with bags: two Bolt or Uber cars straight to the apartment, about 25–35 minutes. Cheaper: the airport train to Kraków Główny (about 20 minutes; buy tickets at the machine on the platform), then a 20-minute walk or a short taxi.",
+     "d": "Ryanair FR 8976 lands at 12:20, Kraków time (one hour behind Bulgaria). The hotel is on the other side of the city, about 20 km away. Easiest for seven people with bags: two Bolt or Uber cars straight to the hotel, about 30–40 minutes. Cheaper: the airport train to Kraków Główny (about 20 minutes; tickets at the machine on the platform), then tram 16 from the Dworzec Główny Tunel stop under the station to Park Wodny, about 15 minutes; about an hour door to door.",
      "ll": [
       50.0777,
       19.7848
@@ -129,28 +130,27 @@
     },
     {
      "t": "13:30",
+     "k": "home",
+     "name": "Check in at Hotel Swing",
+     "d": "Drop the bags; if the room is not ready yet, leave them at the 24-hour reception. Buy water and snacks at a Żabka or in the Krokus shopping centre next door.",
+     "ll": [
+      50.0891,
+      19.9808
+     ],
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 from Park Wodny to Basztowa LOT",
+      "time": "about 20 min",
+      "d": "The Park Wodny stop is outside the hotel, by the water park. Tram 12 runs towards the centre through Rondo Mogilskie and Lubicz; get off on Basztowa street at the north edge of the Old Town. Buy tickets by card at the machine inside the tram."
+     }
+    },
+    {
+     "t": "14:15",
      "k": "eat",
-     "name": "Late lunch next to the apartment",
-     "d": "Eat first if the apartment is not ready yet. Check the check-in time in the Airbnb app and ask the host if you can leave bags earlier.",
+     "name": "Late lunch at the Old Town's north edge",
+     "d": "All three are a few minutes from the Basztowa LOT stop.",
      "opts": [
-      {
-       "n": "Bar Mleczny Miła, Czysta 1",
-       "s": "old-school milk bar right by the apartment: soups, pierogi, cutlets, very cheap; pay at the counter",
-       "ll": [
-        50.0646,
-        19.9268
-       ],
-       "q": "Bar Mleczny Miła Czysta 1 Kraków"
-      },
-      {
-       "n": "Pod Norenami, Krupnicza 6",
-       "s": "vegan Asian bowls and ramen, 5 minutes' walk",
-       "ll": [
-        50.0626,
-        19.9327
-       ],
-       "q": "Pod Norenami Krupnicza 6 Kraków"
-      },
       {
        "n": "Przypiecek, Sławkowska 32",
        "s": "pierogi bar open around the clock, quick and cheap",
@@ -159,25 +159,32 @@
         19.9395
        ],
        "q": "Przypiecek Sławkowska 32 Kraków"
+      },
+      {
+       "n": "Milkbar Tomasza, Św. Tomasza 24",
+       "s": "all-day breakfasts, a modern take on the milk bar",
+       "ll": [
+        50.0634,
+        19.9408
+       ],
+       "q": "Milkbar Tomasza Kraków"
+      },
+      {
+       "n": "Café Camelot, Św. Tomasza 17",
+       "s": "candle-lit café tucked into a side street, with the Loch Camelot cabaret cellar below",
+       "ll": [
+        50.0627,
+        19.9386
+       ],
+       "q": "Cafe Camelot Świętego Tomasza 17 Kraków"
       }
      ]
     },
     {
-     "t": "14:45",
-     "k": "home",
-     "name": "Check in and put your feet up",
-     "d": "Unpack, rest, sleep after the early start. The sun sets around 15:40 anyway. On the way in, buy water, breakfast things and drinks at a small shop (Żabka) nearby.",
-     "ll": [
-      50.065,
-      19.9256
-     ],
-     "q": "50.0650,19.9256"
-    },
-    {
-     "t": "18:00",
+     "t": "15:15",
      "k": "walk",
      "name": "Planty park and the Collegium Maius courtyard",
-     "d": "Ten minutes on foot: through the Planty, the green ring around the Old Town, to the Gothic courtyard of the oldest university building (Jagiellońska 15). The courtyard is free; the gate usually closes in the evening, so if it is shut, look through the gate and carry on.",
+     "d": "Walk through the Planty, the green ring around the Old Town, to the Gothic courtyard of the oldest university building (Jagiellońska 15), just as the light goes (sunset around 15:40). The courtyard is free; if the gate is shut, look through it and carry on.",
      "ll": [
       50.0614,
       19.9333
@@ -185,7 +192,7 @@
      "q": "Collegium Maius Jagiellońska 15 Kraków",
      "b": {
       "name": "Bunkier Café, Plac Szczepański 3a",
-      "d": "Skip the park and walk straight down Karmelicka to Plac Szczepański; warm up on the covered, heated terrace of Bunkier Café, then go on to the square.",
+      "d": "Skip the park and walk from Basztowa to Plac Szczepański, 5 minutes; warm up on the covered, heated terrace of Bunkier Café, then go on to the square.",
       "ll": [
        50.064,
        19.9346
@@ -194,7 +201,7 @@
      }
     },
     {
-     "t": "18:30",
+     "t": "16:15",
      "k": "market",
      "name": "Christmas market on the Main Square",
      "d": "Guides disagree on when the market ends: some say about 1 January, others 26 December, so check krakow.pl. Even without the stalls, the lit-up square is the place to start. Have a grzaniec (mulled wine) and try oscypek, smoked sheep's cheese with cranberry. Prices on the square are high, so have dinner elsewhere. On the hour, listen for the trumpet call (hejnał) from St Mary's tower.",
@@ -205,10 +212,10 @@
      "q": "Rynek Główny Kraków Christmas market"
     },
     {
-     "t": "19:30",
+     "t": "18:30",
      "k": "eat",
      "name": "Dinner off the square",
-     "d": "Book a table for seven; December evenings fill up.",
+     "d": "Book a table for seven; December evenings fill up. An early dinner after the early flight.",
      "opts": [
       {
        "n": "Chimera, Św. Anny 3",
@@ -240,14 +247,14 @@
      ]
     },
     {
-     "t": "21:30",
+     "t": "20:30",
      "k": "bar",
-     "name": "One drink on the way home",
-     "d": "All three are between the square and the apartment.",
+     "name": "One drink, then back to the hotel",
+     "d": "All three are a few minutes from the square.",
      "opts": [
       {
        "n": "Pauza In Garden, Rajska 12",
-       "s": "bar and small club with a hidden courtyard, DJs at weekends; 5 minutes from the apartment",
+       "s": "bar and small club with a hidden courtyard, DJs at weekends; 5 minutes from the square",
        "ll": [
         50.0641,
         19.9303
@@ -256,7 +263,7 @@
       },
       {
        "n": "Weźże Krafta, Dolnych Młynów 10",
-       "s": "craft beer bar in the Tytano complex, a former tobacco factory, 3 minutes from the apartment",
+       "s": "craft beer bar in the Tytano complex, a former tobacco factory, 15 minutes' walk west of the square",
        "ll": [
         50.0655,
         19.9282
@@ -272,18 +279,24 @@
        ],
        "q": "Piwnica pod Baranami Rynek Główny 27 Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "taxi",
+      "by": "Two Bolt or Uber cars to the hotel",
+      "time": "about 15 min",
+      "d": "From the Old Town, about 4–5 km. Before about 23:00 tram 12 from Basztowa LOT to Park Wodny also works, about 20 minutes."
+     }
     },
     {
-     "t": "23:00",
+     "t": "22:00",
      "k": "home",
-     "name": "Back to the apartment",
-     "d": "Five to fifteen minutes on foot from any of the bars.",
+     "name": "Back to the hotel",
+     "d": "Early night after the flight.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     }
    ]
   },
@@ -291,24 +304,30 @@
    "id": "d2",
    "n": "Tue 29 Dec",
    "title": "Wawel, Kazimierz and a sunset on Krakus Mound",
-   "theme": "A local market, the quiet streets up to Wawel Hill, lunch in Kazimierz, then over the footbridge to Podgórze for sunset from the oldest mound in the city. Dinner and bars in Kazimierz.",
+   "theme": "Tram 12 into town, a local market, the quiet streets up to Wawel Hill, lunch in Kazimierz, then over the footbridge to Podgórze for sunset from the oldest mound in the city. Dinner and bars in Kazimierz, a taxi back.",
    "stops": [
     {
-     "t": "09:00",
+     "t": "08:45",
      "k": "home",
-     "name": "Leave the apartment",
-     "d": "Walk north-east along Czysta and Basztowa to the market, about 12 minutes.",
+     "name": "Leave the hotel",
+     "d": "",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 from Park Wodny to Basztowa LOT",
+      "time": "about 20 min",
+      "d": "The Park Wodny stop is outside the hotel, by the water park. Tram 12 runs towards the centre through Rondo Mogilskie and Lubicz; get off on Basztowa street at the north edge of the Old Town. Buy tickets by card at the machine inside the tram."
+     }
     },
     {
      "t": "09:15",
      "k": "market",
      "name": "Stary Kleparz market",
-     "d": "Locals' food market since the Middle Ages, open Monday to Saturday from early morning: fruit, pickles, cheese, sausage and pączki (Polish doughnuts). Partly covered. Buy an obwarzanek, the braided Kraków bagel, from one of the blue street carts on the way; about 3 zł.",
+     "d": "Locals' food market since the Middle Ages, open Monday to Saturday from early morning: fruit, pickles, cheese, sausage and pączki (Polish doughnuts). Partly covered. Buy an obwarzanek, the braided Kraków bagel, from one of the blue street carts on the way; about 3 zł. Two minutes from the Basztowa LOT stop.",
      "ll": [
       50.0681,
       19.9405
@@ -434,13 +453,19 @@
        19.9615
       ],
       "q": "MOCAK Lipowa 4 Kraków"
+     },
+     "go": {
+      "m": "walk",
+      "by": "Walk back down to Kazimierz",
+      "time": "about 30 min",
+      "d": "Down the hill, over the Bernatek footbridge and into Kazimierz. The hotel is too far to go back before dinner; warm up in a café on Józefa or Szeroka until 19:30."
      }
     },
     {
      "t": "19:30",
      "k": "eat",
      "name": "Dinner in Kazimierz",
-     "d": "Book for seven. Between sunset and dinner, rest in a café or go back to the apartment by tram.",
+     "d": "Book for seven.",
      "opts": [
       {
        "n": "Starka, Józefa 14",
@@ -539,18 +564,24 @@
        ],
        "q": "Przypiecek Sławkowska 32 Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "taxi",
+      "by": "Two Bolt or Uber cars to the hotel",
+      "time": "about 15 min",
+      "d": "From the market hall on Grzegórzecka, about 4 km. Tram 9 from the Hala Targowa / Grzegórzki area also runs to Park Wodny, but late at night a taxi is quicker."
+     }
     },
     {
      "t": "23:45",
      "k": "home",
-     "name": "Back to the apartment",
-     "d": "Two Bolt or Uber cars take about 10 minutes; or walk 25–30 minutes through the Old Town to Karmelicka and Czysta.",
+     "name": "Back to the hotel",
+     "d": "",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     }
    ]
   },
@@ -558,67 +589,27 @@
    "id": "d3",
    "n": "Wed 30 Dec",
    "title": "Nowa Huta, the communist model town",
-   "theme": "A tram ride east to Nowa Huta, the planned socialist-realist town built in the 1950s: a grand square, a milk bar unchanged since the 1950s and a church shaped like an ark. Back by mid-afternoon for the big shop before the holidays, then a club night.",
+   "theme": "Nowa Huta is close to the hotel: a short tram ride east to the planned socialist-realist town of the 1950s, with a grand square, a milk bar unchanged since then and a church shaped like an ark. The big shop next to the hotel, a rest, then a club night in the Old Town.",
    "stops": [
     {
      "t": "09:00",
      "k": "home",
-     "name": "Leave the apartment",
-     "d": "",
+     "name": "Breakfast at the hotel",
+     "d": "The buffet is a paid extra (see Good to know). Leave by 09:45.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 16 east towards Pleszów, to Plac Centralny im. R. Reagana",
+      "time": "about 20–25 min",
+      "d": "From the Park Wodny stop the tram runs out through Mistrzejowice and Bieńczyce into Nowa Huta, much closer than from the centre. Check the exact stop in Jakdojade. Two Bolt cars take about 15 minutes."
+     }
     },
     {
-     "t": "09:10",
-     "k": "eat",
-     "name": "Breakfast near the apartment",
-     "d": "All within 5 minutes.",
-     "opts": [
-      {
-       "n": "Karma, Krupnicza 12",
-       "s": "roastery café with good breakfasts, 5 minutes from the apartment",
-       "ll": [
-        50.0628,
-        19.9312
-       ],
-       "q": "Karma Coffee Roastery Krupnicza 12 Kraków"
-      },
-      {
-       "n": "Bunkier Café, Plac Szczepański 3a",
-       "s": "café of the Bunkier Sztuki gallery with a covered, heated terrace",
-       "ll": [
-        50.064,
-        19.9346
-       ],
-       "q": "Bunkier Cafe Plac Szczepański Kraków"
-      },
-      {
-       "n": "Cukiernia Michałek, Krupnicza 6",
-       "s": "famous Kraków pastry shop, known for its rose-filled pączki; takeaway, 3 minutes from the apartment",
-       "ll": [
-        50.0627,
-        19.9325
-       ],
-       "q": "Cukiernia Michałek Krupnicza 6 Kraków"
-      }
-     ]
-    },
-    {
-     "t": "10:00",
-     "k": "transit",
-     "name": "Tram to Plac Centralny",
-     "d": "From the Teatr Bagatela stop, take a tram east to Plac Centralny im. Ronalda Reagana, about 35–40 minutes. Check the line in the Jakdojade app or Google Maps. Buy tickets at the machine inside the tram by card; a 24-hour ticket each covers the whole day.",
-     "ll": [
-      50.0634,
-      19.9327
-     ],
-     "q": "Teatr Bagatela tram stop Kraków"
-    },
-    {
-     "t": "10:45",
+     "t": "10:15",
      "k": "landmark",
      "name": "Plac Centralny and Aleja Róż",
      "d": "The central square of the town planned in the 1950s, framed by grand socialist-realist blocks. Walk up Aleja Róż (Avenue of Roses), where a Lenin statue stood until 1989.",
@@ -629,7 +620,7 @@
      "q": "Plac Centralny Nowa Huta Kraków"
     },
     {
-     "t": "11:15",
+     "t": "10:45",
      "k": "museum",
      "name": "Museum of Nowa Huta",
      "d": "Branch of the Museum of Kraków in the former Światowid cinema (Osiedle Centrum E 1): life in the communist years. Check hours on mhk.pl. Guided tours of the Cold-War shelters under the town are run by private companies; book them a day ahead.",
@@ -640,7 +631,7 @@
      "q": "Muzeum Nowej Huty Światowid Osiedle Centrum E 1 Kraków"
     },
     {
-     "t": "12:30",
+     "t": "12:00",
      "k": "church",
      "name": "Arka Pana (Lord's Ark)",
      "d": "Twenty minutes' walk north through the housing estates. A modernist church shaped like Noah's ark, finished in 1977 after a 20-year fight with the communist authorities. Free; be quiet during mass.",
@@ -651,7 +642,7 @@
      "q": "Arka Pana Obrońców Krzyża 1 Kraków"
     },
     {
-     "t": "13:30",
+     "t": "13:00",
      "k": "eat",
      "name": "Lunch on the square",
      "d": "Back on Plac Centralny. Milk bars are cash only.",
@@ -683,18 +674,41 @@
        ],
        "q": "Good Lood Nowa Huta Aleja Róż Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "tram",
+      "by": "Tram 16 back towards the centre, to Park Wodny",
+      "time": "about 20–25 min",
+      "d": "The same line as this morning, the other way; check the stop in Jakdojade. Two Bolt cars take about 15 minutes."
+     }
     },
     {
-     "t": "14:45",
-     "k": "transit",
-     "name": "Tram back and the big shop",
-     "d": "Ride back to Teatr Bagatela. Shops close early on 31 December and nearly all are closed on 1 January, so buy food and drinks for New Year's Eve and New Year's Day now at a supermarket near the apartment. Then rest.",
+     "t": "14:15",
+     "k": "shop",
+     "name": "The big shop next to the hotel",
+     "d": "Shops close early on 31 December and nearly all are closed on 1 January, so buy food and drinks for New Year's Eve and New Year's Day now at a supermarket in the Krokus or Serenada shopping centre (Bora-Komorowskiego 37 and 41), a short walk from the hotel. Check their 30 December hours on Google Maps.",
      "ll": [
-      50.064,
-      19.93
+      50.0905,
+      19.984
      ],
-     "q": "supermarket Karmelicka Kraków"
+     "q": "Centrum Handlowe Krokus Bora-Komorowskiego 37 Kraków"
+    },
+    {
+     "t": "15:15",
+     "k": "home",
+     "name": "Rest at the hotel",
+     "d": "Put the shopping away and rest; the sun sets around 15:40.",
+     "ll": [
+      50.0891,
+      19.9808
+     ],
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 from Park Wodny to Basztowa LOT",
+      "time": "about 20 min",
+      "d": "Leave about 19:00. Tram 12 to Basztowa LOT, then 5–10 minutes on foot to dinner."
+     }
     },
     {
      "t": "19:30",
@@ -735,7 +749,7 @@
      "t": "22:00",
      "k": "bar",
      "name": "Club night",
-     "d": "Three Old Town clubs within 5 minutes of each other and 15 minutes' walk from the apartment. Check the night's programme and entry fee on their pages.",
+     "d": "Three Old Town clubs within 5 minutes of each other. Check the night's programme and entry fee on their pages.",
      "opts": [
       {
        "n": "Prozak 2.0, Plac Dominikański 6",
@@ -764,18 +778,24 @@
        ],
        "q": "Frantic Club Szewska 5 Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "taxi",
+      "by": "Two Bolt or Uber cars to the hotel",
+      "time": "about 15 min",
+      "d": "Trams are rare after midnight; stay together and order both cars at once."
+     }
     },
     {
      "t": "02:00",
      "k": "home",
-     "name": "Back to the apartment",
-     "d": "15 minutes on foot from any of the three clubs: Szewska → Karmelicka → Czysta. Walk back together.",
+     "name": "Back to the hotel",
+     "d": "",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     }
    ]
   },
@@ -783,18 +803,24 @@
    "id": "d4",
    "n": "Thu 31 Dec",
    "title": "Salwator, Kościuszko Mound and New Year's Eve",
-   "theme": "A late start and a walk west along the river to the mound with the widest view of the city. A nap in the afternoon, dinner, then the evening is blocked for New Year's Eve: pick one of three free options.",
+   "theme": "Tram 12 across town for a late brunch and a walk west along the river to the mound with the widest view of the city. A nap at the hotel, dinner, then the evening is blocked for New Year's Eve: pick one of three free options.",
    "stops": [
     {
-     "t": "10:00",
+     "t": "09:45",
      "k": "home",
-     "name": "Leave the apartment",
-     "d": "Walk south through the Planty to Felicjanek Street, 10 minutes.",
+     "name": "Leave the hotel",
+     "d": "A late start.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 towards Cichy Kącik, to the stop on Podwale nearest Felicjanek",
+      "time": "about 25 min",
+      "d": "Tram 12 runs through the centre along Basztowa, Dunajewskiego and Podwale; get off where Jakdojade shows the shortest walk to Felicjanek street, then a few minutes on foot."
+     }
     },
     {
      "t": "10:15",
@@ -822,7 +848,7 @@
       },
       {
        "n": "Karma, Krupnicza 12",
-       "s": "roastery café with good breakfasts, 5 minutes from the apartment",
+       "s": "roastery café with good breakfasts, on Krupnicza just west of the Old Town",
        "ll": [
         50.0628,
         19.9312
@@ -854,7 +880,7 @@
      "q": "Kopiec Kościuszki Kraków",
      "b": {
       "name": "National Museum, Al. 3 Maja 1",
-      "d": "Polish 20th-century art and design, 8 minutes from the apartment. Hours on 31 December may be shorter; check mnk.pl.",
+      "d": "Polish 20th-century art and design, at the east end of Błonia; tram 12 runs past it on the way back. Hours on 31 December may be shorter; check mnk.pl.",
       "ll": [
        50.0603,
        19.9235
@@ -866,31 +892,27 @@
      "t": "13:45",
      "k": "park",
      "name": "Back across Błonia",
-     "d": "The huge meadow where the Pope said mass; walk straight across it and through Jordan Park towards the apartment.",
+     "d": "The huge meadow where the Pope said mass; walk straight across it and through Jordan Park towards Krupnicza.",
      "ll": [
       50.06,
       19.912
      ],
      "q": "Błonia Kraków",
      "b": {
-      "name": "Bus or taxi back",
-      "d": "Skip the meadow and take a Bolt back from the mound, about 10 minutes.",
-      "ll": [
-       50.0549,
-       19.8935
-      ],
-      "q": "Kopiec Kościuszki Kraków"
+      "name": "Tram 12 from Cichy Kącik",
+      "d": "Skip the meadow: walk down to the Cichy Kącik loop and ride tram 12 back towards Podwale.",
+      "q": "Cichy Kącik tram stop Kraków"
      }
     },
     {
      "t": "14:30",
      "k": "eat",
-     "name": "Late lunch near the apartment",
-     "d": "Shops close early today; you shopped yesterday. Pod Wawelem is 15 minutes south of the apartment; the other two are closer.",
+     "name": "Late lunch on the way back",
+     "d": "Shops close early today; you shopped yesterday.",
      "opts": [
       {
        "n": "Pod Wawelem, Plac na Groblach 9 (from the TikTok food guide)",
-       "s": "huge schnitzels, ribs and beer by the litre in a loud beer hall; 15 minutes from the apartment",
+       "s": "huge schnitzels, ribs and beer by the litre in a loud beer hall, below Wawel",
        "ll": [
         50.0566,
         19.9339
@@ -915,7 +937,13 @@
        ],
        "q": "Przypiecek Sławkowska 32 Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 back to Park Wodny",
+      "time": "about 25 min",
+      "d": "From the Podwale or Basztowa stops. Holiday-eve timetables can be thinner; check Jakdojade."
+     }
     },
     {
      "t": "15:30",
@@ -923,16 +951,22 @@
      "name": "Nap and get ready",
      "d": "Rest before a long night. Charge your phones and agree on a meeting point in case you lose each other at midnight (mobile networks get slow).",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 from Park Wodny to Basztowa LOT",
+      "time": "about 20 min",
+      "d": "Leave about 18:30. Tram 12 to Basztowa LOT, or two Bolt cars if you book a table further away."
+     }
     },
     {
      "t": "19:00",
      "k": "eat",
      "name": "Dinner before the night",
-     "d": "Most restaurants serve set New Year's Eve menus that must be booked weeks ahead. If you can't book, cook at the apartment with what you bought yesterday.",
+     "d": "Most restaurants serve set New Year's Eve menus that must be booked weeks ahead. If you cannot book, eat at the hotel restaurant or bring food from yesterday's shop and eat at the hotel before you go.",
      "opts": [
       {
        "n": "Morskie Oko, Plac Szczepański 8",
@@ -967,11 +1001,11 @@
      "t": "21:00",
      "k": "party",
      "name": "New Year's Eve: pick one",
-     "d": "This time is blocked for New Year's Eve. All three are free to enter. Kraków bans fireworks from 2026 and the city no longer runs a show; the 2026/27 programme had not been announced in October 2026, so check krakow.pl and pik.krakow.pl in December. Drinking alcohol in public is illegal in Poland, and glass is usually not allowed on the square. Taxis are scarce after midnight; all three are walkable from the apartment.",
+     "d": "This time is blocked for New Year's Eve. All three are free to enter. Kraków bans fireworks from 2026 and the city no longer runs a show; the 2026/27 programme had not been announced in October 2026, so check krakow.pl and pik.krakow.pl in December. Drinking alcohol in public is illegal in Poland, and glass is usually not allowed on the square. From the hotel, the Main Square is the easiest to get back from; Krakus Mound is the furthest.",
      "opts": [
       {
        "n": "Main Square (Rynek Główny)",
-       "s": "the city's big open-air gathering in front of the Cloth Hall, traditionally free; recent years had a stage or light show and a countdown. 15 minutes' walk from the apartment",
+       "s": "the city's big open-air gathering in front of the Cloth Hall, traditionally free; recent years had a stage or light show and a countdown. the easiest to reach from the hotel: tram 12 to Basztowa LOT, then 5 minutes on foot",
        "ll": [
         50.0617,
         19.9373
@@ -996,18 +1030,24 @@
        ],
        "q": "Kopiec Krakusa Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "ride",
+      "by": "Back to the hotel: night tram, taxi or a long walk",
+      "time": "about 55 min on foot from the Main Square",
+      "d": "Taxis are scarce and expensive after midnight. From the Main Square it is about 4.5 km on foot, out along Lubicz to Rondo Mogilskie and up the tram line. Check in Jakdojade whether tram 12 or a night line runs that night; from Plac Nowy or Krakus Mound wait for a taxi or a tram rather than walk."
+     }
     },
     {
      "t": "01:00",
      "k": "home",
-     "name": "Back to the apartment",
-     "d": "Walk back together; taxis are scarce and expensive after midnight. From the Main Square 15 minutes, from Plac Nowy 30 minutes, from Krakus Mound about 50 minutes (or a taxi if you can get one).",
+     "name": "Back to the hotel",
+     "d": "",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     }
    ]
   },
@@ -1015,18 +1055,24 @@
    "id": "d5",
    "n": "Fri 1 Jan",
    "title": "New Year's Day, slow",
-   "theme": "A public holiday: most shops are closed and many cafés open late. A late brunch, a walk along the river to the cliffs of the Zakrzówek quarry lake, an early dinner and an early night, because the alarm rings at 04:00.",
+   "theme": "A public holiday: most shops are closed and trams run less often. A late brunch, a walk along the river to the cliffs of the Zakrzówek quarry lake, an early dinner in Kazimierz and an early night, because the alarm rings at 04:00.",
    "stops": [
     {
-     "t": "11:30",
+     "t": "11:15",
      "k": "home",
      "name": "Wake up slowly",
-     "d": "Leave around midday.",
+     "d": "Leave at about 11:30.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków",
+     "go": {
+      "m": "tram",
+      "by": "Tram 12 from Park Wodny to Basztowa LOT",
+      "time": "about 20 min",
+      "d": "Trams run on a holiday timetable on 1 January, so check Jakdojade before you go out to the stop."
+     }
     },
     {
      "t": "12:00",
@@ -1106,8 +1152,8 @@
     {
      "t": "16:15",
      "k": "transit",
-     "name": "Back by tram or taxi",
-     "d": "From Zakrzówek take a tram towards the centre or two Bolt cars, about 15 minutes to the apartment. Rest for an hour; dinner is at 18:00.",
+     "name": "Ride to Kazimierz",
+     "d": "Two Bolt cars to Kazimierz, about 10 minutes, or a tram (Jakdojade). Warm up in a café until dinner; the hotel is too far to go back and forth.",
      "ll": [
       50.0405,
       19.9185
@@ -1153,7 +1199,7 @@
      "t": "20:00",
      "k": "bar",
      "name": "One last quiet drink",
-     "d": "Close to dinner, so you can be home by 22:00.",
+     "d": "Close to dinner, so you can be at the hotel by 22:00.",
      "opts": [
       {
        "n": "Singer, Estery 20",
@@ -1182,18 +1228,24 @@
        ],
        "q": "Spokój Bracka 3 Kraków"
       }
-     ]
+     ],
+     "go": {
+      "m": "taxi",
+      "by": "Two Bolt or Uber cars to the hotel",
+      "time": "about 15 min",
+      "d": "From Kazimierz, about 4–5 km. Before about 23:00 tram 12 from Basztowa LOT to Park Wodny also works, about 20 minutes. On 1 January trams are less frequent."
+     }
     },
     {
-     "t": "22:00",
+     "t": "21:30",
      "k": "home",
      "name": "Pack and sleep",
-     "d": "Book two taxis for 04:45 tonight (Bolt or Uber can schedule rides) and set alarms for 04:00.",
+     "d": "Book two taxis for 04:30 tomorrow (Bolt or Uber can schedule rides, or ask the 24-hour reception) and set alarms for 04:00.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     }
    ]
   },
@@ -1207,26 +1259,26 @@
      "t": "04:00",
      "k": "home",
      "name": "Wake up and check out",
-     "d": "Leave the keys as the host asked and close the windows.",
+     "d": "Leave the key cards at the 24-hour reception.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     },
     {
-     "t": "04:45",
+     "t": "04:30",
      "k": "transit",
      "name": "Two taxis to the airport",
-     "d": "About 20–25 minutes at night. The airport train may start too late at this hour; if you want it, check the first departure on kolejemalopolskie.com.pl.",
+     "d": "From the hotel to Balice is about 20 km across the north of the city: about 25–30 minutes at night. Trams and the airport train do not help at this hour.",
      "ll": [
-      50.065,
-      19.9256
+      50.0891,
+      19.9808
      ],
-     "q": "50.0650,19.9256"
+     "q": "Hotel Swing Dobrego Pasterza 124 Kraków"
     },
     {
-     "t": "05:15",
+     "t": "05:00",
      "k": "transit",
      "name": "Kraków Airport",
      "d": "Check in online with Ryanair before you go. Security can be slow in the morning; the gate closes 30 minutes before departure.",

@@ -7,7 +7,8 @@ Live site (after you enable Pages): `https://<your-github-username>.github.io/tr
 ## What it does
 
 - **Home page** lists every city. It loads only one small file, `data/cities.json`.
-- **City page** loads only that city's file, `data/<city>.json`, when you open it.
+- **City page** loads only that city's file, `data/<city>.json`, when you open it. It lists the days as cards.
+- **Day page.** Each day opens on its own page with its map, daylight bar and stops. A "← <city>" button goes back to the list of days, the day bar at the top jumps to any other day, and the buttons at the bottom go to the previous and next day.
 - **Remembers your city.** The last city you opened is stored in the browser. Opening the site again goes straight to it, so you never download or render the other cities.
 - **Back to all cities.** The "← Cities" button always shows the full list.
 - **Cache cleared?** If browser data is cleared, the home page is shown again.
@@ -20,7 +21,8 @@ Live site (after you enable Pages): `https://<your-github-username>.github.io/tr
 2. `app.js` reads the URL hash:
    - empty hash: open the remembered city if there is one, otherwise show the home page
    - `#/cities`: show the home page (used by the back button)
-   - `#/<id>`: show that city (for example `#/prague`)
+   - `#/<id>`: show that city's days (for example `#/prague`)
+   - `#/<id>/<day>`: show one day of that city (for example `#/krakow/d2`); an unknown day shows the city's days
 3. For a city, the app first shows the copy stored in `localStorage` (key `city:<id>`), then fetches `data/<id>.json` with `no-cache`. If the file changed, the stored copy and the page are updated.
 4. The remembered city is stored under the key `lastCity`. It is saved only after a city has loaded successfully, and removed if that city fails to load.
 5. `sw.js` caches the shell and data files for offline use (stale-while-revalidate).
@@ -38,7 +40,7 @@ sw.js                   offline cache
 data/cities.json        list shown on the home page
 data/prague.json        full itinerary for Prague
 data/budapest.json      full itinerary for Budapest
-data/krakow.json        full itinerary for Kraków (six days, New Year)
+data/krakow.json        full itinerary for Kraków (six days, New Year, from Hotel Swing)
 .github/workflows/      GitHub Pages deployment
 CLAUDE.md               guide for Claude Code sessions in this repo
 ```
@@ -57,7 +59,7 @@ CLAUDE.md               guide for Claude Code sessions in this repo
 | `facts` | list of `[label, text]` shown in the "Good to know" box, which is collapsed by default |
 | `currency` | `{code, rate, sample}`: ISO code, fallback rate in local units per 1 euro, and the sample amount the converter starts with. Leave it out for euro countries. The live rate comes from api.frankfurter.dev (ECB) |
 | `river` | optional `[lon, lat]` points drawn as a river on the map |
-| `stay` | optional `{label, name, url, ll}`: where the group sleeps. Shown under the lead with the listing link and directions, and as a button at the start of the day bar that opens directions to it. `label` (for example `Airbnb`) replaces the word "Stay" on that button, the heading and the `home` stop chips |
+| `stay` | optional `{label, name, url, ll, q}`: where the group sleeps. Shown under the lead with the listing link and directions, and as a button at the start of the day bar that opens directions to it. `label` (for example `Airbnb` or `Hotel`) replaces the word "Stay" on that button, the heading and the `home` stop chips. `q`, if given, is the address used for directions instead of the coordinates |
 | `note` | footnote shown at the bottom |
 | `days` | list of days (below) |
 
@@ -65,6 +67,8 @@ Each day has `id`, `n` (label), `title`, `theme` and `stops`. Each stop has `t` 
 
 - `ll: [lat, lon]` plus `q` (search text) and optionally `id` (Google place id), or
 - `opts`: three options, each with `n` (name), `s` (short description), `ll`, `q`, `id`.
+
+Any stop can have `go`, how to get from it to the next stop when that is a ride or a long walk: `{m, by, time, d}`. `m` is the mode (`tram`, `bus`, `taxi`, `train`, `plane`, `walk`, or `ride` when the note offers several), `by` says what to take and where to get off (for example `Tram 12 from Park Wodny to Basztowa LOT`), `time` is how long it takes, and `d` is an optional longer note. It is shown as a row between the two stops. A leg with a `go` that is not `walk`, or a leg after a `transit` stop, is ridden: it is drawn dotted on the map and not counted in the walking distance. When the stay is far from the centre, give the first and last stop of each day a `go`.
 
 An outdoor stop can have `b`, a plan B if it rains: `{name, d, ll, q}`. It is shown under the stop in a "Plan B if it rains" box.
 
@@ -89,6 +93,7 @@ The day `n` label is shown in the day bar. With more than four days, or with a `
 | `home` | Stay | the apartment or hotel: start and end of a day |
 | `transit` | Transit | an airport, tram ride or taxi; the leg after it is ridden and not counted in the walking distance |
 | `party` | Party | a New Year's Eve or other one-night event, with three `opts` to choose from |
+| `shop` | Shop | a supermarket or shopping centre, for example the big shop before a holiday |
 
 New kinds can be added whenever a stop fits none of these. Add the kind to `KIND` in `assets/app.js`, add `--<kind>` and `--<kind>-bg` colours to the `:root` block in `assets/style.css` plus a `.k-<kind>` rule, add a row to this table, and bump the `?v=` and `CACHE` versions.
 
