@@ -14,6 +14,7 @@
   --park:#8fd493; --park-bg:#183019; --spa:#8cb8ec; --spa-bg:#172a40;
   --bar:#ec8fbf; --bar-bg:#3a1a2b; --zoo:#b5d66f; --zoo-bg:#26300f;
   --home:#f2f5f8; --home-bg:#2b3a4a; --transit:#7f93a6; --transit-bg:#1c2733; --party:#ff6f91; --party-bg:#40142a;
+  --shop:#c99cf5; --shop-bg:#2d1d42;
   --display:"Unbounded","Onest",system-ui,sans-serif; --body:"Onest",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
 }
 *{box-sizing:border-box}
@@ -79,6 +80,7 @@ h2{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.25;ma
 .k-home{background:var(--home-bg);color:var(--home)}
 .k-transit{background:var(--transit-bg);color:var(--transit)}
 .k-party{background:var(--party-bg);color:var(--party)}
+.k-shop{background:var(--shop-bg);color:var(--shop)}
 .stop h3{margin:0;font-size:16px;font-weight:500;line-height:1.35}
 .stop p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:52ch}
 .opts{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
@@ -120,3 +122,25 @@ nav a.home svg{width:16px;height:16px}
 .icon-btn.ok{color:var(--park)}
 .icon-btn:focus-visible{outline:2px solid var(--river);outline-offset:2px}
 .hbtns{display:flex;gap:8px;flex:none}
+/* City overview: one card per day, each opens the day's own page */
+.daylist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.daycard{display:flex;flex-direction:column;gap:6px;padding:14px;border:1px solid var(--line);background:var(--card);border-radius:12px;color:var(--ink);text-decoration:none}
+.daycard:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+.daycard .dhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.daycard .count{font-size:12px;color:var(--muted)}
+.daycard strong{font-family:var(--display);font-weight:500;font-size:17px;line-height:1.25;text-wrap:balance}
+.daycard .theme{font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.daycard .dots{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.daycard .dots i{width:8px;height:8px;border-radius:50%}
+.daycard::after{content:"Open day →";font-size:13px;font-weight:500;color:var(--river)}
+/* Day page */
+section.day h1{font-size:22px}
+nav a[aria-current="page"]{border-color:var(--river);color:var(--river);background:var(--river-bg)}
+/* How to get to the next stop: a ride or a long walk, between two stops */
+.go{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;padding:10px 14px;border-top:1px solid var(--line);background:var(--transit-bg);font-size:13px}
+.go .mode{font-size:11px;font-weight:500;padding:2px 6px;border-radius:5px;color:var(--transit);border:1px solid var(--line)}
+.go p{margin:0;color:var(--muted);max-width:52ch}
+.go p.how{color:var(--ink)}
+.go p.how b{font-weight:500}
+.pager{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0}
+.pager .next{text-align:right}

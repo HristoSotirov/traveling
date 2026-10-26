@@ -9,7 +9,7 @@
     walk: "Walk", eat: "Eat", view: "View", market: "Market",
     landmark: "Landmark", museum: "Museum", palace: "Palace", church: "Church",
     park: "Park", spa: "Spa", bar: "Bar", zoo: "Zoo",
-    home: "Stay", transit: "Transit", party: "Party"
+    home: "Stay", transit: "Transit", party: "Party", shop: "Shop"
   };
   function kcol(k) { return KIND[k] ? "var(--" + k + ")" : "var(--stone)"; }   // unknown kinds fall back to grey
   var app = document.getElementById("app");
@@ -120,6 +120,8 @@
   }
 
   // ---------- map for one day ----------
+  // The leg after a stop is ridden when the stop is a `transit` stop or its `go` is not on foot.
+  function ridden(p) { return p.k === "transit" || !!(p.go && p.go.m !== "walk"); }
   function drawMap(C, D) {
     var pts = D.stops.map(center), all = pts.slice();
     D.stops.forEach(function (p) { (p.opts || []).forEach(function (o) { all.push(o.ll); }); });
@@ -134,7 +136,11 @@
     var svg = sv("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Schematic map of the day's route with numbered stops" });
     svg.appendChild(sv("rect", { width: W, height: H, fill: "var(--stone-bg)" }));
     if (C.river && C.river.length > 1) svg.appendChild(sv("polyline", { points: C.river.map(function (r) { return X(r[0]).toFixed(1) + "," + Y(r[1]).toFixed(1); }).join(" "), fill: "none", stroke: "var(--water)", "stroke-width": 16, "stroke-linecap": "round", "stroke-linejoin": "round" }));
-    svg.appendChild(sv("polyline", { points: pts.map(function (p) { return X(p[1]).toFixed(1) + "," + Y(p[0]).toFixed(1); }).join(" "), fill: "none", stroke: "var(--ink)", "stroke-opacity": ".45", "stroke-width": 2, "stroke-dasharray": "5 4", "stroke-linejoin": "round" }));
+    // Walked legs are a dashed line; ridden legs (tram, taxi, plane) a faint dotted one.
+    for (var j = 1; j < pts.length; j++) {
+      var rd = ridden(D.stops[j - 1]);
+      svg.appendChild(sv("line", { x1: X(pts[j - 1][1]).toFixed(1), y1: Y(pts[j - 1][0]).toFixed(1), x2: X(pts[j][1]).toFixed(1), y2: Y(pts[j][0]).toFixed(1), stroke: "var(--ink)", "stroke-opacity": rd ? ".3" : ".45", "stroke-width": 2, "stroke-dasharray": rd ? "1 6" : "5 4", "stroke-linecap": "round" }));
+    }
     D.stops.forEach(function (p) { (p.opts || []).forEach(function (o) { svg.appendChild(sv("circle", { cx: X(o.ll[1]).toFixed(1), cy: Y(o.ll[0]).toFixed(1), r: 3.5, fill: "var(--lantern)", stroke: "var(--card)", "stroke-width": 1.5 })); }); });
     pts.forEach(function (p, i) {
       var g = sv("g", {});
@@ -142,21 +148,28 @@
       var t = sv("text", { x: X(p[1]).toFixed(1), y: (Y(p[0]) + 4).toFixed(1), "text-anchor": "middle", "font-size": 12, "font-weight": 500, "font-family": "JetBrains Mono, monospace", fill: "var(--card)" });
       t.textContent = String(i + 1); g.appendChild(t); svg.appendChild(g);
     });
-    // Length of the whole day on foot, shown bottom left instead of a scale bar. The straight lines between stops
-    // are shorter than real streets, so the distance is multiplied by 1.3 (a typical street factor); a step is 0.75 m.
-    // A leg that starts at a `transit` stop is ridden (tram, taxi, plane), so it is not counted.
-    var meters = 0;
-    for (var k = 1; k < pts.length; k++) { if (D.stops[k - 1].k === "transit") continue; var ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my; meters += Math.sqrt(ddx * ddx + ddy * ddy); }
-    meters *= 1.3;
+    // Distances of the day, shown bottom left instead of a scale bar: on foot (with steps) and by tram, bus or taxi.
+    // The straight lines between stops are shorter than real streets, so both are multiplied by 1.3 (a typical
+    // street factor); a step is 0.75 m. A ridden leg (see ridden()) counts as transport; flights are left out.
+    var meters = 0, rode = 0;
+    for (var k = 1; k < pts.length; k++) {
+      var prev = D.stops[k - 1], ddx = (pts[k][1] - pts[k - 1][1]) * mx, ddy = (pts[k][0] - pts[k - 1][0]) * my, m = Math.sqrt(ddx * ddx + ddy * ddy);
+      if (!ridden(prev)) meters += m; else if (!(prev.go && prev.go.m === "plane")) rode += m;
+    }
+    meters *= 1.3; rode *= 1.3;
     var steps = String(Math.round(meters / 0.75 / 100) * 100).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    var label = "≈ " + (meters / 1000).toFixed(1) + " km · ≈ " + steps + " steps";
-    svg.appendChild(sv("rect", { x: 6, y: H - 31, width: Math.round(label.length * 6.9 + 12), height: 22, rx: 6, fill: "var(--card)", "fill-opacity": ".85" }));
-    var bt = sv("text", { x: 12, y: H - 16, "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--ink)" }); bt.textContent = label; svg.appendChild(bt);
+    var lines = ["Walk ≈ " + (meters / 1000).toFixed(1) + " km · ≈ " + steps + " steps"];
+    if (rode >= 100) lines.push("Ride ≈ " + (rode / 1000).toFixed(1) + " km by tram or taxi");
+    var lw = Math.max.apply(0, lines.map(function (l) { return l.length; }));
+    svg.appendChild(sv("rect", { x: 6, y: H - 15 - 16 * lines.length, width: Math.round(lw * 6.9 + 12), height: 6 + 16 * lines.length, rx: 6, fill: "var(--card)", "fill-opacity": ".85" }));
+    lines.forEach(function (l, i) {
+      var bt = sv("text", { x: 12, y: H - 16 - 16 * (lines.length - 1 - i), "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: i ? "var(--muted)" : "var(--ink)" }); bt.textContent = l; svg.appendChild(bt);
+    });
     var nt = sv("text", { x: W - 14, y: 20, "text-anchor": "end", "font-size": 11, "font-family": "JetBrains Mono, monospace", fill: "var(--muted)" }); nt.textContent = "N ↑"; svg.appendChild(nt);
     return svg;
   }
   var ICON_HOME = "M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10";
-  function stayUrl(S) { return "https://www.google.com/maps/dir/?api=1&destination=" + S.ll[0] + "," + S.ll[1]; }
+  function stayUrl(S) { return "https://www.google.com/maps/dir/?api=1&destination=" + (S.q ? encodeURIComponent(S.q) : S.ll[0] + "," + S.ll[1]); }
   function dirUrl(D) {
     var c = D.stops.map(function (p) { var x = center(p); return x[0].toFixed(5) + "," + x[1].toFixed(5); });
     var u = "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=" + c[0] + "&destination=" + c[c.length - 1];
@@ -206,16 +219,26 @@
   }
 
   // ---------- city page ----------
-  function city(C) {
-    var y = window.scrollY;
+  // Two views of a city: the overview (#/<city>) lists the days, and each day has its own page (#/<city>/<day>).
+  var shown = null;   // the view on screen, so a background refresh of the same view keeps the scroll position
+  function city(C, dayId) {
+    var D = null; (C.days || []).forEach(function (x) { if (x.id === dayId) D = x; });
+    var view = C.id + "/" + (D ? D.id : ""), y = view === shown ? window.scrollY : 0;
+    shown = view;
     app.replaceChildren();
-    document.title = C.title || C.name;
-    var stayLabel = (C.stay && C.stay.label) || KIND.home;   // e.g. "Airbnb" instead of "Stay"
-    var top = el("div", "top"), bk = el("a", "back", "← Cities"); bk.href = "#/cities"; top.appendChild(bk); app.appendChild(top);
+    document.title = D ? D.n + " · " + (C.title || C.name) : C.title || C.name;
+    var stayLabel = (C.stay && C.stay.label) || KIND.home;   // e.g. "Airbnb" or "Hotel" instead of "Stay"
+    var top = el("div", "top"), bk = el("a", "back", D ? "← " + C.name : "← Cities"); bk.href = D ? "#/" + C.id : "#/cities"; top.appendChild(bk); app.appendChild(top);
+    if (D) day(C, D, stayLabel); else overview(C, stayLabel);
+    if (C.note) app.appendChild(el("p", "note", C.note));
+    window.scrollTo(0, y);
+  }
+
+  function overview(C, stayLabel) {
     var h = el("header"); h.appendChild(el("h1", null, C.title || C.name));
     if (C.lead) h.appendChild(el("p", "lead", C.lead));
     if (C.stay) {
-      // Where the group sleeps: the listing and walking directions to it. Every day's route starts there.
+      // Where the group sleeps: the listing and directions to it. Every day's route starts there.
       var st = el("p", "stay"); st.appendChild(el("b", null, stayLabel));
       st.appendChild(el("span", null, C.stay.name));
       var sl = el("span", "links");
@@ -233,81 +256,108 @@
       f.appendChild(rows); app.appendChild(f);
     }
     var fx = fxRow(C); if (fx) app.appendChild(fx);
+    // One card per day; each opens the day's own page.
+    var ul = el("ul", "daylist");
+    C.days.forEach(function (D) {
+      var li = el("li"), a = el("a", "daycard"); a.href = "#/" + C.id + "/" + D.id;
+      var hd = el("div", "dhead"); hd.appendChild(el("span", "eyebrow", D.n)); hd.appendChild(el("span", "count", D.stops.length + " stops")); a.appendChild(hd);
+      a.appendChild(el("strong", null, D.title));
+      if (D.theme) a.appendChild(el("span", "theme", D.theme));
+      var dots = el("span", "dots"); dots.setAttribute("aria-hidden", "true");
+      D.stops.forEach(function (p) { var d = el("i"); d.style.background = kcol(p.k); dots.appendChild(d); });
+      a.appendChild(dots);
+      li.appendChild(a); ul.appendChild(li);
+    });
+    app.appendChild(ul);
+  }
+
+  var MODE = { tram: "Tram", bus: "Bus", taxi: "Taxi", train: "Train", walk: "Walk", plane: "Plane", ride: "Ride" };   // ride: any of several, the note says which
+  function day(C, D, stayLabel) {
+    var i0 = C.days.indexOf(D);
+    // Day bar: the stay, then every day; the current day is marked.
     var nav = el("nav", "days"); nav.setAttribute("aria-label", "Days");
     if (C.days.length > 4 || C.stay) nav.classList.add("scroll");   // many days: a sideways slider
     else nav.style.setProperty("--n", C.days.length);
-    if (C.stay) { var hm = link(stayUrl(C.stay), stayLabel, "home"); hm.title = "Directions to the apartment"; hm.insertBefore(iconSvg(ICON_HOME), hm.firstChild); nav.appendChild(hm); }
-    C.days.forEach(function (D) { var a = el("a", null, D.n); a.href = "#" + D.id; a.addEventListener("click", function (e) { e.preventDefault(); document.getElementById(D.id).scrollIntoView(); }); nav.appendChild(a); });
+    if (C.stay) { var hm = link(stayUrl(C.stay), stayLabel, "home"); hm.title = "Directions to " + stayLabel.toLowerCase(); hm.insertBefore(iconSvg(ICON_HOME), hm.firstChild); nav.appendChild(hm); }
+    var curA = null;
+    C.days.forEach(function (x) { var a = el("a", null, x.n); a.href = "#/" + C.id + "/" + x.id; if (x === D) { a.setAttribute("aria-current", "page"); curA = a; } nav.appendChild(a); });
     app.appendChild(nav);
     var T0 = C.hours[0], T1 = C.hours[1];
     function pct(x) { return Math.max(0, Math.min(100, (x - T0) / (T1 - T0) * 100)); }
     function hx(t) { var x = hh(t); return x < T0 ? x + 24 : x; }   // after midnight (02:00) goes to the end of the bar
     function photoUrl(q) { return "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(q.split(" " + C.en)[0] + " " + C.local); }
-    var root = el("div"); root.style.cssText = "display:flex;flex-direction:column;gap:32px";
-    C.days.forEach(function (D) {
-      var s = el("section", "day"); s.id = D.id;
-      s.appendChild(el("div", "eyebrow", D.n)); s.appendChild(el("h2", null, D.title)); s.appendChild(el("p", "theme", D.theme));
-      var mb = el("div", "mapbox"); mb.appendChild(drawMap(C, D));
-      var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink. The distance is an estimate for the whole walk."));
-      mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
-      var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
-      var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);
-      D.stops.forEach(function (p) { var t = el("div", "tick"); t.style.left = pct(hx(p.t)) + "%"; t.style.background = kcol(p.k); tr.appendChild(t); });
-      s.appendChild(tr);
-      var lb = el("div", "tracklabel"); for (var t = T0; t <= T1; t += 4) lb.appendChild(el("span", null, (t < 10 ? "0" : "") + t + ":00")); s.appendChild(lb);
-      var list = el("div", "stops");
-      D.stops.forEach(function (p, i) {
-        var r = el("div", "stop"), lt = el("div", "lt"), n = el("div", "num", String(i + 1));
-        n.style.background = kcol(p.k); lt.appendChild(n); lt.appendChild(el("div", "time", p.t)); r.appendChild(lt);
-        var b = el("div"); b.appendChild(el("span", "chip k-" + (KIND[p.k] ? p.k : "walk"), p.k === "home" ? stayLabel : KIND[p.k] || p.k)); b.appendChild(el("h3", null, p.name)); b.appendChild(el("p", null, p.d));
-        if (p.opts) {
-          var u = el("ul", "opts");
-          p.opts.forEach(function (o) {
-            var li = el("li"); li.appendChild(el("b", null, o.n)); li.appendChild(el("span", null, o.s));
-            var ln = el("div", "links"); ln.appendChild(link(mapUrl(o.q, o.id), "Map →")); ln.appendChild(link(photoUrl(o.q), "Photos →")); li.appendChild(ln); u.appendChild(li);
-          });
-          b.appendChild(u);
-        } else {
-          var ln2 = el("div", "links"); ln2.style.marginTop = "6px";
-          ln2.appendChild(link(mapUrl(p.q, p.id), "Map →")); ln2.appendChild(link(photoUrl(p.q), "Photos →")); b.appendChild(ln2);
-        }
-        if (p.b) {   // indoor alternative for an outdoor stop, if it rains
-          var pb = el("div", "planb"); pb.appendChild(el("small", null, "Plan B if it rains"));
-          pb.appendChild(el("b", null, p.b.name)); if (p.b.d) pb.appendChild(el("span", null, p.b.d));
-          if (p.b.q) { var ln3 = el("div", "links"); ln3.appendChild(link(mapUrl(p.b.q, p.b.id), "Map →")); ln3.appendChild(link(photoUrl(p.b.q), "Photos →")); pb.appendChild(ln3); }
-          b.appendChild(pb);
-        }
-        r.appendChild(b); list.appendChild(r);
-      });
-      s.appendChild(list); root.appendChild(s);
+    var s = el("section", "day"); s.id = D.id;
+    s.appendChild(el("div", "eyebrow", D.n)); s.appendChild(el("h1", null, D.title)); s.appendChild(el("p", "theme", D.theme));
+    var mb = el("div", "mapbox"); mb.appendChild(drawMap(C, D));
+    var mf = el("div", "mapfoot"); mf.appendChild(el("small", null, "Numbers are the stops below. Orange dots are places to eat or drink. Dotted lines are rides. Walk and ride distances are estimates."));
+    mf.appendChild(link(dirUrl(D), "Open route", "dir")); mb.appendChild(mf); s.appendChild(mb);
+    var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", "Stop times against daylight");
+    var sb = el("div", "sunbar"); sb.style.left = pct(C.sun[0]) + "%"; sb.style.width = (pct(C.sun[1]) - pct(C.sun[0])) + "%"; tr.appendChild(sb);
+    D.stops.forEach(function (p) { var t = el("div", "tick"); t.style.left = pct(hx(p.t)) + "%"; t.style.background = kcol(p.k); tr.appendChild(t); });
+    s.appendChild(tr);
+    var lb = el("div", "tracklabel"); for (var t = T0; t <= T1; t += 4) lb.appendChild(el("span", null, (t < 10 ? "0" : "") + t + ":00")); s.appendChild(lb);
+    var list = el("div", "stops");
+    D.stops.forEach(function (p, i) {
+      var r = el("div", "stop"), lt = el("div", "lt"), n = el("div", "num", String(i + 1));
+      n.style.background = kcol(p.k); lt.appendChild(n); lt.appendChild(el("div", "time", p.t)); r.appendChild(lt);
+      var b = el("div"); b.appendChild(el("span", "chip k-" + (KIND[p.k] ? p.k : "walk"), p.k === "home" ? stayLabel : KIND[p.k] || p.k)); b.appendChild(el("h3", null, p.name)); if (p.d) b.appendChild(el("p", null, p.d));
+      if (p.opts) {
+        var u = el("ul", "opts");
+        p.opts.forEach(function (o) {
+          var li = el("li"); li.appendChild(el("b", null, o.n)); li.appendChild(el("span", null, o.s));
+          var ln = el("div", "links"); ln.appendChild(link(mapUrl(o.q, o.id), "Map →")); ln.appendChild(link(photoUrl(o.q), "Photos →")); li.appendChild(ln); u.appendChild(li);
+        });
+        b.appendChild(u);
+      } else {
+        var ln2 = el("div", "links"); ln2.style.marginTop = "6px";
+        ln2.appendChild(link(mapUrl(p.q, p.id), "Map →")); ln2.appendChild(link(photoUrl(p.q), "Photos →")); b.appendChild(ln2);
+      }
+      if (p.b) {   // indoor alternative for an outdoor stop, if it rains
+        var pb = el("div", "planb"); pb.appendChild(el("small", null, "Plan B if it rains"));
+        pb.appendChild(el("b", null, p.b.name)); if (p.b.d) pb.appendChild(el("span", null, p.b.d));
+        if (p.b.q) { var ln3 = el("div", "links"); ln3.appendChild(link(mapUrl(p.b.q, p.b.id), "Map →")); ln3.appendChild(link(photoUrl(p.b.q), "Photos →")); pb.appendChild(ln3); }
+        b.appendChild(pb);
+      }
+      r.appendChild(b); list.appendChild(r);
+      if (p.go && i < D.stops.length - 1) {   // how to get to the next stop: line, time, where to get off
+        var g = el("div", "go"), gl = el("div", "lt"); gl.appendChild(el("span", "mode", MODE[p.go.m] || p.go.m)); g.appendChild(gl);
+        var gb = el("div"), gh = el("p", "how"); gh.appendChild(el("b", null, p.go.by)); if (p.go.time) gh.appendChild(el("span", null, " · " + p.go.time)); gb.appendChild(gh);
+        if (p.go.d) gb.appendChild(el("p", null, p.go.d));
+        g.appendChild(gb); list.appendChild(g);
+      }
     });
-    app.appendChild(root);
-    if (C.note) app.appendChild(el("p", "note", C.note));
-    window.scrollTo(0, y);
+    s.appendChild(list); app.appendChild(s);
+    // Previous and next day, and back to the overview.
+    var pg = el("nav", "pager"); pg.setAttribute("aria-label", "Other days");
+    var pv = C.days[i0 - 1], nx = C.days[i0 + 1];
+    var pa = el("a", "prev", pv ? "← " + pv.n : "← All days"); pa.href = "#/" + C.id + (pv ? "/" + pv.id : ""); pg.appendChild(pa);
+    var na = el("a", "next", nx ? nx.n + " →" : "All days →"); na.href = "#/" + C.id + (nx ? "/" + nx.id : ""); pg.appendChild(na);
+    app.appendChild(pg);
+    if (curA) requestAnimationFrame(function () { nav.scrollLeft = Math.max(0, curA.offsetLeft - nav.offsetLeft - 8); });
   }
 
   // ---------- routing ----------
+  // #/cities: home; #/<city>: the city's days; #/<city>/<day>: one day. No hash: the last city, otherwise home.
   var cur = null;
   function route() {
-    var h = location.hash;
-    var id = h.replace(/^#\/?/, "");
+    var parts = location.hash.replace(/^#\/?/, "").split("/"), id = parts[0], dayId = parts[1] || "";
     document.title = "Traveling";
     if (id === "") {                       // opened without a choice: last city, otherwise home
       var last = store("lastCity");
       if (last) { location.replace("#/" + last); return; }
-      home(); return;
+      shown = null; home(); return;
     }
-    if (id === "cities") { home(); return; }   // the back link always shows all cities
-    if (!/^[a-z0-9-]+$/.test(id)) { home(); return; }
-    cur = id;
-    app.replaceChildren(el("p", "note", "Loading…"));
+    if (id === "cities" || !/^[a-z0-9-]+$/.test(id) || !/^[a-z0-9-]*$/.test(dayId)) { shown = null; home(); window.scrollTo(0, 0); return; }   // the back link always shows all cities
+    var key = id + "/" + dayId; cur = key;
+    if (!shown || shown.split("/")[0] !== id) app.replaceChildren(el("p", "note", "Loading…"));
     load("data/" + id + ".json", "city:" + id, function (C) {
-      if (cur !== id) return;
+      if (cur !== key) return;
       store("lastCity", id);
-      city(C);
+      C.id = C.id || id;
+      city(C, dayId);
     }, function () {
       if (store("lastCity") === id) store("lastCity", null);
-      home("This city did not load. Pick another or try again.");
+      shown = null; home("This city did not load. Pick another or try again.");
     });
   }
   window.addEventListener("hashchange", route);

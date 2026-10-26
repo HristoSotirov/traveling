@@ -18,6 +18,8 @@ Read `README.md` first. It explains the loading behaviour, the file layout and t
 - **Dark theme only.** There is no light mode, in the browser or in the installed app. All colours are CSS variables in the `:root` block of `assets/style.css`.
 - **Keep the site installable** on every system: `manifest.webmanifest`, the icons in `assets/icons/`, the service worker, and the Apple and Windows tags in `index.html`. Keep the one-tap install button on the home page (it shows only where it can install directly); do not add written install instructions to the page.
 - **Activity kinds can grow.** If a stop fits none of the existing kinds, add a new one rather than forcing it into a wrong kind. Follow the steps under "Activity kinds" in `README.md` (there is the same note above `KIND` in `assets/app.js`).
+- **One page per day.** A city opens on a list of its days (`#/<city>`); each day has its own page (`#/<city>/<day>`) with a back button to the days. Keep this for every city.
+- **Rides between stops.** When a stop is far from the next one (for example the hotel is out of the centre), give it a `go` with the tram line or taxi, where to get off and how long it takes (see "City data format" in `README.md`).
 - **Mobile first.** The layout is a single column, max 600px, with a 16px side gutter.
 - When you change `assets/app.js` or `assets/style.css`, bump the `?v=` number in `index.html` and in the `SHELL` list in `sw.js`, and bump `CACHE` in `sw.js`, so returning visitors get the new files.
 
@@ -25,7 +27,7 @@ Read `README.md` first. It explains the loading behaviour, the file layout and t
 
 Follow "Adding a city" in `README.md`. Facts to research per city: sunrise and sunset for the travel month, typical weather, local holidays, currency, market or event dates. Each meal stop and each after-dinner `bar` stop needs three nearby options. Use real places and give coordinates (`ll`). Never invent places, addresses or opening hours; if something cannot be verified, say so in the stop description or leave it out.
 
-Each day should have 7 to 10 stops with times that fit the daylight, a mix of activity kinds (`walk`, `eat`, `view`, `market`, `landmark`, `museum`, `palace`, `church`, `park`, `spa`, `bar`, `zoo`, `home`, `transit`, `party`; see "Activity kinds" in `README.md`), and `ll` coordinates close enough that the day is walkable.
+Each day should have 7 to 10 stops with times that fit the daylight, a mix of activity kinds (`walk`, `eat`, `view`, `market`, `landmark`, `museum`, `palace`, `church`, `park`, `spa`, `bar`, `zoo`, `home`, `transit`, `party`, `shop`; see "Activity kinds" in `README.md`), and `ll` coordinates close enough that the day is walkable.
 
 ## Check your work
 
@@ -35,8 +37,9 @@ Before finishing any change:
 2. Parse every JSON file in `data/` (for example `node -e "JSON.parse(require('fs').readFileSync('data/prague.json'))"`).
 3. Serve locally with `python3 -m http.server 8000` and check, on a phone-width viewport:
    - the home page lists all cities
-   - opening a city shows its days, maps and stops
-   - reloading the site opens the same city
+   - opening a city lists its days, and opening a day shows its map and stops on its own page
+   - on a day page, "← <city>", the day bar and the previous/next buttons work
+   - reloading the site opens the same city (and the same day, on a day page)
    - "← Cities" returns to the list
    - clearing site data shows the home page again
    - an empty city shows "Coming soon" without errors
